@@ -7,13 +7,42 @@
 //
 
 #import "SnowMusicAppDelegate.h"
+#import "SnowMusicViewController.h"
+
+#import "PGMidi.h"
+#import "PGArc.h"
 
 @implementation SnowMusicAppDelegate
 
 @synthesize window = _window;
+@synthesize viewController = viewController_;
+@synthesize audioController = _audioController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    application.idleTimerDisabled = YES; // we don't want the screen to sleep.
+    self.viewController = (SnowMusicViewController *) self.window.rootViewController;
+    
+    _audioController = [[PdAudioController alloc] init];
+    
+    if([self.audioController configurePlaybackWithSampleRate:22050 numberChannels:2 inputEnabled:NO mixingEnabled:NO] != PdAudioOK) {
+        NSLog(@"failed to initialise audioController");
+    }
+    
+    [PdBase setDelegate:self];
+
+    
+    //[self.audioController configureTicksPerBuffer:128];
+	[PdBase openFile:@"snowapp2.pd" path:[[NSBundle mainBundle] resourcePath]];
+	[self.audioController setActive:YES];
+	[self.audioController print];
+    
+    //Configure MIDI
+    midi = [[PGMidi alloc] init];
+    midi.networkEnabled = YES;
+    self.viewController.midi = midi;
+    
     // Override point for customization after application launch.
     return YES;
 }

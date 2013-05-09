@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SnowMusicViewController.h"
+#import "PdAudioController.h"
+#import "PDBase.h"
 
-@interface SnowMusicAppDelegate : UIResponder <UIApplicationDelegate>
+@class PGMidi;
+
+@interface SnowMusicAppDelegate : UIResponder <UIApplicationDelegate, PdReceiverDelegate> {
+    PGMidi *midi;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) SnowMusicViewController *viewController;
+@property (strong, nonatomic, readonly) PdAudioController *audioController;
 
 @end

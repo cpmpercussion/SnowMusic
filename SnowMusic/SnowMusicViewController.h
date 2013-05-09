@@ -8,6 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SnowMusicViewController : UIViewController
+#import "PdDispatcher.h"
+
+@class PGMidi;
+
+@interface SnowMusicViewController : UIViewController {
+    void *patch;
+    
+    PGMidi *midi;
+}
+
+@property (nonatomic, assign) PGMidi *midi;
+
+@property (retain, nonatomic) IBOutlet UISwitch *clustersOn;
+- (IBAction)clustersSwitched:(id)sender;
+@property (retain, nonatomic) IBOutlet UISwitch *backgroundSwitch;
+- (IBAction)backgroundsOn:(id)sender;
+@property (retain, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (retain, nonatomic) IBOutlet UISwitch *snowSwitch;
+- (IBAction)snowSwitched:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *cymbalSwitchLabel;
+@property (weak, nonatomic) IBOutlet UILabel *clusterSwitchLabel;
+@property (weak, nonatomic) IBOutlet UILabel *snowSwitchLabel;
+@property (weak, nonatomic) IBOutlet UILabel *midiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *midiInterfaceLabel;
 
 @end

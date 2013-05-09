@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1906" systemVersion="11A511" targetRuntime="iOS.CocoaTouch.iPad" nextObjectID="6" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="902"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Snow Music View Controller-->
         <scene sceneID="4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="SnowMusicViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="SnowBackgroundiPad.png" id="jqq-0e-jVo">
+                                <rect key="frame" x="0.0" y="-20" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Status" lineBreakMode="tailTruncation" minimumFontSize="10" id="Npj-WI-gfr" userLabel="status label">
+                                <rect key="frame" x="20" y="20" width="467" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="ndc-s1-W43" userLabel="cymbal switch" colorLabel="IBBuiltInLabel-Yellow">
+                                <rect key="frame" x="925" y="20" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="backgroundsOn:" destination="2" eventType="valueChanged" id="a82-CL-0fX"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="cPZ-9h-rqo" userLabel="clusters switch" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="925" y="701" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="clustersSwitched:" destination="2" eventType="valueChanged" id="dzK-QO-ubV"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="E7n-At-wLG" userLabel="snow slide switch">
+                                <rect key="frame" x="20" y="701" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="snowSwitched:" destination="2" eventType="valueChanged" id="iSN-Zf-t7N"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Snow" lineBreakMode="tailTruncation" minimumFontSize="10" id="BTl-jM-58y">
+                                <rect key="frame" x="20" y="672" width="65" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bells" lineBreakMode="tailTruncation" minimumFontSize="10" id="n8y-H0-eau">
+                                <rect key="frame" x="925" y="672" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cymbals" lineBreakMode="tailTruncation" minimumFontSize="10" id="JsR-Jp-gCw">
+                                <rect key="frame" x="925" y="55" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MIDI:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1QD-1T-c1A">
+                                <rect key="frame" x="20" y="55" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MIDI Interface" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9qV-J1-zxc">
+                                <rect key="frame" x="69" y="55" width="222" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="backgroundSwitch" destination="ndc-s1-W43" id="uSI-B3-GeR"/>
+                        <outlet property="clusterSwitchLabel" destination="n8y-H0-eau" id="zWm-0H-f1V"/>
+                        <outlet property="clustersOn" destination="cPZ-9h-rqo" id="0z5-Oo-8Fe"/>
+                        <outlet property="cymbalSwitchLabel" destination="JsR-Jp-gCw" id="v8T-Mb-oSa"/>
+                        <outlet property="distanceLabel" destination="Npj-WI-gfr" id="WED-jg-czl"/>
+                        <outlet property="midiInterfaceLabel" destination="9qV-J1-zxc" id="2Of-kk-RV5"/>
+                        <outlet property="midiLabel" destination="1QD-1T-c1A" id="ZHv-Mz-vIA"/>
+                        <outlet property="snowSwitch" destination="E7n-At-wLG" id="s3T-84-s92"/>
+                        <outlet property="snowSwitchLabel" destination="BTl-jM-58y" id="pAR-iO-rdE"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-47" y="-72"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SnowBackgroundiPad.png" width="1024" height="768"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
