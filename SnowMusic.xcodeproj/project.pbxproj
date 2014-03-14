@@ -8,28 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		5612059614F5B5CB007EFBB9 /* snowapp2.pd in Resources */ = {isa = PBXBuildFile; fileRef = 5612059514F5B5CB007EFBB9 /* snowapp2.pd */; };
-		562C868315F9C40A008DE188 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 562C868215F9C40A008DE188 /* Default.png */; };
-		564084FC15F577FD00CC2314 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FB15F577FD00CC2314 /* Icon-72@2x.png */; };
 		564084FF15F62CFD00CC2314 /* SnowBackgroundiPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */; };
 		5640850015F62CFD00CC2314 /* SnowBackgroundiPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */; };
-		5640850415F62D2A00CC2314 /* SnowBackgroundiPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5640850215F62D2A00CC2314 /* SnowBackgroundiPhone@2x.png */; };
-		5640850915F6379D00CC2314 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5640850515F6379D00CC2314 /* Icon-Small-50.png */; };
-		5640850A15F6379D00CC2314 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5640850615F6379D00CC2314 /* Icon-Small-50@2x.png */; };
-		5640850B15F6379D00CC2314 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5640850715F6379D00CC2314 /* Icon-Small.png */; };
-		5640850C15F6379D00CC2314 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5640850815F6379D00CC2314 /* Icon-Small@2x.png */; };
-		5640850F15F63CE700CC2314 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5640850E15F63CE700CC2314 /* Default@2x.png */; };
-		5640851115F63DA700CC2314 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5640851015F63DA700CC2314 /* Default-Landscape~ipad.png */; };
-		5640851315F63E2200CC2314 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5640851215F63E2100CC2314 /* Default-Landscape@2x~ipad.png */; };
+		5648F75517F16E3900536BC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5648F75417F16E3900536BC2 /* Images.xcassets */; };
+		5648F75917F1751A00536BC2 /* snowbackground-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5648F75817F1751A00536BC2 /* snowbackground-phone.png */; };
 		5665F2C214FFA0ED00321D1B /* cymbal2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2BF14FFA0ED00321D1B /* cymbal2.wav */; };
 		5665F2C314FFA0ED00321D1B /* cymbal4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2C014FFA0ED00321D1B /* cymbal4.wav */; };
 		5665F2C414FFA0ED00321D1B /* cymbal6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2C114FFA0ED00321D1B /* cymbal6.wav */; };
+		5685473F17F1C5FC005AD64A /* snowbackground-phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5685473E17F1C5FC005AD64A /* snowbackground-phone@2x.png */; };
 		56999F2E16D4916200C1C6D5 /* PGMidi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2916D4916200C1C6D5 /* PGMidi.mm */; };
 		56999F2F16D4916200C1C6D5 /* PGMidiAllSources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2B16D4916200C1C6D5 /* PGMidiAllSources.mm */; };
 		56999F3016D4916200C1C6D5 /* PGMidiFind.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2D16D4916200C1C6D5 /* PGMidiFind.mm */; };
 		56999F3316D4917E00C1C6D5 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56999F3216D4917E00C1C6D5 /* CoreMIDI.framework */; };
-		56AE803F1641FAEE00EBFC87 /* SnowBackgroundiPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AE803E1641FAEE00EBFC87 /* SnowBackgroundiPhone.png */; };
-		56AE804116421C8700EBFC87 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AE804016421C8700EBFC87 /* Default-568h@2x.png */; };
-		56AE80431642232600EBFC87 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AE80421642232600EBFC87 /* Default-568h.png */; };
 		56FA5EB514E70F78008A2347 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB414E70F78008A2347 /* UIKit.framework */; };
 		56FA5EB714E70F78008A2347 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB614E70F78008A2347 /* Foundation.framework */; };
 		56FA5EB914E70F78008A2347 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB814E70F78008A2347 /* CoreGraphics.framework */; };
@@ -42,11 +32,6 @@
 		56FA5ED614E70F78008A2347 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5ED514E70F78008A2347 /* SenTestingKit.framework */; };
 		56FA5ED714E70F78008A2347 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB414E70F78008A2347 /* UIKit.framework */; };
 		56FA5ED814E70F78008A2347 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB614E70F78008A2347 /* Foundation.framework */; };
-		56FA5EE014E70F78008A2347 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56FA5EDE14E70F78008A2347 /* InfoPlist.strings */; };
-		56FA5EE314E70F78008A2347 /* SnowMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA5EE214E70F78008A2347 /* SnowMusicTests.m */; };
-		56FA5EED14E70F97008A2347 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FA5EEC14E70F97008A2347 /* Icon.png */; };
-		56FA5EEF14E70F9A008A2347 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FA5EEE14E70F9A008A2347 /* Icon@2x.png */; };
-		56FA5EF114E70FA2008A2347 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FA5EF014E70FA2008A2347 /* Icon-72.png */; };
 		56FA629214E72936008A2347 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA629114E72936008A2347 /* AudioToolbox.framework */; };
 		56FA629514E72941008A2347 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA629414E72941008A2347 /* AVFoundation.framework */; };
 		56FA97C114EFCC9B00628FEF /* snow-crushing-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97BC14EFCC9B00628FEF /* snow-crushing-1.wav */; };
@@ -412,7 +397,6 @@
 		56FA9A9214EFCCB200628FEF /* u_wrandom.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA992C14EFCCB200628FEF /* u_wrandom.pd */; };
 		56FA9A9314EFCCB200628FEF /* z_blank-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA992D14EFCCB200628FEF /* z_blank-help.pd */; };
 		56FA9AAC14EFD0FC00628FEF /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA9A9C14EFCFF000628FEF /* libpd-ios.a */; };
-		56FA9ABB14EFE82600628FEF /* background-vert.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AB914EFE82600628FEF /* background-vert.jpg */; };
 		56FA9ACA14F0580700628FEF /* m_mixolydian.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9ABF14F0580700628FEF /* m_mixolydian.pd */; };
 		56FA9ACB14F0580700628FEF /* m_phrygian.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AC014F0580700628FEF /* m_phrygian.pd */; };
 		56FA9ACC14F0580700628FEF /* almglockenC.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AC214F0580700628FEF /* almglockenC.wav */; };
@@ -454,21 +438,14 @@
 
 /* Begin PBXFileReference section */
 		5612059514F5B5CB007EFBB9 /* snowapp2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snowapp2.pd; path = Resources/snowapp2.pd; sourceTree = "<group>"; };
-		562C868215F9C40A008DE188 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		564084FB15F577FD00CC2314 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
-		564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SnowBackgroundiPad.png; sourceTree = "<group>"; };
-		564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SnowBackgroundiPad@2x.png"; sourceTree = "<group>"; };
-		5640850215F62D2A00CC2314 /* SnowBackgroundiPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SnowBackgroundiPhone@2x.png"; sourceTree = "<group>"; };
-		5640850515F6379D00CC2314 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
-		5640850615F6379D00CC2314 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
-		5640850715F6379D00CC2314 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		5640850815F6379D00CC2314 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		5640850E15F63CE700CC2314 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		5640851015F63DA700CC2314 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		5640851215F63E2100CC2314 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SnowBackgroundiPad.png; path = Resources/backgrounds/SnowBackgroundiPad.png; sourceTree = "<group>"; };
+		564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SnowBackgroundiPad@2x.png"; path = "Resources/backgrounds/SnowBackgroundiPad@2x.png"; sourceTree = "<group>"; };
+		5648F75417F16E3900536BC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5648F75817F1751A00536BC2 /* snowbackground-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "snowbackground-phone.png"; path = "Resources/backgrounds/snowbackground-phone.png"; sourceTree = "<group>"; };
 		5665F2BF14FFA0ED00321D1B /* cymbal2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal2.wav; sourceTree = "<group>"; };
 		5665F2C014FFA0ED00321D1B /* cymbal4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal4.wav; sourceTree = "<group>"; };
 		5665F2C114FFA0ED00321D1B /* cymbal6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal6.wav; sourceTree = "<group>"; };
+		5685473E17F1C5FC005AD64A /* snowbackground-phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "snowbackground-phone@2x.png"; path = "Resources/backgrounds/snowbackground-phone@2x.png"; sourceTree = "<group>"; };
 		56999F2616D4916200C1C6D5 /* iOSVersionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSVersionDetection.h; sourceTree = "<group>"; };
 		56999F2716D4916200C1C6D5 /* PGArc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGArc.h; sourceTree = "<group>"; };
 		56999F2816D4916200C1C6D5 /* PGMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidi.h; sourceTree = "<group>"; };
@@ -478,9 +455,6 @@
 		56999F2C16D4916200C1C6D5 /* PGMidiFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidiFind.h; sourceTree = "<group>"; };
 		56999F2D16D4916200C1C6D5 /* PGMidiFind.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidiFind.mm; sourceTree = "<group>"; };
 		56999F3216D4917E00C1C6D5 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
-		56AE803E1641FAEE00EBFC87 /* SnowBackgroundiPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SnowBackgroundiPhone.png; sourceTree = "<group>"; };
-		56AE804016421C8700EBFC87 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Snow Music - Image Resources/launch images/iPhone5-set/Default-568h@2x.png"; sourceTree = "<group>"; };
-		56AE80421642232600EBFC87 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h.png"; path = "../Snow Music - Image Resources/launch images/iPhone5-set/Default-568h.png"; sourceTree = "<group>"; };
 		56FA5EB014E70F78008A2347 /* SnowMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA5EB414E70F78008A2347 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56FA5EB614E70F78008A2347 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -497,13 +471,6 @@
 		56FA5ECD14E70F78008A2347 /* SnowMusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowMusicViewController.m; sourceTree = "<group>"; };
 		56FA5ED414E70F78008A2347 /* SnowMusicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowMusicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA5ED514E70F78008A2347 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		56FA5EDD14E70F78008A2347 /* SnowMusicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnowMusicTests-Info.plist"; sourceTree = "<group>"; };
-		56FA5EDF14E70F78008A2347 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		56FA5EE114E70F78008A2347 /* SnowMusicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnowMusicTests.h; sourceTree = "<group>"; };
-		56FA5EE214E70F78008A2347 /* SnowMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowMusicTests.m; sourceTree = "<group>"; };
-		56FA5EEC14E70F97008A2347 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		56FA5EEE14E70F9A008A2347 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		56FA5EF014E70FA2008A2347 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		56FA629114E72936008A2347 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		56FA629414E72941008A2347 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		56FA97BC14EFCC9B00628FEF /* snow-crushing-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-crushing-1.wav"; path = "Resources/snow-crushing-1.wav"; sourceTree = "<group>"; };
@@ -869,7 +836,6 @@
 		56FA992C14EFCCB200628FEF /* u_wrandom.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = u_wrandom.pd; sourceTree = "<group>"; };
 		56FA992D14EFCCB200628FEF /* z_blank-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "z_blank-help.pd"; sourceTree = "<group>"; };
 		56FA9A9414EFCFF000628FEF /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = "../pd-for-ios/libpd/libpd.xcodeproj"; sourceTree = "<group>"; };
-		56FA9AB914EFE82600628FEF /* background-vert.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-vert.jpg"; sourceTree = "<group>"; };
 		56FA9ABF14F0580700628FEF /* m_mixolydian.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = m_mixolydian.pd; path = Resources/m_mixolydian.pd; sourceTree = "<group>"; };
 		56FA9AC014F0580700628FEF /* m_phrygian.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = m_phrygian.pd; path = Resources/m_phrygian.pd; sourceTree = "<group>"; };
 		56FA9AC214F0580700628FEF /* almglockenC.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = almglockenC.wav; sourceTree = "<group>"; };
@@ -928,6 +894,17 @@
 			name = cpmlibs;
 			sourceTree = "<group>";
 		};
+		5685474017F1C780005AD64A /* backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				5648F75817F1751A00536BC2 /* snowbackground-phone.png */,
+				5685473E17F1C5FC005AD64A /* snowbackground-phone@2x.png */,
+				564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */,
+				564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */,
+			);
+			name = backgrounds;
+			sourceTree = "<group>";
+		};
 		56999F2516D4916200C1C6D5 /* PGMidi */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,15 +918,15 @@
 				56999F2D16D4916200C1C6D5 /* PGMidiFind.mm */,
 			);
 			name = PGMidi;
-			path = ../../PGMidi/Sources/PGMidi;
+			path = ../PGMidi/Sources/PGMidi;
 			sourceTree = "<group>";
 		};
 		56FA5EA514E70F78008A2347 = {
 			isa = PBXGroup;
 			children = (
+				56999F2516D4916200C1C6D5 /* PGMidi */,
 				56FA5EF214E70FB6008A2347 /* Resources */,
 				56FA5EBA14E70F78008A2347 /* SnowMusic */,
-				56FA5EDB14E70F78008A2347 /* SnowMusicTests */,
 				56FA5EB314E70F78008A2347 /* Frameworks */,
 				56FA5EB114E70F78008A2347 /* Products */,
 				56FA9A9414EFCFF000628FEF /* libpd.xcodeproj */,
@@ -982,13 +959,13 @@
 		56FA5EBA14E70F78008A2347 /* SnowMusic */ = {
 			isa = PBXGroup;
 			children = (
-				56999F2516D4916200C1C6D5 /* PGMidi */,
 				56FA5EC914E70F78008A2347 /* MainStoryboard_iPad.storyboard */,
 				56FA5EC614E70F78008A2347 /* MainStoryboard_iPhone.storyboard */,
 				56FA5EC314E70F78008A2347 /* SnowMusicAppDelegate.h */,
 				56FA5EC414E70F78008A2347 /* SnowMusicAppDelegate.m */,
 				56FA5ECC14E70F78008A2347 /* SnowMusicViewController.h */,
 				56FA5ECD14E70F78008A2347 /* SnowMusicViewController.m */,
+				5648F75417F16E3900536BC2 /* Images.xcassets */,
 				56FA5EBB14E70F78008A2347 /* Supporting Files */,
 			);
 			path = SnowMusic;
@@ -1005,49 +982,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		56FA5EDB14E70F78008A2347 /* SnowMusicTests */ = {
-			isa = PBXGroup;
-			children = (
-				56FA5EE114E70F78008A2347 /* SnowMusicTests.h */,
-				56FA5EE214E70F78008A2347 /* SnowMusicTests.m */,
-				56FA5EDC14E70F78008A2347 /* Supporting Files */,
-			);
-			path = SnowMusicTests;
-			sourceTree = "<group>";
-		};
-		56FA5EDC14E70F78008A2347 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				56FA5EDD14E70F78008A2347 /* SnowMusicTests-Info.plist */,
-				56FA5EDE14E70F78008A2347 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		56FA5EF214E70FB6008A2347 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5640851215F63E2100CC2314 /* Default-Landscape@2x~ipad.png */,
-				5640851015F63DA700CC2314 /* Default-Landscape~ipad.png */,
-				56AE80421642232600EBFC87 /* Default-568h.png */,
-				56AE804016421C8700EBFC87 /* Default-568h@2x.png */,
-				5640850E15F63CE700CC2314 /* Default@2x.png */,
-				562C868215F9C40A008DE188 /* Default.png */,
-				5640850515F6379D00CC2314 /* Icon-Small-50.png */,
-				5640850615F6379D00CC2314 /* Icon-Small-50@2x.png */,
-				5640850715F6379D00CC2314 /* Icon-Small.png */,
-				5640850815F6379D00CC2314 /* Icon-Small@2x.png */,
-				5640850215F62D2A00CC2314 /* SnowBackgroundiPhone@2x.png */,
-				564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */,
-				564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */,
-				56AE803E1641FAEE00EBFC87 /* SnowBackgroundiPhone.png */,
-				56FA9AB914EFE82600628FEF /* background-vert.jpg */,
+				5685474017F1C780005AD64A /* backgrounds */,
 				5612059414F5B464007EFBB9 /* cpmlibs */,
 				5612059314F5B3EF007EFBB9 /* fieldrecordings */,
-				56FA5EF014E70FA2008A2347 /* Icon-72.png */,
-				564084FB15F577FD00CC2314 /* Icon-72@2x.png */,
-				56FA5EEC14E70F97008A2347 /* Icon.png */,
-				56FA5EEE14E70F9A008A2347 /* Icon@2x.png */,
 				56FA9AC114F0580700628FEF /* percsamples */,
 				56FA97C714EFCCB100628FEF /* rj */,
 				56FA97C014EFCC9B00628FEF /* snowapp.pd */,
@@ -1489,8 +1429,13 @@
 		56FA5EA714E70F78008A2347 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Charles Martin Percussion";
+				TargetAttributes = {
+					56FA5EAF14E70F78008A2347 = {
+						DevelopmentTeam = EDH387FRHA;
+					};
+				};
 			};
 			buildConfigurationList = 56FA5EAA14E70F78008A2347 /* Build configuration list for PBXProject "SnowMusic" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1541,9 +1486,6 @@
 				56FA5EBF14E70F78008A2347 /* InfoPlist.strings in Resources */,
 				56FA5EC814E70F78008A2347 /* MainStoryboard_iPhone.storyboard in Resources */,
 				56FA5ECB14E70F78008A2347 /* MainStoryboard_iPad.storyboard in Resources */,
-				56FA5EED14E70F97008A2347 /* Icon.png in Resources */,
-				56FA5EEF14E70F9A008A2347 /* Icon@2x.png in Resources */,
-				56FA5EF114E70FA2008A2347 /* Icon-72.png in Resources */,
 				56FA97C114EFCC9B00628FEF /* snow-crushing-1.wav in Resources */,
 				56FA97C314EFCC9B00628FEF /* snow-sliding-1.wav in Resources */,
 				56FA97C414EFCC9B00628FEF /* snow-wade-medium.wav in Resources */,
@@ -1589,6 +1531,7 @@
 				56FA995414EFCCB200628FEF /* c_multimetro.pd in Resources */,
 				56FA995514EFCCB200628FEF /* c_multipass-help.pd in Resources */,
 				56FA995614EFCCB200628FEF /* c_multipass.pd in Resources */,
+				5648F75517F16E3900536BC2 /* Images.xcassets in Resources */,
 				56FA995714EFCCB200628FEF /* c_pass-help.pd in Resources */,
 				56FA995814EFCCB200628FEF /* c_pass.pd in Resources */,
 				56FA995914EFCCB200628FEF /* c_patternchange-help.pd in Resources */,
@@ -1793,6 +1736,7 @@
 				56FA9A2014EFCCB200628FEF /* s_hstr-help.pd in Resources */,
 				56FA9A2114EFCCB200628FEF /* s_hstr.pd in Resources */,
 				56FA9A2214EFCCB200628FEF /* s_looper-help.pd in Resources */,
+				5685473F17F1C5FC005AD64A /* snowbackground-phone@2x.png in Resources */,
 				56FA9A2314EFCCB200628FEF /* s_looper.pd in Resources */,
 				56FA9A2414EFCCB200628FEF /* s_loopsmooth-help.pd in Resources */,
 				56FA9A2514EFCCB200628FEF /* s_loopsmooth.pd in Resources */,
@@ -1865,6 +1809,7 @@
 				56FA9A6814EFCCB200628FEF /* u_loader-help.pd in Resources */,
 				56FA9A6914EFCCB200628FEF /* u_loader.pd in Resources */,
 				56FA9A6A14EFCCB200628FEF /* u_loadmeter-help.pd in Resources */,
+				5648F75917F1751A00536BC2 /* snowbackground-phone.png in Resources */,
 				56FA9A6B14EFCCB200628FEF /* u_loadmeter.pd in Resources */,
 				56FA9A6C14EFCCB200628FEF /* u_lowpass-help.pd in Resources */,
 				56FA9A6D14EFCCB200628FEF /* u_lowpass.pd in Resources */,
@@ -1906,7 +1851,6 @@
 				56FA9A9114EFCCB200628FEF /* u_wrandom-help.pd in Resources */,
 				56FA9A9214EFCCB200628FEF /* u_wrandom.pd in Resources */,
 				56FA9A9314EFCCB200628FEF /* z_blank-help.pd in Resources */,
-				56FA9ABB14EFE82600628FEF /* background-vert.jpg in Resources */,
 				56FA9ACA14F0580700628FEF /* m_mixolydian.pd in Resources */,
 				56FA9ACB14F0580700628FEF /* m_phrygian.pd in Resources */,
 				56FA9ACC14F0580700628FEF /* almglockenC.wav in Resources */,
@@ -1917,21 +1861,8 @@
 				5665F2C214FFA0ED00321D1B /* cymbal2.wav in Resources */,
 				5665F2C314FFA0ED00321D1B /* cymbal4.wav in Resources */,
 				5665F2C414FFA0ED00321D1B /* cymbal6.wav in Resources */,
-				564084FC15F577FD00CC2314 /* Icon-72@2x.png in Resources */,
 				564084FF15F62CFD00CC2314 /* SnowBackgroundiPad.png in Resources */,
 				5640850015F62CFD00CC2314 /* SnowBackgroundiPad@2x.png in Resources */,
-				5640850415F62D2A00CC2314 /* SnowBackgroundiPhone@2x.png in Resources */,
-				5640850915F6379D00CC2314 /* Icon-Small-50.png in Resources */,
-				5640850A15F6379D00CC2314 /* Icon-Small-50@2x.png in Resources */,
-				5640850B15F6379D00CC2314 /* Icon-Small.png in Resources */,
-				5640850C15F6379D00CC2314 /* Icon-Small@2x.png in Resources */,
-				5640850F15F63CE700CC2314 /* Default@2x.png in Resources */,
-				5640851115F63DA700CC2314 /* Default-Landscape~ipad.png in Resources */,
-				5640851315F63E2200CC2314 /* Default-Landscape@2x~ipad.png in Resources */,
-				562C868315F9C40A008DE188 /* Default.png in Resources */,
-				56AE803F1641FAEE00EBFC87 /* SnowBackgroundiPhone.png in Resources */,
-				56AE804116421C8700EBFC87 /* Default-568h@2x.png in Resources */,
-				56AE80431642232600EBFC87 /* Default-568h.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1939,7 +1870,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56FA5EE014E70F78008A2347 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1979,7 +1909,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56FA5EE314E70F78008A2347 /* SnowMusicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2023,14 +1952,6 @@
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
-		56FA5EDE14E70F78008A2347 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56FA5EDF14E70F78008A2347 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2038,9 +1959,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2049,9 +1971,12 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = (
@@ -2071,10 +1996,13 @@
 		562C868515FCC5CB008DE188 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
 				INFOPLIST_FILE = "SnowMusic/SnowMusic-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/charles/src/pd-for-ios/libpd/**";
 				VALIDATE_PRODUCT = NO;
@@ -2103,9 +2031,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2121,11 +2050,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-DPD",
 					"-DUSEAPI_DUMMY",
@@ -2142,9 +2075,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2153,9 +2087,12 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = (
@@ -2175,10 +2112,13 @@
 		56FA5EE714E70F78008A2347 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
 				INFOPLIST_FILE = "SnowMusic/SnowMusic-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/charles/src/pd-for-ios/libpd/**";
@@ -2189,10 +2129,13 @@
 		56FA5EE814E70F78008A2347 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
 				INFOPLIST_FILE = "SnowMusic/SnowMusic-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/charles/src/pd-for-ios/libpd/**";
 				WRAPPER_EXTENSION = app;
