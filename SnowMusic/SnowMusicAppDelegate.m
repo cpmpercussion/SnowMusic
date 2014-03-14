@@ -26,7 +26,7 @@
     
     _audioController = [[PdAudioController alloc] init];
     
-    if([self.audioController configurePlaybackWithSampleRate:22050 numberChannels:2 inputEnabled:NO mixingEnabled:NO] != PdAudioOK) {
+    if([self.audioController configurePlaybackWithSampleRate:44100 numberChannels:2 inputEnabled:NO mixingEnabled:NO] != PdAudioOK) {
         NSLog(@"failed to initialise audioController");
     }
     
