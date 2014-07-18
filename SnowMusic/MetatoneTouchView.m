@@ -9,6 +9,11 @@
 #import "MetatoneTouchView.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define SNOWTRIGGERED @"snowTriggered"
+#define CYMBALTRIGGERED @"cymbalTriggered"
+#define CLUSTERTRIGGERED @"clusterTriggered"
+
+
 @interface MetatoneTouchView()
 
 @property (strong, nonatomic) UIImage *lastFrame;
@@ -16,6 +21,7 @@
 @property (strong, nonatomic) UIColor *touchColour;
 @property (strong, nonatomic) UIColor *loopColour;
 @property (strong, nonatomic) NSString *deviceID;
+@property (strong, nonatomic) NSDictionary *generativeColours;
 
 @end
 
@@ -31,14 +37,16 @@
     return _noteCirclePoints;
 }
 
-- (void)drawGenerativeNoteOfType:(NSString *)type {
-    // TODO fill it in.
-}
+
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        
+        self.generativeColours = @{SNOWTRIGGERED: [UIColor colorWithRed:0.69 green:0.784 blue:0.894 alpha:0.8],
+                                       CLUSTERTRIGGERED: [UIColor colorWithRed:0.356 green:0.631 blue:0.827 alpha:0.8],
+                                       CYMBALTRIGGERED: [UIColor colorWithRed:0.952 green:0.862 blue:0.709 alpha:0.8]};
         
         self.deviceID = [[UIDevice currentDevice].identifierForVendor UUIDString];
         if ([self.deviceID isEqual:@"1D7BCDC1-5AAB-441B-9C92-C3F00B6FF930"]) {
@@ -67,10 +75,51 @@
     return self;
 }
 
+- (void)drawGenerativeNoteOfType:(NSString *)type {
+    UIColor *colour = [self.generativeColours valueForKey:type];
+    if (!colour) colour = self.loopColour;
+    CALayer *layer = [self makeCircleLayerWithColour:colour];
+    [self.layer addSublayer:layer];
+    [self.noteCirclePoints addObject:layer];
+    
+    [CATransaction setAnimationDuration:0.0];
+    CGFloat newX = arc4random_uniform(1024);
+    CGFloat newY = arc4random_uniform(768);
+    layer.position = CGPointMake( newX, newY);
+    layer.hidden = NO;
+    
+    float scaleFactor = 1.3 + arc4random_uniform(100)/33;
+    
+    CABasicAnimation *expand = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    expand.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    expand.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(scaleFactor, scaleFactor, 1.0)];
+    expand.duration = 2.0;
+    [layer addAnimation:expand forKey:@"expandAnimation"];
+
+    
+    [CATransaction setCompletionBlock:^{
+        [CATransaction setCompletionBlock:^{
+            [self.noteCirclePoints removeObject:layer];
+            [layer removeFromSuperlayer];
+        }];
+        [CATransaction setAnimationDuration:3.0];
+        layer.hidden = YES;
+    }];
+    
+//    [CATransaction ]
+}
+
+
 -(void) drawTouchCircleAt:(CGPoint) point {
     CALayer *layer = [self makeCircleLayerWithColour:self.touchColour];
     [self.layer addSublayer:layer];
     [self.touchCirclePoints addObject:layer];
+    
+    CABasicAnimation *expand = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    expand.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    expand.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.1, 0.1, 1.0)];
+    expand.duration = 2.0;
+    [layer addAnimation:expand forKey:@"expandAnimation"];
     
     [CATransaction setAnimationDuration:0.0];
     layer.position = point;
