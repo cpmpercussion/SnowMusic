@@ -35,6 +35,9 @@
 
 @property (nonatomic) int sameGestureCount;
 @property (strong, nonatomic) NSString *lastGesture;
+@property (nonatomic) int gestureAssistState;
+@property (strong, nonatomic) NSString* gestureAssistGesture;
+@property (strong, nonatomic) NSArray* gestureAssistGroup;
 
 - (IBAction)snowSwitched:(UISwitch *)sender;
 - (IBAction)backgroundsOn:(UISwitch *)sender;

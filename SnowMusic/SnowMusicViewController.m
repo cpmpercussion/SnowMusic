@@ -10,10 +10,12 @@
 #import "PGMidi.h"
 #import <CoreMIDI/CoreMIDI.h>
 
+#define HARDCORE_SWITCH_HIDING NO
+
 #define OSC_LOGGING @YES
 #define SNOWMUSIC_SNOW_MODE 0
 #define SNOWMUSIC_NOTE_MODE 1
-#define NEWIDEA_LIMIT 5
+#define NEWIDEA_LIMIT 10
 
 #define CLUSTERVOLUME @"clusterVolume"
 #define CYMBALVOLUME @"cymbalVolume"
@@ -23,12 +25,22 @@
 #define CYMBALTRIGGERED @"cymbalTriggered"
 #define CLUSTERTRIGGERED @"clusterTriggered"
 
+#define ASSIST_STATE_NOTHING 0
+#define ASSIST_STATE_ASSISTING 1
+
+#define SCREENCENTER 646.049533705
+
+#define TAP_GESTURES @[@"ft",@"st",@"c"]
+#define SWIPE_GESTURES @[@"fs",@"fsa"]
+#define SWIRL_GESTURES @[@"ss",@"bs",@"vss"]
+
 @interface UITouch (Private)
 -(float)_pathMajorRadius;
 @end
 
 @interface SnowMusicViewController () <PGMidiDelegate, PGMidiSourceDelegate>
 @property (strong,nonatomic) MetatoneNetworkManager *networkManager;
+@property (nonatomic) float distanceToCentre;
 @end
 
 @implementation SnowMusicViewController
@@ -53,7 +65,7 @@
 }
 
 - (void)receivePrint:(NSString *)message {
-    NSLog(@"PD print: %@",message);
+//    NSLog(@"PD print: %@",message);
 
 }
 
@@ -84,9 +96,9 @@
     
 //    [self.clustersOn setHidden:YES];
     [self.distanceLabel setHidden:YES];
-    [self.cymbalSwitchLabel setHidden:YES];
-    [self.snowSwitchLabel setHidden:YES];
-    [self.clusterSwitchLabel setHidden:YES];
+    [self.cymbalSwitchLabel setHidden:NO];
+    [self.snowSwitchLabel setHidden:NO];
+    [self.clusterSwitchLabel setHidden:NO];
     [self.midiLabel setHidden:YES];
     [self.midiInterfaceLabel setHidden:YES];
     
@@ -94,6 +106,46 @@
     [PdBase subscribe:CLUSTERTRIGGERED];
     [PdBase subscribe:SNOWTRIGGERED];
     [PdBase subscribe:CYMBALTRIGGERED];
+    
+    self.distanceToCentre = SCREENCENTER;
+    self.gestureAssistState = ASSIST_STATE_NOTHING;
+    self.gestureAssistGesture = @"n";
+    self.gestureAssistGroup = @[@"n"];
+}
+
+-(CGFloat)calculateDistanceFromCenter:(CGPoint)touchPoint {
+    CGFloat xDist = (touchPoint.x - self.view.center.y);
+    CGFloat yDist = (touchPoint.y - self.view.center.x);
+    return sqrt((xDist * xDist) + (yDist * yDist));
+}
+
+
+-(void) hideSwitches {
+    [self.cymbalSwitchLabel setHidden:YES];
+    [self.snowSwitchLabel setHidden:YES];
+    [self.clusterSwitchLabel setHidden:YES];
+    [self.clustersOn setHidden:YES];
+    [self.backgroundSwitch setHidden:YES];
+    [self.snowSwitch setHidden:YES];
+}
+
+-(void) disableSwitches {
+    NSLog(@"Switches Disabled");
+    [self.cymbalSwitchLabel setHidden:YES];
+    [self.snowSwitchLabel setHidden:YES];
+    [self.clusterSwitchLabel setHidden:YES];
+    [self.clustersOn setUserInteractionEnabled:NO];
+    [self.backgroundSwitch setUserInteractionEnabled:NO];
+    [self.snowSwitch setUserInteractionEnabled:NO];
+}
+
+-(void) showSwitches {
+    [self.cymbalSwitchLabel setHidden:NO];
+    [self.snowSwitchLabel setHidden:NO];
+    [self.clusterSwitchLabel setHidden:NO];
+    [self.clustersOn setHidden:NO];
+    [self.backgroundSwitch setHidden:NO];
+    [self.snowSwitch setHidden:NO];
 }
 
 #pragma mark - Touch
@@ -109,11 +161,11 @@
     CGPoint touchPoint = [touch locationInView:self.view];
     
     [self.touchView drawTouchCircleAt:touchPoint];
-
-    // calculate distance from the center
-    CGFloat xDist = (touchPoint.x - self.view.center.x);
-    CGFloat yDist = (touchPoint.y - self.view.center.y);
-    CGFloat distance = sqrt((xDist * xDist) + (yDist * yDist)) / 600;
+    
+    CGFloat ratioToCentre = [self calculateDistanceFromCenter:touchPoint] / self.distanceToCentre;
+    CGFloat distance = ratioToCentre;
+    int sliceToPlay = floorf(100 * ratioToCentre);
+//    NSLog(@"Next Slice to Play: %d",sliceToPlay);
 
     // velocity from touch point
     int velocity = floorf(15 + (((touch._pathMajorRadius - 5.0)/16) * 115));
@@ -126,7 +178,11 @@
             distance = distance / self.newIdeaNumber;
         }
     }
+    
+    
+    
     [PdBase sendBangToReceiver:@"touch" ]; // makes a small sound
+    [PdBase sendFloat:sliceToPlay toReceiver:@"snowStepSlice"];
     [PdBase sendFloat:distance toReceiver:@"tapdistance" ];
     
     if (self.oscLogging) [self.networkManager sendMessageWithTouch:touchPoint Velocity:0.0]; // osc logging
@@ -184,12 +240,12 @@
     [PdBase sendFloat:value toReceiver:@"snowSwitch"];
     if (self.oscLogging) [self.networkManager sendMesssageSwitch:@"snowSwitch" On:sender.on];
     
-    if (self.snowSwitch.on)
-    {
-        self.tapMode = SNOWMUSIC_NOTE_MODE;
-    } else {
-        self.tapMode = SNOWMUSIC_SNOW_MODE;
-    }    
+//    if (self.snowSwitch.on)
+//    {
+//        self.tapMode = SNOWMUSIC_NOTE_MODE;
+//    } else {
+//        self.tapMode = SNOWMUSIC_SNOW_MODE;
+//    }    
 }
 
 #pragma mark - Note Methods
@@ -199,14 +255,9 @@
     velocity = (int) (velocity * 0.2) + (vel * 0.8);
     int note = (int) (distance * 35);
     
-    note = [ScaleMaker mixolydian:36 + (self.newIdeaNumber * 3) withNote:note];
+//    note = [ScaleMaker mixolydian:36 + (self.newIdeaNumber * 3) withNote:note];
+    note = [ScaleMaker mixolydian:36 + (self.newIdeaNumber) withNote:note];
     [PdBase sendNoteOn:1 pitch:note velocity:velocity];
-}
-
--(CGFloat)calculateDistanceFromCenter:(CGPoint)touchPoint {
-    CGFloat xDist = (touchPoint.x - self.view.center.y);
-    CGFloat yDist = (touchPoint.y - self.view.center.x);
-    return sqrt((xDist * xDist) + (yDist * yDist));
 }
 
 -(void)changeTapMode {
@@ -233,6 +284,7 @@
         [self.midiInterfaceLabel setHidden:NO];
         [self.midiInterfaceLabel setText:@"not classifying! 😰"];
         NSLog(@"OSC Logging: Not Connected");
+        [self showSwitches];
     }
 }
 
@@ -245,18 +297,27 @@
     if (self.oscLogging) {
         [self.midiInterfaceLabel setHidden:NO];
         [self.midiInterfaceLabel setText:@"searching for classifier 😒"];
+        [self showSwitches];
     }
 }
 
 -(void) loggingServerFoundWithAddress:(NSString *)address andPort:(int)port andHostname:(NSString *)hostname {
     [self.midiInterfaceLabel setHidden:NO];
     [self.midiInterfaceLabel setText:[NSString stringWithFormat:@"connected to %@ 👍", hostname]];
+    
+    if (HARDCORE_SWITCH_HIDING) {
+        [self hideSwitches];
+    } else {
+        NSLog(@"Disabling switches...");
+        [self disableSwitches];
+    }
 }
 
 -(void) stoppedSearchingForLoggingServer {
     if (self.oscLogging) {
         [self.midiInterfaceLabel setHidden:NO];
         [self.midiInterfaceLabel setText: @"classifier not found! 😰"];
+        [self showSwitches];
     }
 }
 
@@ -264,28 +325,100 @@
 
 
 -(void)didReceiveGestureMessageFor:(NSString *)device withClass:(NSString *)class {
+    NSLog(@"Gesture: %@",class);
+    
     if ([class isEqualToString:self.lastGesture]) {
         self.sameGestureCount++;
     } else {
         self.sameGestureCount = 0;
     }
     
-    if (self.sameGestureCount > 3 && arc4random_uniform(100)>85) {
-        self.sameGestureCount = 0;
-        if (arc4random_uniform(10)>5) {
-            [self.snowSwitch setOn:!self.snowSwitch.on animated:YES];
-            [self snowSwitched:self.snowSwitch];
-            NSLog(@"Loops Changed by Classifier");
-        } else {
-            [self.backgroundSwitch setOn:!self.backgroundSwitch.on animated:YES];
-            [self backgroundsOn:self.backgroundSwitch];
-            NSLog(@"Fields Changed by Classifier");
+    if (self.sameGestureCount > 2) {
+        // Possible start or stop of gesture assist.
+        NSLog(@"ASSIST: possible gesture change");
+        
+        if (![self.gestureAssistGroup containsObject:class]) {
+            // new gesture focus, turn off assist.
+            NSLog(@"ASSIST: New gesture focus, turn off assist.");
+            [self allBackgroundsOff];
+            self.gestureAssistState = ASSIST_STATE_NOTHING;
+            self.gestureAssistGesture = @"n";
+            self.gestureAssistGroup = @[@"n"];
+        }
+        
+        if (arc4random_uniform(100)>65) {
+            NSLog(@"ASSIST: going to assist with new gesture");
+            // OK let's assist
+            self.sameGestureCount = 0;
+            self.gestureAssistGesture = class;
+            
+            
+            if ([TAP_GESTURES containsObject:class]) {
+                self.gestureAssistState = ASSIST_STATE_ASSISTING;
+                NSLog(@"ASSIST: Assisting with Tap Gestures.");
+                self.gestureAssistGroup = TAP_GESTURES;
+                if (arc4random_uniform(10)>5) {
+                    self.tapMode = SNOWMUSIC_NOTE_MODE;
+                } else {
+                    [self.clustersOn setOn:YES animated:YES];
+                    [self clustersSwitched:self.clustersOn];
+                }
+            }
+            
+            if ([SWIRL_GESTURES containsObject:class]) {
+                self.gestureAssistState = ASSIST_STATE_ASSISTING;
+                NSLog(@"ASSIST: Assisting with swirl Gestures.");
+                self.gestureAssistGroup = SWIRL_GESTURES;
+                
+                if (arc4random_uniform(10)>5) {
+                    [self.snowSwitch setOn:YES animated:YES];
+                    [self snowSwitched:self.snowSwitch];
+                } else {
+                    [self.clustersOn setOn:YES animated:YES];
+                    [self clustersSwitched:self.clustersOn];
+                }
+            }
+            
+            if ([SWIPE_GESTURES containsObject:class]) {
+                self.gestureAssistState = ASSIST_STATE_ASSISTING;
+                NSLog(@"ASSIST: Assisting with swipe Gestures.");
+                self.gestureAssistGroup = SWIPE_GESTURES;
+                
+                if (arc4random_uniform(10)>5) {
+                    [self.snowSwitch setOn:YES animated:YES];
+                    [self snowSwitched:self.snowSwitch];
+                } else {
+                    [self.backgroundSwitch setOn:YES animated:YES];
+                    [self backgroundsOn:self.backgroundSwitch];
+                }
+            }
+            
+            if ([class isEqualToString:@"n"]) {
+                // N gesture gets nothing.
+                NSLog(@"ASSIST: Not assisting with nil gesture");
+                self.gestureAssistGesture = @"n";
+                self.gestureAssistGroup = @[@"n"];
+                [self allBackgroundsOff];
+            }
         }
     }
     self.lastGesture = class;
 }
 
--(void)didReceiveEnsembleState:(NSString *)state withSpread:(NSNumber *)spread withRatio:(NSNumber *)ratio {}
+-(void) allBackgroundsOff {
+    [self.snowSwitch setOn:NO animated:YES];
+    [self snowSwitched:self.snowSwitch];
+    [self.backgroundSwitch setOn:NO animated:YES];
+    [self backgroundsOn:self.backgroundSwitch];
+    [self.clustersOn setOn:NO animated:YES];
+    [self clustersSwitched:self.clustersOn];
+    self.tapMode = SNOWMUSIC_SNOW_MODE;
+}
+
+
+-(void)didReceiveEnsembleState:(NSString *)state withSpread:(NSNumber *)spread withRatio:(NSNumber *)ratio {
+    // use spread to balance the snow vs the background sounds.
+}
 
 -(void)didReceiveEnsembleEvent:(NSString *)event forDevice:(NSString *)device withMeasure:(NSNumber *)measure {
     // threshold starts at 10
@@ -294,6 +427,8 @@
     // 3 - 70
     // 4 - 90
     // 5 - 110
+    
+    
     int threshold = self.newIdeaNumber * floor(100 / NEWIDEA_LIMIT) + floor(50 / NEWIDEA_LIMIT);
     
     if (self.newIdeaNumber > NEWIDEA_LIMIT) {
