@@ -41,6 +41,8 @@
 		56A5F78218D3093300B5735A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A5F78118D3093300B5735A /* CFNetwork.framework */; };
 		56A5F78418D3093800B5735A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A5F78318D3093800B5735A /* Security.framework */; };
 		56A5F78718D329C600B5735A /* ScaleMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A5F78618D329C600B5735A /* ScaleMaker.m */; };
+		56C7C62B1979393B003FD551 /* MetatoneTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C7C62A1979393B003FD551 /* MetatoneTouchView.m */; };
+		56C7C62F19793AB8003FD551 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C7C62E19793AB8003FD551 /* QuartzCore.framework */; };
 		56FA5EB514E70F78008A2347 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB414E70F78008A2347 /* UIKit.framework */; };
 		56FA5EB714E70F78008A2347 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB614E70F78008A2347 /* Foundation.framework */; };
 		56FA5EB914E70F78008A2347 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB814E70F78008A2347 /* CoreGraphics.framework */; };
@@ -516,6 +518,9 @@
 		56A5F78318D3093800B5735A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		56A5F78518D329C600B5735A /* ScaleMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleMaker.h; sourceTree = "<group>"; };
 		56A5F78618D329C600B5735A /* ScaleMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleMaker.m; sourceTree = "<group>"; };
+		56C7C6291979393B003FD551 /* MetatoneTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetatoneTouchView.h; sourceTree = "<group>"; };
+		56C7C62A1979393B003FD551 /* MetatoneTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetatoneTouchView.m; sourceTree = "<group>"; };
+		56C7C62E19793AB8003FD551 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56FA5EB014E70F78008A2347 /* SnowMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA5EB414E70F78008A2347 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56FA5EB614E70F78008A2347 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -910,6 +915,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C7C62F19793AB8003FD551 /* QuartzCore.framework in Frameworks */,
 				56A5F78418D3093800B5735A /* Security.framework in Frameworks */,
 				56A5F78218D3093300B5735A /* CFNetwork.framework in Frameworks */,
 				56999F3316D4917E00C1C6D5 /* CoreMIDI.framework in Frameworks */,
@@ -1051,6 +1057,7 @@
 		56FA5EB314E70F78008A2347 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56C7C62E19793AB8003FD551 /* QuartzCore.framework */,
 				56A5F78318D3093800B5735A /* Security.framework */,
 				56A5F78118D3093300B5735A /* CFNetwork.framework */,
 				56999F3216D4917E00C1C6D5 /* CoreMIDI.framework */,
@@ -1067,6 +1074,8 @@
 		56FA5EBA14E70F78008A2347 /* SnowMusic */ = {
 			isa = PBXGroup;
 			children = (
+				56C7C6291979393B003FD551 /* MetatoneTouchView.h */,
+				56C7C62A1979393B003FD551 /* MetatoneTouchView.m */,
 				56FA5EC914E70F78008A2347 /* MainStoryboard_iPad.storyboard */,
 				56FA5EC614E70F78008A2347 /* MainStoryboard_iPhone.storyboard */,
 				56FA5EC314E70F78008A2347 /* SnowMusicAppDelegate.h */,
@@ -2033,6 +2042,7 @@
 				567C15C81978D4B3002E2BD3 /* F53OSCPacket.m in Sources */,
 				56999F3016D4916200C1C6D5 /* PGMidiFind.mm in Sources */,
 				567C15CA1978D4B3002E2BD3 /* F53OSCServer.m in Sources */,
+				56C7C62B1979393B003FD551 /* MetatoneTouchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

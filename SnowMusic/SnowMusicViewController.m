@@ -44,6 +44,7 @@
 
 - (void)receiveFloat:(float)received fromSource:(NSString *)source {
     NSLog(@"PD FLOAT: %@ - %f",source,received);
+    [self.touchView drawGenerativeNoteOfType:source];
 }
 
 - (void)receiveMessage:(NSString *)message withArguments:(NSArray *)arguments fromSource:(NSString *)source {
@@ -105,7 +106,9 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
 {   
     UITouch *touch = [touches anyObject];
-    CGPoint touchPoint = [touch locationInView:self.view];  
+    CGPoint touchPoint = [touch locationInView:self.view];
+    
+    [self.touchView drawTouchCircleAt:touchPoint];
 
     // calculate distance from the center
     CGFloat xDist = (touchPoint.x - self.view.center.x);
@@ -145,6 +148,8 @@
     CGFloat yVelocity = [touch locationInView:self.view].y - [touch previousLocationInView:self.view].y;
     CGFloat velocity = sqrt((xVelocity * xVelocity) + (yVelocity * yVelocity));
     
+    [self.touchView drawMovingTouchCircleAt:[touch locationInView:self.view]];
+    
     // send vel to pd program
     [PdBase sendFloat:velocity toReceiver:@"touchvelocity" ];
     self.distanceLabel.text = [[NSString alloc] initWithFormat:@"Volume: %.2f", ((velocity * 0.07) + 0.1)];
@@ -156,6 +161,8 @@
 {
     [PdBase sendBangToReceiver:@"touchended" ];
     if (self.oscLogging) [self.networkManager sendMessageTouchEnded];
+    
+    [self.touchView hideMovingTouchCircle];
 }
 
 // Interface responders

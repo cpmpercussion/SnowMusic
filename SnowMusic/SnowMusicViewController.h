@@ -10,6 +10,7 @@
 #import "PDBase.h"
 #import "MetatoneNetworkManager.h"
 #import "ScaleMaker.h"
+#import "MetatoneTouchView.h"
 
 @class PGMidi;
 
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *snowSwitchLabel;
 @property (weak, nonatomic) IBOutlet UILabel *midiLabel;
 @property (weak, nonatomic) IBOutlet UILabel *midiInterfaceLabel;
+@property (weak, nonatomic) IBOutlet MetatoneTouchView *touchView;
 
 @property (nonatomic) bool oscLogging;
 @property (nonatomic) int scaleMode;
