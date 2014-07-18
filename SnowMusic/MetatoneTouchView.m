@@ -13,7 +13,6 @@
 #define CYMBALTRIGGERED @"cymbalTriggered"
 #define CLUSTERTRIGGERED @"clusterTriggered"
 
-
 @interface MetatoneTouchView()
 
 @property (strong, nonatomic) UIImage *lastFrame;
@@ -36,8 +35,6 @@
     if (!_noteCirclePoints) _noteCirclePoints = [[NSMutableArray alloc] init];
     return _noteCirclePoints;
 }
-
-
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -105,8 +102,6 @@
         [CATransaction setAnimationDuration:3.0];
         layer.hidden = YES;
     }];
-    
-//    [CATransaction ]
 }
 
 
@@ -164,9 +159,7 @@
     layer.shadowOpacity = 0.8;
     layer.frame = CGRectMake(0, 0, 50, 50);
     layer.cornerRadius = 25.0;
-    //[self.layer addSublayer:layer];
     layer.hidden = YES;
-    
     return layer;
 }
 
