@@ -13,6 +13,7 @@
 #define OSC_LOGGING @YES
 #define SNOWMUSIC_SNOW_MODE 0
 #define SNOWMUSIC_NOTE_MODE 1
+#define NEWIDEA_LIMIT 5
 
 
 @interface SnowMusicViewController () <PGMidiDelegate, PGMidiSourceDelegate>
@@ -38,27 +39,15 @@
     [self.midiInterfaceLabel setText:@""];
     
     self.tapMode = SNOWMUSIC_SNOW_MODE;
+    //self.tapMode = SNOWMUSIC_NOTE_MODE;
     self.oscLogging = OSC_LOGGING;
     self.sameGestureCount = 0;
+    self.newIdeaNumber = 0;
     [self setupOscLogging];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        if ((interfaceOrientation == UIInterfaceOrientationPortrait) | (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
-            return YES;
-        } else {
-            return NO;
-        }
-    } else {
-        if ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) | (interfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-            return YES;
-        } else {
-            return NO;
-        }
-    }
+    
+    // Hiding the Cluster function
+//    [self.clustersOn setHidden:YES];
+//    [self.clusterSwitchLabel setHidden:YES];
 }
 
 #pragma mark - Touch
@@ -79,8 +68,10 @@
     CGFloat distance = sqrt((xDist * xDist) + (yDist * yDist)) / 600;
 
     // Send to Pd
-    if (self.tapMode == SNOWMUSIC_SNOW_MODE) {
-        distance = 0.5 * distance;
+    if (self.tapMode == SNOWMUSIC_NOTE_MODE) {
+        if (self.newIdeaNumber > 0) {
+            distance = distance / self.newIdeaNumber;
+        }
     }
     [PdBase sendBangToReceiver:@"touch" ]; // makes a small sound
     [PdBase sendFloat:distance toReceiver:@"tapdistance" ];
@@ -148,12 +139,13 @@
     float value = (sender.on) ? 1 : 0;
     [PdBase sendFloat:value toReceiver:@"snowSwitch"];
     if (self.oscLogging) [self.networkManager sendMesssageSwitch:@"snowSwitch" On:sender.on];
-//    if (self.snowSwitch.on)
-//    {
-//        [PdBase sendFloat:1 toReceiver:@"snowSwitch"];
-//    } else {
-//        [PdBase sendFloat:0 toReceiver:@"snowSwitch"];
-//    }    
+    
+    if (self.snowSwitch.on)
+    {
+        self.tapMode = SNOWMUSIC_NOTE_MODE;
+    } else {
+        self.tapMode = SNOWMUSIC_SNOW_MODE;
+    }    
 }
 
 #pragma mark - Note Methods
@@ -164,7 +156,7 @@
     velocity = (int) (velocity * 0.2) + (vel * 0.8);
     int note = (int) (distance * 35);
     
-    note = [ScaleMaker mixolydian:36 withNote:note];
+    note = [ScaleMaker mixolydian:36 + (self.newIdeaNumber * 3) withNote:note];
     [PdBase sendNoteOn:1 pitch:note velocity:velocity];
 }
 
@@ -180,6 +172,11 @@
     } else {
         self.tapMode = SNOWMUSIC_NOTE_MODE;
     }
+    NSLog(@"Tap Mode Changed to %d", self.tapMode);
+}
+
+-(void)changeTapModeTo: (int) newTapMode {
+    self.tapMode = newTapMode;
     NSLog(@"Tap Mode Changed to %d", self.tapMode);
 }
 
@@ -249,12 +246,31 @@
 }
 
 -(void)didReceiveEnsembleEvent:(NSString *)event forDevice:(NSString *)device withMeasure:(NSNumber *)measure {
-    if (arc4random_uniform(100)>50) {
-        [self changeTapMode];
-        NSLog(@"Ensemble Event Received: Reset.");
+    
+    // threshold starts at 10
+    // 1 - 30
+    // 2 - 50
+    // 3 - 70
+    // 4 - 90
+    // 5 - 110
+    int threshold = self.newIdeaNumber * floor(100 / NEWIDEA_LIMIT) + floor(50 / NEWIDEA_LIMIT);
+    
+    if (self.newIdeaNumber > NEWIDEA_LIMIT) {
+        [self changeTapModeTo:SNOWMUSIC_NOTE_MODE];
+    } else if (arc4random_uniform(100) < threshold) {
+        [self changeTapModeTo:SNOWMUSIC_NOTE_MODE];
     } else {
-        NSLog(@"Ensemble Event Received: No Action.");
+        [self changeTapModeTo:SNOWMUSIC_SNOW_MODE];
     }
+    
+//    if (arc4random_uniform(100)>threshold) {
+//        [self changeTapMode];
+//        NSLog(@"Ensemble Event Received: Reset.");
+//    } else {
+//        NSLog(@"Ensemble Event Received: No Action.");
+//    }
+    NSLog(@"Threshold was: %d",threshold);
+    self.newIdeaNumber++;
 }
 
 #pragma mark Midi

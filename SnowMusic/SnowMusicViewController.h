@@ -29,6 +29,7 @@
 @property (nonatomic) bool oscLogging;
 @property (nonatomic) int scaleMode;
 @property (nonatomic) int tapMode;
+@property (nonatomic) int newIdeaNumber;
 
 @property (nonatomic) int sameGestureCount;
 @property (strong, nonatomic) NSString *lastGesture;
