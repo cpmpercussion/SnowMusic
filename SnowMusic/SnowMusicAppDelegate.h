@@ -19,6 +19,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) SnowMusicViewController *viewController;
-@property (strong, nonatomic, readonly) PdAudioController *audioController;
+@property (strong, nonatomic) PdAudioController *audioController;
 
 @end

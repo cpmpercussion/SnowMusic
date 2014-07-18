@@ -15,10 +15,17 @@
 #define SNOWMUSIC_NOTE_MODE 1
 #define NEWIDEA_LIMIT 5
 
+#define CLUSTERVOLUME @"clusterVolume"
+#define CYMBALVOLUME @"cymbalVolume"
+#define SNOWVOLUME @"snowVolume"
+#define CROTALEVOLUME @"crotaleVolume"
+#define SNOWTRIGGERED @"snowTriggered"
+#define CYMBALTRIGGERED @"cymbalTriggered"
+#define CLUSTERTRIGGERED @"clusterTriggered"
+
 @interface UITouch (Private)
 -(float)_pathMajorRadius;
 @end
-
 
 @interface SnowMusicViewController () <PGMidiDelegate, PGMidiSourceDelegate>
 @property (strong,nonatomic) MetatoneNetworkManager *networkManager;
@@ -26,8 +33,34 @@
 
 @implementation SnowMusicViewController
 
-#pragma mark - View lifecycle
+- (void)receiveBangFromSource:(NSString *)source {
+    NSLog(@"PD BANG: %@",source);
+}
 
+- (void)receiveList:(NSArray *)list fromSource:(NSString *)source {
+    NSLog(@"PD LIST: %@",source);
+
+}
+
+- (void)receiveFloat:(float)received fromSource:(NSString *)source {
+    NSLog(@"PD FLOAT: %@ - %f",source,received);
+}
+
+- (void)receiveMessage:(NSString *)message withArguments:(NSArray *)arguments fromSource:(NSString *)source {
+    NSLog(@"PD string: %@",source);
+
+}
+
+- (void)receivePrint:(NSString *)message {
+    NSLog(@"PD print: %@",message);
+
+}
+
+- (void)receiveSymbol:(NSString *)symbol fromSource:(NSString *)source {
+    NSLog(@"PD symbol: %@",source);
+}
+
+#pragma mark - View lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -48,15 +81,18 @@
     self.newIdeaNumber = 0;
     [self setupOscLogging];
     
-    // Hiding the Cluster function
 //    [self.clustersOn setHidden:YES];
-//    [self.clusterSwitchLabel setHidden:YES];
     [self.distanceLabel setHidden:YES];
     [self.cymbalSwitchLabel setHidden:YES];
     [self.snowSwitchLabel setHidden:YES];
     [self.clusterSwitchLabel setHidden:YES];
     [self.midiLabel setHidden:YES];
     [self.midiInterfaceLabel setHidden:YES];
+    
+    [PdBase setDelegate:self];
+    [PdBase subscribe:CLUSTERTRIGGERED];
+    [PdBase subscribe:SNOWTRIGGERED];
+    [PdBase subscribe:CYMBALTRIGGERED];
 }
 
 #pragma mark - Touch
@@ -218,6 +254,7 @@
 }
 
 -(void) didReceiveMetatoneMessageFrom:(NSString *)device withName:(NSString *)name andState:(NSString *)state {}
+
 
 -(void)didReceiveGestureMessageFor:(NSString *)device withClass:(NSString *)class {
     if ([class isEqualToString:self.lastGesture]) {

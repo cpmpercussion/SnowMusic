@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PdDispatcher.h"
+#import "PDBase.h"
 #import "MetatoneNetworkManager.h"
 #import "ScaleMaker.h"
 
 @class PGMidi;
 
-@interface SnowMusicViewController : UIViewController <MetatoneNetworkManagerDelegate> {}
+@interface SnowMusicViewController : UIViewController <MetatoneNetworkManagerDelegate, PdReceiverDelegate> {}
 
 @property (weak, nonatomic) PGMidi *midi;
 @property (weak, nonatomic) IBOutlet UISwitch *clustersOn;
@@ -39,6 +39,8 @@
 - (IBAction)clustersSwitched:(UISwitch *)sender;
 - (void)setupOscLogging;
 - (void)stopOscLogging;
+
+- (void)receiveBangFromSource:(NSString *)source;
 
 
 
