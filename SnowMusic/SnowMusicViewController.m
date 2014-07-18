@@ -15,13 +15,16 @@
 #define SNOWMUSIC_NOTE_MODE 1
 #define NEWIDEA_LIMIT 5
 
+@interface UITouch (Private)
+-(float)_pathMajorRadius;
+@end
+
 
 @interface SnowMusicViewController () <PGMidiDelegate, PGMidiSourceDelegate>
 @property (strong,nonatomic) MetatoneNetworkManager *networkManager;
 @end
 
 @implementation SnowMusicViewController
-
 
 #pragma mark - View lifecycle
 
@@ -48,6 +51,12 @@
     // Hiding the Cluster function
 //    [self.clustersOn setHidden:YES];
 //    [self.clusterSwitchLabel setHidden:YES];
+    [self.distanceLabel setHidden:YES];
+    [self.cymbalSwitchLabel setHidden:YES];
+    [self.snowSwitchLabel setHidden:YES];
+    [self.clusterSwitchLabel setHidden:YES];
+    [self.midiLabel setHidden:YES];
+    [self.midiInterfaceLabel setHidden:YES];
 }
 
 #pragma mark - Touch
@@ -67,6 +76,11 @@
     CGFloat yDist = (touchPoint.y - self.view.center.y);
     CGFloat distance = sqrt((xDist * xDist) + (yDist * yDist)) / 600;
 
+    // velocity from touch point
+    int velocity = floorf(15 + (((touch._pathMajorRadius - 5.0)/16) * 115));
+    if (velocity > 127) velocity = 127;
+    if (velocity < 0) velocity = 0;
+    
     // Send to Pd
     if (self.tapMode == SNOWMUSIC_NOTE_MODE) {
         if (self.newIdeaNumber > 0) {
@@ -78,11 +92,10 @@
     
     if (self.oscLogging) [self.networkManager sendMessageWithTouch:touchPoint Velocity:0.0]; // osc logging
     
-    self.distanceLabel.text = [[NSString alloc] initWithFormat:@"Volume: %.2f", ((distance * 0.8) + 0.2)];
+    [self.distanceLabel setText:[NSString stringWithFormat:@"Volume: %.2f", ((distance * 0.8) + 0.2)]];
     
     if (self.tapMode == SNOWMUSIC_NOTE_MODE) {
-        //int vel = floor(128 * ((distance * 0.8) + 0.2));
-        [self sendMidiNoteFromPoint:touchPoint withVelocity:120];
+        [self sendMidiNoteFromPoint:touchPoint withVelocity:velocity];
     }
 }
 
@@ -115,24 +128,12 @@
     float value = (sender.on) ? 1 : 0;
     [PdBase sendFloat:value toReceiver:@"cymbalSwitch"];
     if (self.oscLogging) [self.networkManager sendMesssageSwitch:@"fieldsOn" On:sender.on];
-//    if (self.backgroundSwitch.on)
-//    {
-//        [PdBase sendFloat:1 toReceiver:@"cymbalSwitch"];
-//    } else {
-//        [PdBase sendFloat:0 toReceiver:@"cymbalSwitch"];
-//    }
 }
 
 - (IBAction)clustersSwitched:(UISwitch *)sender {
     float value = (sender.on) ? 1 : 0;
     [PdBase sendFloat:value toReceiver:@"clusterSwitch"];
     if (self.oscLogging) [self.networkManager sendMesssageSwitch:@"clusterSwitch" On:sender.on];
-//    if (self.clustersOn.on)
-//    {
-//        [PdBase sendFloat:1 toReceiver:@"clusterSwitch"];
-//    } else {
-//        [PdBase sendFloat:0 toReceiver:@"clusterSwitch"];
-//    }
 }
 
 - (IBAction)snowSwitched:(UISwitch *)sender {
@@ -149,7 +150,6 @@
 }
 
 #pragma mark - Note Methods
-
 -(void)sendMidiNoteFromPoint:(CGPoint) point withVelocity:(int) vel {
     CGFloat distance = [self calculateDistanceFromCenter:point]/600;
     int velocity = ((int) 25 + 100 * (point.y / 800));
@@ -187,8 +187,8 @@
     self.networkManager = [[MetatoneNetworkManager alloc] initWithDelegate:self shouldOscLog:self.oscLogging];
     if (!self.networkManager) {
         self.oscLogging = NO;
-        [self.midiLabel setText:@"OSC:"];
-        [self.midiInterfaceLabel setText:@"OSC Logging: Not Connected"];
+        [self.midiInterfaceLabel setHidden:NO];
+        [self.midiInterfaceLabel setText:@"not classifying! 😰"];
         NSLog(@"OSC Logging: Not Connected");
     }
 }
@@ -200,20 +200,20 @@
 
 - (void) searchingForLoggingServer {
     if (self.oscLogging) {
-        [self.midiLabel setText:@"OSC"];
-        [self.midiInterfaceLabel setText:@"Searching for Logging Server..."];
+        [self.midiInterfaceLabel setHidden:NO];
+        [self.midiInterfaceLabel setText:@"searching for classifier 😒"];
     }
 }
 
 -(void) loggingServerFoundWithAddress:(NSString *)address andPort:(int)port andHostname:(NSString *)hostname {
-    [self.midiLabel setText:@"OSC"];
-    [self.midiInterfaceLabel setText:[NSString stringWithFormat:@"Logging to %@\n %@:%d", hostname, address,port]];
+    [self.midiInterfaceLabel setHidden:NO];
+    [self.midiInterfaceLabel setText:[NSString stringWithFormat:@"connected to %@ 👍", hostname]];
 }
 
 -(void) stoppedSearchingForLoggingServer {
     if (self.oscLogging) {
-        [self.midiLabel setText:@"OSC"];
-        [self.midiInterfaceLabel setText: @"Logging Server Not Found!"];
+        [self.midiInterfaceLabel setHidden:NO];
+        [self.midiInterfaceLabel setText: @"classifier not found! 😰"];
     }
 }
 
@@ -241,12 +241,9 @@
     self.lastGesture = class;
 }
 
--(void)didReceiveEnsembleState:(NSString *)state withSpread:(NSNumber *)spread withRatio:(NSNumber *)ratio {
-    
-}
+-(void)didReceiveEnsembleState:(NSString *)state withSpread:(NSNumber *)spread withRatio:(NSNumber *)ratio {}
 
 -(void)didReceiveEnsembleEvent:(NSString *)event forDevice:(NSString *)device withMeasure:(NSNumber *)measure {
-    
     // threshold starts at 10
     // 1 - 30
     // 2 - 50
@@ -262,16 +259,15 @@
     } else {
         [self changeTapModeTo:SNOWMUSIC_SNOW_MODE];
     }
-    
-//    if (arc4random_uniform(100)>threshold) {
-//        [self changeTapMode];
-//        NSLog(@"Ensemble Event Received: Reset.");
-//    } else {
-//        NSLog(@"Ensemble Event Received: No Action.");
-//    }
+
     NSLog(@"Threshold was: %d",threshold);
     self.newIdeaNumber++;
 }
+
+
+-(void) metatoneClientFoundWithAddress:(NSString *)address andPort:(int)port andHostname:(NSString *)hostname {}
+-(void) metatoneClientRemovedwithAddress:(NSString *)address andPort:(int)port andHostname:(NSString *)hostname {}
+
 
 #pragma mark Midi
 -(void) attachToAllExistingSources
@@ -314,6 +310,14 @@
         packet = MIDIPacketNext(packet);
     }
 }
+
+// View type.
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 
 
 @end

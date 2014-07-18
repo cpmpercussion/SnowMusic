@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -18,7 +18,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Status" lineBreakMode="tailTruncation" minimumFontSize="10" id="Npj-WI-gfr" userLabel="status label">
-                                <rect key="frame" x="20" y="20" width="467" height="27"/>
+                                <rect key="frame" x="20" y="40" width="467" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -69,15 +69,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MIDI:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1QD-1T-c1A">
-                                <rect key="frame" x="20" y="55" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MIDI Interface" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9qV-J1-zxc">
-                                <rect key="frame" x="69" y="55" width="222" height="21"/>
+                                <rect key="frame" x="20" y="5" width="467" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -95,14 +88,13 @@
                         <outlet property="cymbalSwitchLabel" destination="JsR-Jp-gCw" id="v8T-Mb-oSa"/>
                         <outlet property="distanceLabel" destination="Npj-WI-gfr" id="WED-jg-czl"/>
                         <outlet property="midiInterfaceLabel" destination="9qV-J1-zxc" id="2Of-kk-RV5"/>
-                        <outlet property="midiLabel" destination="1QD-1T-c1A" id="ZHv-Mz-vIA"/>
                         <outlet property="snowSwitch" destination="E7n-At-wLG" id="s3T-84-s92"/>
                         <outlet property="snowSwitchLabel" destination="BTl-jM-58y" id="pAR-iO-rdE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-47" y="-72"/>
+            <point key="canvasLocation" x="-35" y="-84"/>
         </scene>
     </scenes>
     <resources>
