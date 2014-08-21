@@ -24,6 +24,7 @@
 #define SNOWTRIGGERED @"snowTriggered"
 #define CYMBALTRIGGERED @"cymbalTriggered"
 #define CLUSTERTRIGGERED @"clusterTriggered"
+#define NEW_SLIDING_SOUND @"chooseNewSlidingSound"
 
 #define ASSIST_STATE_NOTHING 0
 #define ASSIST_STATE_ASSISTING 1
@@ -163,36 +164,24 @@
 {   
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInView:self.view];
-    
     [self.touchView drawTouchCircleAt:touchPoint];
-    
     CGFloat ratioToCentre = [self calculateDistanceFromCenter:touchPoint] / self.distanceToCentre;
-    CGFloat distance = ratioToCentre;
-//    int sliceToPlay = floorf(100 * ratioToCentre);
-//    NSLog(@"Next Slice to Play: %d",sliceToPlay);
-
-    // velocity from touch point
+    
     int velocity = floorf(15 + (((touch._pathMajorRadius - 5.0)/16) * 115));
     if (velocity > 127) velocity = 127;
     if (velocity < 0) velocity = 0;
     
     // Send to Pd
-    if (self.tapMode == SNOWMUSIC_NOTE_MODE) {
-        if (self.newIdeaNumber > 0) {
-            distance = distance / self.newIdeaNumber;
-        }
-    }
+//    if (self.tapMode == SNOWMUSIC_NOTE_MODE) {
+//        if (self.newIdeaNumber > 0) {
+////            distance = distance / self.newIdeaNumber;
+//        }
+//    }
     
-    
-    
-    [PdBase sendBangToReceiver:@"touch" ]; // makes a small sound
     [PdBase sendFloat:ratioToCentre toReceiver:@"snowStepSlice"];
-    [PdBase sendFloat:distance toReceiver:@"tapdistance" ];
+    [PdBase sendFloat:((float) velocity) / 127.0 toReceiver:@"tapdistance" ];
     
     if (self.oscLogging) [self.networkManager sendMessageWithTouch:touchPoint Velocity:0.0]; // osc logging
-    
-    [self.distanceLabel setText:[NSString stringWithFormat:@"Volume: %.2f", ((distance * 0.8) + 0.2)]];
-    
     if (self.tapMode == SNOWMUSIC_NOTE_MODE) {
         [self sendMidiNoteFromPoint:touchPoint withVelocity:velocity];
     }
@@ -260,7 +249,7 @@
     int note = (int) (distance * 35);
     
 //    note = [ScaleMaker mixolydian:36 + (self.newIdeaNumber * 3) withNote:note];
-    note = [ScaleMaker mixolydian:36 + (self.newIdeaNumber) withNote:note];
+    note = [ScaleMaker mixolydian:32 + (self.newIdeaNumber) withNote:note];
     [PdBase sendNoteOn:1 pitch:note velocity:velocity];
 }
 
@@ -278,8 +267,12 @@
     NSLog(@"Tap Mode Changed to %d", self.tapMode);
 }
 
-#pragma mark - Network
+-(void) changeSwipeSound {
+    [PdBase sendBangToReceiver:NEW_SLIDING_SOUND];
+}
 
+
+#pragma mark - Network
 - (void)setupOscLogging
 {
     self.networkManager = [[MetatoneNetworkManager alloc] initWithDelegate:self shouldOscLog:self.oscLogging];
@@ -331,13 +324,6 @@
 -(void)didReceiveGestureMessageFor:(NSString *)device withClass:(NSString *)class {
     NSLog(@"Gesture: %@",class);
     
-    // Can this count somehow work with the gesture classes instead??
-    
-//    if ([class isEqualToString:self.lastGesture]) {
-//        self.sameGestureCount++;
-//    } else {
-//        self.sameGestureCount = 0;
-//    }
     if ([[GESTURE_GROUPS objectForKey:class] isEqualToNumber:self.lastGestureClass]) {
         self.sameGestureCount++;
         NSLog(@"Same Gesture Inc: %d",self.sameGestureCount);
@@ -345,7 +331,6 @@
         self.sameGestureCount = 0;
         NSLog(@"Same Gesture reset 0");
     }
-    
     
     if (self.sameGestureCount > 2) {
         // Possible start or stop of gesture assist.
@@ -436,14 +421,13 @@
 }
 
 -(void)didReceiveEnsembleEvent:(NSString *)event forDevice:(NSString *)device withMeasure:(NSNumber *)measure {
+    [self changeSwipeSound];
     // threshold starts at 10
     // 1 - 30
     // 2 - 50
     // 3 - 70
     // 4 - 90
     // 5 - 110
-    
-    
     int threshold = self.newIdeaNumber * floor(100 / NEWIDEA_LIMIT) + floor(50 / NEWIDEA_LIMIT);
     
     if (self.newIdeaNumber > NEWIDEA_LIMIT) {
@@ -457,7 +441,6 @@
     NSLog(@"Threshold was: %d",threshold);
     self.newIdeaNumber++;
 }
-
 
 -(void) metatoneClientFoundWithAddress:(NSString *)address andPort:(int)port andHostname:(NSString *)hostname {}
 -(void) metatoneClientRemovedwithAddress:(NSString *)address andPort:(int)port andHostname:(NSString *)hostname {}
