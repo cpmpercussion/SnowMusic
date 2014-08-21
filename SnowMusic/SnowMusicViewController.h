@@ -35,6 +35,7 @@
 
 @property (nonatomic) int sameGestureCount;
 @property (strong, nonatomic) NSString *lastGesture;
+@property (strong, nonatomic) NSNumber* lastGestureClass;
 @property (nonatomic) int gestureAssistState;
 @property (strong, nonatomic) NSString* gestureAssistGesture;
 @property (strong, nonatomic) NSArray* gestureAssistGroup;

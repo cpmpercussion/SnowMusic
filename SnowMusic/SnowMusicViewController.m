@@ -34,6 +34,9 @@
 #define SWIPE_GESTURES @[@"fs",@"fsa"]
 #define SWIRL_GESTURES @[@"ss",@"bs",@"vss"]
 
+
+#define GESTURE_GROUPS @{@"n":@0,@"ft":@1,@"st":@1,@"c":@1,@"fs":@2,@"fsa":@2,@"ss":@3,@"bs":@3,@"vss":@3}
+
 @interface UITouch (Private)
 -(float)_pathMajorRadius;
 @end
@@ -111,6 +114,8 @@
     self.gestureAssistState = ASSIST_STATE_NOTHING;
     self.gestureAssistGesture = @"n";
     self.gestureAssistGroup = @[@"n"];
+    self.lastGestureClass = @0;
+    self.lastGesture = @"n";
 }
 
 -(CGFloat)calculateDistanceFromCenter:(CGPoint)touchPoint {
@@ -327,11 +332,21 @@
 -(void)didReceiveGestureMessageFor:(NSString *)device withClass:(NSString *)class {
     NSLog(@"Gesture: %@",class);
     
-    if ([class isEqualToString:self.lastGesture]) {
+    // Can this count somehow work with the gesture classes instead??
+    
+//    if ([class isEqualToString:self.lastGesture]) {
+//        self.sameGestureCount++;
+//    } else {
+//        self.sameGestureCount = 0;
+//    }
+    if ([[GESTURE_GROUPS objectForKey:class] isEqualToNumber:self.lastGestureClass]) {
         self.sameGestureCount++;
+        NSLog(@"Same Gesture Inc: %d",self.sameGestureCount);
     } else {
         self.sameGestureCount = 0;
+        NSLog(@"Same Gesture reset 0");
     }
+    
     
     if (self.sameGestureCount > 2) {
         // Possible start or stop of gesture assist.
@@ -403,6 +418,7 @@
         }
     }
     self.lastGesture = class;
+    self.lastGestureClass = [GESTURE_GROUPS objectForKey:class];
 }
 
 -(void) allBackgroundsOff {
