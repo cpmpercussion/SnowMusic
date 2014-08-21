@@ -69,7 +69,6 @@
 
 - (void)receivePrint:(NSString *)message {
 //    NSLog(@"PD print: %@",message);
-
 }
 
 - (void)receiveSymbol:(NSString *)symbol fromSource:(NSString *)source {
@@ -169,7 +168,7 @@
     
     CGFloat ratioToCentre = [self calculateDistanceFromCenter:touchPoint] / self.distanceToCentre;
     CGFloat distance = ratioToCentre;
-    int sliceToPlay = floorf(100 * ratioToCentre);
+//    int sliceToPlay = floorf(100 * ratioToCentre);
 //    NSLog(@"Next Slice to Play: %d",sliceToPlay);
 
     // velocity from touch point
@@ -187,7 +186,7 @@
     
     
     [PdBase sendBangToReceiver:@"touch" ]; // makes a small sound
-    [PdBase sendFloat:sliceToPlay toReceiver:@"snowStepSlice"];
+    [PdBase sendFloat:ratioToCentre toReceiver:@"snowStepSlice"];
     [PdBase sendFloat:distance toReceiver:@"tapdistance" ];
     
     if (self.oscLogging) [self.networkManager sendMessageWithTouch:touchPoint Velocity:0.0]; // osc logging

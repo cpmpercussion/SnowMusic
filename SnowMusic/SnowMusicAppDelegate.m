@@ -14,6 +14,8 @@
 
 @implementation SnowMusicAppDelegate
 
+void arraysize_setup();
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     application.idleTimerDisabled = YES; // we don't want the screen to sleep.
@@ -23,11 +25,7 @@
     if([self.audioController configurePlaybackWithSampleRate:44100 numberChannels:2 inputEnabled:NO mixingEnabled:NO] != PdAudioOK) {
         NSLog(@"failed to initialise audioController");
     }
-    
-//    [PdBase setDelegate:self];
-
-    
-    //[self.audioController configureTicksPerBuffer:128];
+    arraysize_setup();
 	[PdBase openFile:@"snowapp2.pd" path:[[NSBundle mainBundle] resourcePath]];
 	[self.audioController setActive:YES];
 	[self.audioController print];
@@ -36,8 +34,6 @@
     midi = [[PGMidi alloc] init];
     midi.networkEnabled = YES;
     self.viewController.midi = midi;
-    
-    // Override point for customization after application launch.
     return YES;
 }
 							

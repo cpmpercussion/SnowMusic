@@ -17,6 +17,14 @@
 		5665F2C214FFA0ED00321D1B /* cymbal2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2BF14FFA0ED00321D1B /* cymbal2.wav */; };
 		5665F2C314FFA0ED00321D1B /* cymbal4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2C014FFA0ED00321D1B /* cymbal4.wav */; };
 		5665F2C414FFA0ED00321D1B /* cymbal6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2C114FFA0ED00321D1B /* cymbal6.wav */; };
+		566CBF0B19A5B32A008EA96A /* arraysize.c in Sources */ = {isa = PBXBuildFile; fileRef = 566CBF0219A5B32A008EA96A /* arraysize.c */; };
+		566CBF0C19A5B32A008EA96A /* cpmlooper.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0319A5B32A008EA96A /* cpmlooper.pd */; };
+		566CBF0D19A5B32A008EA96A /* dispatch.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0419A5B32A008EA96A /* dispatch.pd */; };
+		566CBF0E19A5B32A008EA96A /* m_lydian.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0619A5B32A008EA96A /* m_lydian.pd */; };
+		566CBF0F19A5B32A008EA96A /* m_lydiansharp5.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0719A5B32A008EA96A /* m_lydiansharp5.pd */; };
+		566CBF1019A5B32A008EA96A /* percsampler.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0819A5B32A008EA96A /* percsampler.pd */; };
+		566CBF1119A5B32A008EA96A /* slicesampler.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0919A5B32A008EA96A /* slicesampler.pd */; };
+		566CBF1219A5B32A008EA96A /* stereovol.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0A19A5B32A008EA96A /* stereovol.pd */; };
 		567C15C51978D4B3002E2BD3 /* F53OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A41978D4B3002E2BD3 /* F53OSCBundle.m */; };
 		567C15C61978D4B3002E2BD3 /* F53OSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A61978D4B3002E2BD3 /* F53OSCClient.m */; };
 		567C15C71978D4B3002E2BD3 /* F53OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A91978D4B3002E2BD3 /* F53OSCMessage.m */; };
@@ -60,7 +68,6 @@
 		56FA97C114EFCC9B00628FEF /* snow-crushing-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97BC14EFCC9B00628FEF /* snow-crushing-1.wav */; };
 		56FA97C314EFCC9B00628FEF /* snow-sliding-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97BE14EFCC9B00628FEF /* snow-sliding-1.wav */; };
 		56FA97C414EFCC9B00628FEF /* snow-wade-medium.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97BF14EFCC9B00628FEF /* snow-wade-medium.wav */; };
-		56FA97C514EFCC9B00628FEF /* snowapp.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97C014EFCC9B00628FEF /* snowapp.pd */; };
 		56FA992E14EFCCB200628FEF /* _markovanal.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97C814EFCCB100628FEF /* _markovanal.pd */; };
 		56FA992F14EFCCB200628FEF /* a.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97C914EFCCB100628FEF /* a.txt */; };
 		56FA993014EFCCB200628FEF /* a_breath-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97CA14EFCCB100628FEF /* a_breath-help.pd */; };
@@ -470,6 +477,15 @@
 		5665F2BF14FFA0ED00321D1B /* cymbal2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal2.wav; sourceTree = "<group>"; };
 		5665F2C014FFA0ED00321D1B /* cymbal4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal4.wav; sourceTree = "<group>"; };
 		5665F2C114FFA0ED00321D1B /* cymbal6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal6.wav; sourceTree = "<group>"; };
+		566CBF0219A5B32A008EA96A /* arraysize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = arraysize.c; path = Resources/arraysize.c; sourceTree = "<group>"; };
+		566CBF0319A5B32A008EA96A /* cpmlooper.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cpmlooper.pd; path = Resources/cpmlooper.pd; sourceTree = "<group>"; };
+		566CBF0419A5B32A008EA96A /* dispatch.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dispatch.pd; path = Resources/dispatch.pd; sourceTree = "<group>"; };
+		566CBF0519A5B32A008EA96A /* fts_to_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fts_to_pd.h; path = Resources/fts_to_pd.h; sourceTree = "<group>"; };
+		566CBF0619A5B32A008EA96A /* m_lydian.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = m_lydian.pd; path = Resources/m_lydian.pd; sourceTree = "<group>"; };
+		566CBF0719A5B32A008EA96A /* m_lydiansharp5.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = m_lydiansharp5.pd; path = Resources/m_lydiansharp5.pd; sourceTree = "<group>"; };
+		566CBF0819A5B32A008EA96A /* percsampler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = percsampler.pd; path = Resources/percsampler.pd; sourceTree = "<group>"; };
+		566CBF0919A5B32A008EA96A /* slicesampler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = slicesampler.pd; path = Resources/slicesampler.pd; sourceTree = "<group>"; };
+		566CBF0A19A5B32A008EA96A /* stereovol.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stereovol.pd; path = Resources/stereovol.pd; sourceTree = "<group>"; };
 		567C15A21978D4B3002E2BD3 /* F53OSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSC.h; sourceTree = "<group>"; };
 		567C15A31978D4B3002E2BD3 /* F53OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCBundle.h; sourceTree = "<group>"; };
 		567C15A41978D4B3002E2BD3 /* F53OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCBundle.m; sourceTree = "<group>"; };
@@ -542,7 +558,6 @@
 		56FA97BC14EFCC9B00628FEF /* snow-crushing-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-crushing-1.wav"; path = "Resources/snow-crushing-1.wav"; sourceTree = "<group>"; };
 		56FA97BE14EFCC9B00628FEF /* snow-sliding-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-sliding-1.wav"; path = "Resources/snow-sliding-1.wav"; sourceTree = "<group>"; };
 		56FA97BF14EFCC9B00628FEF /* snow-wade-medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-wade-medium.wav"; path = "Resources/snow-wade-medium.wav"; sourceTree = "<group>"; };
-		56FA97C014EFCC9B00628FEF /* snowapp.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snowapp.pd; path = Resources/snowapp.pd; sourceTree = "<group>"; };
 		56FA97C814EFCCB100628FEF /* _markovanal.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _markovanal.pd; sourceTree = "<group>"; };
 		56FA97C914EFCCB100628FEF /* a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = a.txt; sourceTree = "<group>"; };
 		56FA97CA14EFCCB100628FEF /* a_breath-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "a_breath-help.pd"; sourceTree = "<group>"; };
@@ -1104,12 +1119,20 @@
 		56FA5EF214E70FB6008A2347 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				566CBF0219A5B32A008EA96A /* arraysize.c */,
+				566CBF0319A5B32A008EA96A /* cpmlooper.pd */,
+				566CBF0419A5B32A008EA96A /* dispatch.pd */,
+				566CBF0519A5B32A008EA96A /* fts_to_pd.h */,
+				566CBF0619A5B32A008EA96A /* m_lydian.pd */,
+				566CBF0719A5B32A008EA96A /* m_lydiansharp5.pd */,
+				566CBF0819A5B32A008EA96A /* percsampler.pd */,
+				566CBF0919A5B32A008EA96A /* slicesampler.pd */,
+				566CBF0A19A5B32A008EA96A /* stereovol.pd */,
 				5685474017F1C780005AD64A /* backgrounds */,
 				5612059414F5B464007EFBB9 /* cpmlibs */,
 				5612059314F5B3EF007EFBB9 /* fieldrecordings */,
 				56FA9AC114F0580700628FEF /* percsamples */,
 				56FA97C714EFCCB100628FEF /* rj */,
-				56FA97C014EFCC9B00628FEF /* snowapp.pd */,
 				5612059514F5B5CB007EFBB9 /* snowapp2.pd */,
 			);
 			name = Resources;
@@ -1610,7 +1633,6 @@
 				56FA97C114EFCC9B00628FEF /* snow-crushing-1.wav in Resources */,
 				56FA97C314EFCC9B00628FEF /* snow-sliding-1.wav in Resources */,
 				56FA97C414EFCC9B00628FEF /* snow-wade-medium.wav in Resources */,
-				56FA97C514EFCC9B00628FEF /* snowapp.pd in Resources */,
 				56FA992E14EFCCB200628FEF /* _markovanal.pd in Resources */,
 				56FA992F14EFCCB200628FEF /* a.txt in Resources */,
 				56FA993014EFCCB200628FEF /* a_breath-help.pd in Resources */,
@@ -1681,6 +1703,7 @@
 				56FA997014EFCCB200628FEF /* e_chorus-help.pd in Resources */,
 				56FA997114EFCCB200628FEF /* e_chorus.pd in Resources */,
 				56FA997214EFCCB200628FEF /* e_chorusr-help.pd in Resources */,
+				566CBF0C19A5B32A008EA96A /* cpmlooper.pd in Resources */,
 				56FA997314EFCCB200628FEF /* e_chorusr.pd in Resources */,
 				56FA997414EFCCB200628FEF /* e_circlepan-help.pd in Resources */,
 				56FA997514EFCCB200628FEF /* e_circlepan.pd in Resources */,
@@ -1721,8 +1744,10 @@
 				56FA999814EFCCB200628FEF /* e_resonzq-help.pd in Resources */,
 				56FA999914EFCCB200628FEF /* e_resonzq.pd in Resources */,
 				56FA999A14EFCCB200628FEF /* e_reverb-help.pd in Resources */,
+				566CBF1019A5B32A008EA96A /* percsampler.pd in Resources */,
 				56FA999B14EFCCB200628FEF /* e_reverb.pd in Resources */,
 				56FA999C14EFCCB200628FEF /* e_scompress-help.pd in Resources */,
+				566CBF0F19A5B32A008EA96A /* m_lydiansharp5.pd in Resources */,
 				56FA999D14EFCCB200628FEF /* e_scompress.pd in Resources */,
 				56FA999E14EFCCB200628FEF /* e_sdelay-help.pd in Resources */,
 				56FA999F14EFCCB200628FEF /* e_sdelay.pd in Resources */,
@@ -1763,6 +1788,7 @@
 				56FA99C214EFCCB200628FEF /* g_tgl.pd in Resources */,
 				56FA99C314EFCCB200628FEF /* g_vol-help.pd in Resources */,
 				56FA99C414EFCCB200628FEF /* g_vol.pd in Resources */,
+				566CBF1119A5B32A008EA96A /* slicesampler.pd in Resources */,
 				56FA99C514EFCCB200628FEF /* g_vol2-help.pd in Resources */,
 				56FA99C614EFCCB200628FEF /* g_vol2.pd in Resources */,
 				56FA99C714EFCCB200628FEF /* LICENSE.txt in Resources */,
@@ -1787,6 +1813,7 @@
 				56FA99D814EFCCB200628FEF /* m_chorddict.pd in Resources */,
 				56FA99D914EFCCB200628FEF /* m_intv2ratio-help.pd in Resources */,
 				56FA99DA14EFCCB200628FEF /* m_intv2ratio.pd in Resources */,
+				566CBF1219A5B32A008EA96A /* stereovol.pd in Resources */,
 				56FA99DB14EFCCB200628FEF /* m_keyfollow-help.pd in Resources */,
 				56FA99DC14EFCCB200628FEF /* m_keyfollow.pd in Resources */,
 				56FA99DD14EFCCB200628FEF /* m_majorscale-help.pd in Resources */,
@@ -1794,6 +1821,7 @@
 				56FA99DF14EFCCB200628FEF /* m_markovanal-help.pd in Resources */,
 				56FA99E014EFCCB200628FEF /* m_markovanal.pd in Resources */,
 				56FA99E114EFCCB200628FEF /* m_minorscale-help.pd in Resources */,
+				566CBF0E19A5B32A008EA96A /* m_lydian.pd in Resources */,
 				56FA99E214EFCCB200628FEF /* m_minorscale.pd in Resources */,
 				56FA99E314EFCCB200628FEF /* m_ms2beat-help.pd in Resources */,
 				56FA99E414EFCCB200628FEF /* m_ms2beat.pd in Resources */,
@@ -1825,6 +1853,7 @@
 				56FA99FD14EFCCB200628FEF /* r_#loc.pd in Resources */,
 				56FA99FE14EFCCB200628FEF /* r_#time-help.pd in Resources */,
 				56FA99FF14EFCCB200628FEF /* r_#time.pd in Resources */,
+				566CBF0D19A5B32A008EA96A /* dispatch.pd in Resources */,
 				56FA9A0014EFCCB200628FEF /* r_#touch-help.pd in Resources */,
 				56FA9A0114EFCCB200628FEF /* r_#touch.pd in Resources */,
 				56FA9A0214EFCCB200628FEF /* rj-meta.pd in Resources */,
@@ -2042,6 +2071,7 @@
 				567C15C81978D4B3002E2BD3 /* F53OSCPacket.m in Sources */,
 				56999F3016D4916200C1C6D5 /* PGMidiFind.mm in Sources */,
 				567C15CA1978D4B3002E2BD3 /* F53OSCServer.m in Sources */,
+				566CBF0B19A5B32A008EA96A /* arraysize.c in Sources */,
 				56C7C62B1979393B003FD551 /* MetatoneTouchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
