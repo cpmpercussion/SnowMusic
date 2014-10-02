@@ -25,6 +25,11 @@
 		566CBF1019A5B32A008EA96A /* percsampler.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0819A5B32A008EA96A /* percsampler.pd */; };
 		566CBF1119A5B32A008EA96A /* slicesampler.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0919A5B32A008EA96A /* slicesampler.pd */; };
 		566CBF1219A5B32A008EA96A /* stereovol.pd in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF0A19A5B32A008EA96A /* stereovol.pd */; };
+		566CBF1819A5C569008EA96A /* snow-crushing-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF1319A5C569008EA96A /* snow-crushing-2.wav */; };
+		566CBF1919A5C569008EA96A /* snow-sliding-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF1419A5C569008EA96A /* snow-sliding-2.wav */; };
+		566CBF1A19A5C569008EA96A /* snow-wade-soft.wav in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF1519A5C569008EA96A /* snow-wade-soft.wav */; };
+		566CBF1B19A5C569008EA96A /* snow-walking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF1619A5C569008EA96A /* snow-walking.wav */; };
+		566CBF1C19A5C569008EA96A /* snowsteps.wav in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF1719A5C569008EA96A /* snowsteps.wav */; };
 		567C15C51978D4B3002E2BD3 /* F53OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A41978D4B3002E2BD3 /* F53OSCBundle.m */; };
 		567C15C61978D4B3002E2BD3 /* F53OSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A61978D4B3002E2BD3 /* F53OSCClient.m */; };
 		567C15C71978D4B3002E2BD3 /* F53OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A91978D4B3002E2BD3 /* F53OSCMessage.m */; };
@@ -432,7 +437,6 @@
 		56FA9ACC14F0580700628FEF /* almglockenC.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AC214F0580700628FEF /* almglockenC.wav */; };
 		56FA9AD614F07B5900628FEF /* bellsynth.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AD414F07B5900628FEF /* bellsynth.pd */; };
 		56FA9AD714F07B5900628FEF /* volumeRandomise.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AD514F07B5900628FEF /* volumeRandomise.pd */; };
-		56FA9ADD14F152CB00628FEF /* snowsteps-short-mono.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9ADC14F152CB00628FEF /* snowsteps-short-mono.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -486,6 +490,11 @@
 		566CBF0819A5B32A008EA96A /* percsampler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = percsampler.pd; path = Resources/percsampler.pd; sourceTree = "<group>"; };
 		566CBF0919A5B32A008EA96A /* slicesampler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = slicesampler.pd; path = Resources/slicesampler.pd; sourceTree = "<group>"; };
 		566CBF0A19A5B32A008EA96A /* stereovol.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stereovol.pd; path = Resources/stereovol.pd; sourceTree = "<group>"; };
+		566CBF1319A5C569008EA96A /* snow-crushing-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-crushing-2.wav"; path = "Resources/snow-crushing-2.wav"; sourceTree = "<group>"; };
+		566CBF1419A5C569008EA96A /* snow-sliding-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-sliding-2.wav"; path = "Resources/snow-sliding-2.wav"; sourceTree = "<group>"; };
+		566CBF1519A5C569008EA96A /* snow-wade-soft.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-wade-soft.wav"; path = "Resources/snow-wade-soft.wav"; sourceTree = "<group>"; };
+		566CBF1619A5C569008EA96A /* snow-walking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-walking.wav"; path = "Resources/snow-walking.wav"; sourceTree = "<group>"; };
+		566CBF1719A5C569008EA96A /* snowsteps.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = snowsteps.wav; path = Resources/snowsteps.wav; sourceTree = "<group>"; };
 		567C15A21978D4B3002E2BD3 /* F53OSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSC.h; sourceTree = "<group>"; };
 		567C15A31978D4B3002E2BD3 /* F53OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCBundle.h; sourceTree = "<group>"; };
 		567C15A41978D4B3002E2BD3 /* F53OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCBundle.m; sourceTree = "<group>"; };
@@ -922,7 +931,6 @@
 		56FA9AC214F0580700628FEF /* almglockenC.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = almglockenC.wav; sourceTree = "<group>"; };
 		56FA9AD414F07B5900628FEF /* bellsynth.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bellsynth.pd; path = Resources/bellsynth.pd; sourceTree = "<group>"; };
 		56FA9AD514F07B5900628FEF /* volumeRandomise.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = volumeRandomise.pd; path = Resources/volumeRandomise.pd; sourceTree = "<group>"; };
-		56FA9ADC14F152CB00628FEF /* snowsteps-short-mono.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snowsteps-short-mono.wav"; path = "Resources/snowsteps-short-mono.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -959,10 +967,14 @@
 		5612059314F5B3EF007EFBB9 /* fieldrecordings */ = {
 			isa = PBXGroup;
 			children = (
+				566CBF1319A5C569008EA96A /* snow-crushing-2.wav */,
+				566CBF1419A5C569008EA96A /* snow-sliding-2.wav */,
+				566CBF1519A5C569008EA96A /* snow-wade-soft.wav */,
+				566CBF1619A5C569008EA96A /* snow-walking.wav */,
+				566CBF1719A5C569008EA96A /* snowsteps.wav */,
 				56FA97BC14EFCC9B00628FEF /* snow-crushing-1.wav */,
 				56FA97BE14EFCC9B00628FEF /* snow-sliding-1.wav */,
 				56FA97BF14EFCC9B00628FEF /* snow-wade-medium.wav */,
-				56FA9ADC14F152CB00628FEF /* snowsteps-short-mono.wav */,
 			);
 			name = fieldrecordings;
 			sourceTree = "<group>";
@@ -1655,6 +1667,7 @@
 				56FA994114EFCCB200628FEF /* c_ead-help.pd in Resources */,
 				56FA994214EFCCB200628FEF /* c_ead.pd in Resources */,
 				56FA994314EFCCB200628FEF /* c_frand-help.pd in Resources */,
+				566CBF1A19A5C569008EA96A /* snow-wade-soft.wav in Resources */,
 				56FA994414EFCCB200628FEF /* c_frand.pd in Resources */,
 				56FA994514EFCCB200628FEF /* c_frombus-help.pd in Resources */,
 				56FA994614EFCCB200628FEF /* c_frombus.pd in Resources */,
@@ -1705,6 +1718,7 @@
 				56FA997214EFCCB200628FEF /* e_chorusr-help.pd in Resources */,
 				566CBF0C19A5B32A008EA96A /* cpmlooper.pd in Resources */,
 				56FA997314EFCCB200628FEF /* e_chorusr.pd in Resources */,
+				566CBF1B19A5C569008EA96A /* snow-walking.wav in Resources */,
 				56FA997414EFCCB200628FEF /* e_circlepan-help.pd in Resources */,
 				56FA997514EFCCB200628FEF /* e_circlepan.pd in Resources */,
 				56FA997614EFCCB200628FEF /* e_dubdel-help.pd in Resources */,
@@ -1722,6 +1736,7 @@
 				56FA998214EFCCB200628FEF /* e_graindelread.pd in Resources */,
 				56FA998314EFCCB200628FEF /* e_lop2-help.pd in Resources */,
 				56FA998414EFCCB200628FEF /* e_lop2.pd in Resources */,
+				566CBF1919A5C569008EA96A /* snow-sliding-2.wav in Resources */,
 				56FA998514EFCCB200628FEF /* e_lop4-help.pd in Resources */,
 				56FA998614EFCCB200628FEF /* e_lop4.pd in Resources */,
 				56FA998714EFCCB200628FEF /* e_noclickdel-help.pd in Resources */,
@@ -1830,6 +1845,7 @@
 				56FA99E714EFCCB200628FEF /* m_ratio2intv-help.pd in Resources */,
 				56FA99E814EFCCB200628FEF /* m_ratio2intv.pd in Resources */,
 				56FA99E914EFCCB200628FEF /* m_scale-help.pd in Resources */,
+				566CBF1819A5C569008EA96A /* snow-crushing-2.wav in Resources */,
 				56FA99EA14EFCCB200628FEF /* m_scale.pd in Resources */,
 				56FA99EB14EFCCB200628FEF /* m_sm2ms-help.pd in Resources */,
 				56FA99EC14EFCCB200628FEF /* m_sm2ms.pd in Resources */,
@@ -1886,6 +1902,7 @@
 				56FA9A1D14EFCCB200628FEF /* s_fplaytable2.pd in Resources */,
 				56FA9A1E14EFCCB200628FEF /* s_guitar-help.pd in Resources */,
 				56FA9A1F14EFCCB200628FEF /* s_guitar.pd in Resources */,
+				566CBF1C19A5C569008EA96A /* snowsteps.wav in Resources */,
 				56FA9A2014EFCCB200628FEF /* s_hstr-help.pd in Resources */,
 				56FA9A2114EFCCB200628FEF /* s_hstr.pd in Resources */,
 				56FA9A2214EFCCB200628FEF /* s_looper-help.pd in Resources */,
@@ -2009,7 +2026,6 @@
 				56FA9ACC14F0580700628FEF /* almglockenC.wav in Resources */,
 				56FA9AD614F07B5900628FEF /* bellsynth.pd in Resources */,
 				56FA9AD714F07B5900628FEF /* volumeRandomise.pd in Resources */,
-				56FA9ADD14F152CB00628FEF /* snowsteps-short-mono.wav in Resources */,
 				5612059614F5B5CB007EFBB9 /* snowapp2.pd in Resources */,
 				5665F2C214FFA0ED00321D1B /* cymbal2.wav in Resources */,
 				5665F2C314FFA0ED00321D1B /* cymbal4.wav in Resources */,

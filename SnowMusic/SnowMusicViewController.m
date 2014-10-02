@@ -25,6 +25,7 @@
 #define CYMBALTRIGGERED @"cymbalTriggered"
 #define CLUSTERTRIGGERED @"clusterTriggered"
 #define NEW_SLIDING_SOUND @"chooseNewSlidingSound"
+#define NEW_TAP_SOUND @"chooseNewTapSound"
 
 #define ASSIST_STATE_NOTHING 0
 #define ASSIST_STATE_ASSISTING 1
@@ -116,6 +117,9 @@
     self.gestureAssistGroup = @[@"n"];
     self.lastGestureClass = @0;
     self.lastGesture = @"n";
+    
+    [self changeSwipeSound];
+    [self changeTapSound];
 }
 
 -(CGFloat)calculateDistanceFromCenter:(CGPoint)touchPoint {
@@ -269,6 +273,12 @@
 
 -(void) changeSwipeSound {
     [PdBase sendBangToReceiver:NEW_SLIDING_SOUND];
+    NSLog(@"Changing Slide Sound.");
+}
+
+-(void) changeTapSound {
+    [PdBase sendBangToReceiver:NEW_TAP_SOUND];
+    NSLog(@"Changing Tap Sound.");
 }
 
 
@@ -368,6 +378,7 @@
                 self.gestureAssistState = ASSIST_STATE_ASSISTING;
                 NSLog(@"ASSIST: Assisting with swirl Gestures.");
                 self.gestureAssistGroup = SWIRL_GESTURES;
+                if (arc4random_uniform(100) < 20) [self changeTapSound];
                 
                 if (arc4random_uniform(10)>5) {
                     [self.snowSwitch setOn:YES animated:YES];
@@ -382,6 +393,7 @@
                 self.gestureAssistState = ASSIST_STATE_ASSISTING;
                 NSLog(@"ASSIST: Assisting with swipe Gestures.");
                 self.gestureAssistGroup = SWIPE_GESTURES;
+                if (arc4random_uniform(100) < 20) [self changeTapSound];
                 
                 if (arc4random_uniform(10)>5) {
                     [self.snowSwitch setOn:YES animated:YES];
@@ -422,6 +434,7 @@
 
 -(void)didReceiveEnsembleEvent:(NSString *)event forDevice:(NSString *)device withMeasure:(NSNumber *)measure {
     [self changeSwipeSound];
+    if (arc4random_uniform(100) < 40) [self changeTapSound];
     // threshold starts at 10
     // 1 - 30
     // 2 - 50
