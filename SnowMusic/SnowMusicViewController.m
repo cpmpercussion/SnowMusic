@@ -39,10 +39,6 @@
 
 #define GESTURE_GROUPS @{@"n":@0,@"ft":@1,@"st":@1,@"c":@1,@"fs":@2,@"fsa":@2,@"ss":@3,@"bs":@3,@"vss":@3}
 
-@interface UITouch (Private)
--(float)_pathMajorRadius;
-@end
-
 @interface SnowMusicViewController () <PGMidiDelegate, PGMidiSourceDelegate>
 @property (strong,nonatomic) MetatoneNetworkManager *networkManager;
 @property (nonatomic) float distanceToCentre;
@@ -171,16 +167,10 @@
     [self.touchView drawTouchCircleAt:touchPoint];
     CGFloat ratioToCentre = [self calculateDistanceFromCenter:touchPoint] / self.distanceToCentre;
     
-    int velocity = floorf(15 + (((touch._pathMajorRadius - 5.0)/16) * 115));
+    int velocity = floorf(15 + (110*((touch.majorRadius)/80)));
+    NSLog(@"Velocity: %d",velocity);
     if (velocity > 127) velocity = 127;
     if (velocity < 0) velocity = 0;
-    
-    // Send to Pd
-//    if (self.tapMode == SNOWMUSIC_NOTE_MODE) {
-//        if (self.newIdeaNumber > 0) {
-////            distance = distance / self.newIdeaNumber;
-//        }
-//    }
     
     [PdBase sendFloat:ratioToCentre toReceiver:@"snowStepSlice"];
     [PdBase sendFloat:((float) velocity) / 127.0 toReceiver:@"tapdistance" ];
@@ -236,13 +226,6 @@
     float value = (sender.on) ? 1 : 0;
     [PdBase sendFloat:value toReceiver:@"snowSwitch"];
     if (self.oscLogging) [self.networkManager sendMesssageSwitch:@"snowSwitch" On:sender.on];
-    
-//    if (self.snowSwitch.on)
-//    {
-//        self.tapMode = SNOWMUSIC_NOTE_MODE;
-//    } else {
-//        self.tapMode = SNOWMUSIC_SNOW_MODE;
-//    }    
 }
 
 #pragma mark - Note Methods
