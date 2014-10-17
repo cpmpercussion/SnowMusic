@@ -11,12 +11,9 @@
 		560A8BAF19F0C52E002FE490 /* SnowyGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 560A8BAE19F0C52E002FE490 /* SnowyGround.png */; };
 		5612059614F5B5CB007EFBB9 /* snowapp2.pd in Resources */ = {isa = PBXBuildFile; fileRef = 5612059514F5B5CB007EFBB9 /* snowapp2.pd */; };
 		563CFDCC19F0C079001B0C2E /* MetatoneMidiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */; };
-		564084FF15F62CFD00CC2314 /* SnowBackgroundiPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */; };
-		5640850015F62CFD00CC2314 /* SnowBackgroundiPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */; };
 		564580F018D3C58A009E1CA9 /* crotale-C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 564580EF18D3C58A009E1CA9 /* crotale-C.wav */; };
 		564580F318D3C598009E1CA9 /* crotalesynth.pd in Resources */ = {isa = PBXBuildFile; fileRef = 564580F218D3C598009E1CA9 /* crotalesynth.pd */; };
 		5648F75517F16E3900536BC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5648F75417F16E3900536BC2 /* Images.xcassets */; };
-		5648F75917F1751A00536BC2 /* snowbackground-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5648F75817F1751A00536BC2 /* snowbackground-phone.png */; };
 		5665F2C214FFA0ED00321D1B /* cymbal2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2BF14FFA0ED00321D1B /* cymbal2.wav */; };
 		5665F2C314FFA0ED00321D1B /* cymbal4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2C014FFA0ED00321D1B /* cymbal4.wav */; };
 		5665F2C414FFA0ED00321D1B /* cymbal6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5665F2C114FFA0ED00321D1B /* cymbal6.wav */; };
@@ -49,7 +46,6 @@
 		567C15D31978D4B3002E2BD3 /* NSNumber+F53OSCNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15C11978D4B3002E2BD3 /* NSNumber+F53OSCNumber.m */; };
 		567C15D41978D4B3002E2BD3 /* NSString+F53OSCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15C31978D4B3002E2BD3 /* NSString+F53OSCString.m */; };
 		567C15D51978D4B3002E2BD3 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 567C15C41978D4B3002E2BD3 /* README.markdown */; };
-		5685473F17F1C5FC005AD64A /* snowbackground-phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5685473E17F1C5FC005AD64A /* snowbackground-phone@2x.png */; };
 		56999F2E16D4916200C1C6D5 /* PGMidi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2916D4916200C1C6D5 /* PGMidi.mm */; };
 		56999F2F16D4916200C1C6D5 /* PGMidiAllSources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2B16D4916200C1C6D5 /* PGMidiAllSources.mm */; };
 		56999F3016D4916200C1C6D5 /* PGMidiFind.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2D16D4916200C1C6D5 /* PGMidiFind.mm */; };
@@ -479,12 +475,9 @@
 		5612059514F5B5CB007EFBB9 /* snowapp2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snowapp2.pd; path = Resources/snowapp2.pd; sourceTree = "<group>"; };
 		563CFDCA19F0C079001B0C2E /* MetatoneMidiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetatoneMidiManager.h; sourceTree = "<group>"; };
 		563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetatoneMidiManager.m; sourceTree = "<group>"; };
-		564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SnowBackgroundiPad.png; path = Resources/backgrounds/SnowBackgroundiPad.png; sourceTree = "<group>"; };
-		564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SnowBackgroundiPad@2x.png"; path = "Resources/backgrounds/SnowBackgroundiPad@2x.png"; sourceTree = "<group>"; };
 		564580EF18D3C58A009E1CA9 /* crotale-C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "crotale-C.wav"; sourceTree = "<group>"; };
 		564580F218D3C598009E1CA9 /* crotalesynth.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = crotalesynth.pd; path = Resources/crotalesynth.pd; sourceTree = "<group>"; };
 		5648F75417F16E3900536BC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5648F75817F1751A00536BC2 /* snowbackground-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "snowbackground-phone.png"; path = "Resources/backgrounds/snowbackground-phone.png"; sourceTree = "<group>"; };
 		5665F2BF14FFA0ED00321D1B /* cymbal2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal2.wav; sourceTree = "<group>"; };
 		5665F2C014FFA0ED00321D1B /* cymbal4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal4.wav; sourceTree = "<group>"; };
 		5665F2C114FFA0ED00321D1B /* cymbal6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cymbal6.wav; sourceTree = "<group>"; };
@@ -536,7 +529,6 @@
 		567C15C21978D4B3002E2BD3 /* NSString+F53OSCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+F53OSCString.h"; sourceTree = "<group>"; };
 		567C15C31978D4B3002E2BD3 /* NSString+F53OSCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+F53OSCString.m"; sourceTree = "<group>"; };
 		567C15C41978D4B3002E2BD3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
-		5685473E17F1C5FC005AD64A /* snowbackground-phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "snowbackground-phone@2x.png"; path = "Resources/backgrounds/snowbackground-phone@2x.png"; sourceTree = "<group>"; };
 		56999F2616D4916200C1C6D5 /* iOSVersionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSVersionDetection.h; sourceTree = "<group>"; };
 		56999F2716D4916200C1C6D5 /* PGArc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGArc.h; sourceTree = "<group>"; };
 		56999F2816D4916200C1C6D5 /* PGMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidi.h; sourceTree = "<group>"; };
@@ -1039,17 +1031,6 @@
 			path = MetatoneOSC;
 			sourceTree = "<group>";
 		};
-		5685474017F1C780005AD64A /* backgrounds */ = {
-			isa = PBXGroup;
-			children = (
-				5648F75817F1751A00536BC2 /* snowbackground-phone.png */,
-				5685473E17F1C5FC005AD64A /* snowbackground-phone@2x.png */,
-				564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */,
-				564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */,
-			);
-			name = backgrounds;
-			sourceTree = "<group>";
-		};
 		56999F2516D4916200C1C6D5 /* PGMidi */ = {
 			isa = PBXGroup;
 			children = (
@@ -1151,7 +1132,6 @@
 				566CBF0819A5B32A008EA96A /* percsampler.pd */,
 				566CBF0919A5B32A008EA96A /* slicesampler.pd */,
 				566CBF0A19A5B32A008EA96A /* stereovol.pd */,
-				5685474017F1C780005AD64A /* backgrounds */,
 				5612059414F5B464007EFBB9 /* cpmlibs */,
 				5612059314F5B3EF007EFBB9 /* fieldrecordings */,
 				56FA9AC114F0580700628FEF /* percsamples */,
@@ -1919,7 +1899,6 @@
 				56FA9A2014EFCCB200628FEF /* s_hstr-help.pd in Resources */,
 				56FA9A2114EFCCB200628FEF /* s_hstr.pd in Resources */,
 				56FA9A2214EFCCB200628FEF /* s_looper-help.pd in Resources */,
-				5685473F17F1C5FC005AD64A /* snowbackground-phone@2x.png in Resources */,
 				56FA9A2314EFCCB200628FEF /* s_looper.pd in Resources */,
 				56FA9A2414EFCCB200628FEF /* s_loopsmooth-help.pd in Resources */,
 				56FA9A2514EFCCB200628FEF /* s_loopsmooth.pd in Resources */,
@@ -1992,7 +1971,6 @@
 				56FA9A6814EFCCB200628FEF /* u_loader-help.pd in Resources */,
 				56FA9A6914EFCCB200628FEF /* u_loader.pd in Resources */,
 				56FA9A6A14EFCCB200628FEF /* u_loadmeter-help.pd in Resources */,
-				5648F75917F1751A00536BC2 /* snowbackground-phone.png in Resources */,
 				56FA9A6B14EFCCB200628FEF /* u_loadmeter.pd in Resources */,
 				56FA9A6C14EFCCB200628FEF /* u_lowpass-help.pd in Resources */,
 				56FA9A6D14EFCCB200628FEF /* u_lowpass.pd in Resources */,
@@ -2043,8 +2021,6 @@
 				5665F2C214FFA0ED00321D1B /* cymbal2.wav in Resources */,
 				5665F2C314FFA0ED00321D1B /* cymbal4.wav in Resources */,
 				5665F2C414FFA0ED00321D1B /* cymbal6.wav in Resources */,
-				564084FF15F62CFD00CC2314 /* SnowBackgroundiPad.png in Resources */,
-				5640850015F62CFD00CC2314 /* SnowBackgroundiPad@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
