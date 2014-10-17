@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		560A8BAC19F0C371002FE490 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560A8BAB19F0C371002FE490 /* Launch Screen.xib */; };
+		560A8BAF19F0C52E002FE490 /* SnowyGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 560A8BAE19F0C52E002FE490 /* SnowyGround.png */; };
 		5612059614F5B5CB007EFBB9 /* snowapp2.pd in Resources */ = {isa = PBXBuildFile; fileRef = 5612059514F5B5CB007EFBB9 /* snowapp2.pd */; };
 		563CFDCC19F0C079001B0C2E /* MetatoneMidiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */; };
 		564084FF15F62CFD00CC2314 /* SnowBackgroundiPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */; };
@@ -474,6 +475,7 @@
 
 /* Begin PBXFileReference section */
 		560A8BAB19F0C371002FE490 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "SnowMusic/Launch Screen.xib"; sourceTree = "<group>"; };
+		560A8BAE19F0C52E002FE490 /* SnowyGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SnowyGround.png; sourceTree = "<group>"; };
 		5612059514F5B5CB007EFBB9 /* snowapp2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snowapp2.pd; path = Resources/snowapp2.pd; sourceTree = "<group>"; };
 		563CFDCA19F0C079001B0C2E /* MetatoneMidiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetatoneMidiManager.h; sourceTree = "<group>"; };
 		563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetatoneMidiManager.m; sourceTree = "<group>"; };
@@ -1109,6 +1111,7 @@
 		56FA5EBA14E70F78008A2347 /* SnowMusic */ = {
 			isa = PBXGroup;
 			children = (
+				560A8BAE19F0C52E002FE490 /* SnowyGround.png */,
 				56C7C6291979393B003FD551 /* MetatoneTouchView.h */,
 				56C7C62A1979393B003FD551 /* MetatoneTouchView.m */,
 				56FA5EC914E70F78008A2347 /* MainStoryboard_iPad.storyboard */,
@@ -1733,6 +1736,7 @@
 				56FA997614EFCCB200628FEF /* e_dubdel-help.pd in Resources */,
 				56FA997714EFCCB200628FEF /* e_dubdel.pd in Resources */,
 				56FA997814EFCCB200628FEF /* e_dynproc-help.pd in Resources */,
+				560A8BAF19F0C52E002FE490 /* SnowyGround.png in Resources */,
 				56FA997914EFCCB200628FEF /* e_dynproc.pd in Resources */,
 				56FA997A14EFCCB200628FEF /* e_fbdelay-help.pd in Resources */,
 				56FA997B14EFCCB200628FEF /* e_fbdelay.pd in Resources */,
