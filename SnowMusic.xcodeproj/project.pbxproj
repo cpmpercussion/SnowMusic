@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5612059614F5B5CB007EFBB9 /* snowapp2.pd in Resources */ = {isa = PBXBuildFile; fileRef = 5612059514F5B5CB007EFBB9 /* snowapp2.pd */; };
+		563CFDCC19F0C079001B0C2E /* MetatoneMidiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */; };
 		564084FF15F62CFD00CC2314 /* SnowBackgroundiPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */; };
 		5640850015F62CFD00CC2314 /* SnowBackgroundiPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */; };
 		564580F018D3C58A009E1CA9 /* crotale-C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 564580EF18D3C58A009E1CA9 /* crotale-C.wav */; };
@@ -472,6 +473,8 @@
 
 /* Begin PBXFileReference section */
 		5612059514F5B5CB007EFBB9 /* snowapp2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snowapp2.pd; path = Resources/snowapp2.pd; sourceTree = "<group>"; };
+		563CFDCA19F0C079001B0C2E /* MetatoneMidiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetatoneMidiManager.h; sourceTree = "<group>"; };
+		563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetatoneMidiManager.m; sourceTree = "<group>"; };
 		564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SnowBackgroundiPad.png; path = Resources/backgrounds/SnowBackgroundiPad.png; sourceTree = "<group>"; };
 		564084FE15F62CFD00CC2314 /* SnowBackgroundiPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SnowBackgroundiPad@2x.png"; path = "Resources/backgrounds/SnowBackgroundiPad@2x.png"; sourceTree = "<group>"; };
 		564580EF18D3C58A009E1CA9 /* crotale-C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "crotale-C.wav"; sourceTree = "<group>"; };
@@ -1046,6 +1049,8 @@
 		56999F2516D4916200C1C6D5 /* PGMidi */ = {
 			isa = PBXGroup;
 			children = (
+				563CFDCA19F0C079001B0C2E /* MetatoneMidiManager.h */,
+				563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */,
 				56999F2616D4916200C1C6D5 /* iOSVersionDetection.h */,
 				56999F2716D4916200C1C6D5 /* PGArc.h */,
 				56999F2816D4916200C1C6D5 /* PGMidi.h */,
@@ -2075,6 +2080,7 @@
 				567C15CE1978D4B3002E2BD3 /* GCDAsyncUdpSocket.m in Sources */,
 				567C15D11978D4B3002E2BD3 /* NSData+F53OSCBlob.m in Sources */,
 				567C15CB1978D4B3002E2BD3 /* F53OSCSocket.m in Sources */,
+				563CFDCC19F0C079001B0C2E /* MetatoneMidiManager.m in Sources */,
 				56FA5EC514E70F78008A2347 /* SnowMusicAppDelegate.m in Sources */,
 				56FA5ECE14E70F78008A2347 /* SnowMusicViewController.m in Sources */,
 				567C15C61978D4B3002E2BD3 /* F53OSCClient.m in Sources */,
