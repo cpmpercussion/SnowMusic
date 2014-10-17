@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560A8BAC19F0C371002FE490 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560A8BAB19F0C371002FE490 /* Launch Screen.xib */; };
 		5612059614F5B5CB007EFBB9 /* snowapp2.pd in Resources */ = {isa = PBXBuildFile; fileRef = 5612059514F5B5CB007EFBB9 /* snowapp2.pd */; };
 		563CFDCC19F0C079001B0C2E /* MetatoneMidiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */; };
 		564084FF15F62CFD00CC2314 /* SnowBackgroundiPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 564084FD15F62CFD00CC2314 /* SnowBackgroundiPad.png */; };
@@ -472,6 +473,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		560A8BAB19F0C371002FE490 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "SnowMusic/Launch Screen.xib"; sourceTree = "<group>"; };
 		5612059514F5B5CB007EFBB9 /* snowapp2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snowapp2.pd; path = Resources/snowapp2.pd; sourceTree = "<group>"; };
 		563CFDCA19F0C079001B0C2E /* MetatoneMidiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetatoneMidiManager.h; sourceTree = "<group>"; };
 		563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetatoneMidiManager.m; sourceTree = "<group>"; };
@@ -1067,6 +1069,7 @@
 		56FA5EA514E70F78008A2347 = {
 			isa = PBXGroup;
 			children = (
+				560A8BAB19F0C371002FE490 /* Launch Screen.xib */,
 				567C15A11978D4B3002E2BD3 /* MetatoneOSC */,
 				56999F2516D4916200C1C6D5 /* PGMidi */,
 				56FA5EF214E70FB6008A2347 /* Resources */,
@@ -1659,6 +1662,7 @@
 				56FA993414EFCCB200628FEF /* c.txt in Resources */,
 				56FA993514EFCCB200628FEF /* c_adsr-help.pd in Resources */,
 				56FA993614EFCCB200628FEF /* c_adsr.pd in Resources */,
+				560A8BAC19F0C371002FE490 /* Launch Screen.xib in Resources */,
 				56FA993714EFCCB200628FEF /* c_adsrj-help.pd in Resources */,
 				56FA993814EFCCB200628FEF /* c_adsrj.pd in Resources */,
 				56FA993914EFCCB200628FEF /* c_bangx-help.pd in Resources */,
@@ -2192,7 +2196,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
@@ -2312,7 +2315,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
@@ -2329,7 +2331,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
