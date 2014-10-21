@@ -14,45 +14,20 @@
                         <viewControllerLayoutGuide type="bottom" id="Aga-yB-EXG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SnowyGround.png" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-Bd-0kv">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
-                            <view opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaP-TG-Rh8" userLabel="Metatone Touch View" customClass="MetatoneTouchView">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndc-s1-W43" userLabel="cymbal switch" colorLabel="IBBuiltInLabel-Yellow">
-                                <rect key="frame" x="499" y="8" width="51" height="31"/>
-                                <color key="tintColor" red="0.58039218189999997" green="0.73725491759999995" blue="0.77647066119999997" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
-                                <connections>
-                                    <action selector="backgroundsOn:" destination="2" eventType="valueChanged" id="a82-CL-0fX"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-9h-rqo" userLabel="clusters switch" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="499" y="281" width="51" height="31"/>
-                                <color key="tintColor" red="0.58039218189999997" green="0.73725491759999995" blue="0.77647066119999997" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
-                                <connections>
-                                    <action selector="clustersSwitched:" destination="2" eventType="valueChanged" id="dzK-QO-ubV"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7n-At-wLG" userLabel="snow slide switch">
-                                <rect key="frame" x="24" y="281" width="51" height="31"/>
-                                <color key="tintColor" red="0.58039218187332153" green="0.73725491762161255" blue="0.77647066116333008" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
-                                <connections>
-                                    <action selector="snowSwitched:" destination="2" eventType="valueChanged" id="iSN-Zf-t7N"/>
-                                </connections>
-                            </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Snow" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="BTl-jM-58y">
-                                <rect key="frame" x="81" y="286" width="42" height="21"/>
+                                <rect key="frame" x="81" y="734" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bells" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="n8y-H0-eau">
-                                <rect key="frame" x="456" y="286" width="35" height="21"/>
+                                <rect key="frame" x="912" y="734" width="35" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,11 +42,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cymbals" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JsR-Jp-gCw">
-                                <rect key="frame" x="427" y="13" width="64" height="21"/>
+                                <rect key="frame" x="883" y="13" width="64" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaP-TG-Rh8" userLabel="Metatone Touch View" customClass="MetatoneTouchView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndc-s1-W43" userLabel="cymbal switch" colorLabel="IBBuiltInLabel-Yellow">
+                                <rect key="frame" x="955" y="8" width="51" height="31"/>
+                                <color key="tintColor" red="0.58039218189999997" green="0.73725491759999995" blue="0.77647066119999997" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="backgroundsOn:" destination="2" eventType="valueChanged" id="a82-CL-0fX"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-9h-rqo" userLabel="clusters switch" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="955" y="729" width="51" height="31"/>
+                                <color key="tintColor" red="0.58039218189999997" green="0.73725491759999995" blue="0.77647066119999997" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="clustersSwitched:" destination="2" eventType="valueChanged" id="dzK-QO-ubV"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7n-At-wLG" userLabel="snow slide switch">
+                                <rect key="frame" x="24" y="729" width="51" height="31"/>
+                                <color key="tintColor" red="0.58039218187332153" green="0.73725491762161255" blue="0.77647066116333008" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="snowSwitched:" destination="2" eventType="valueChanged" id="iSN-Zf-t7N"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -90,6 +90,7 @@
                             <constraint firstAttribute="centerX" secondItem="uSX-Bd-0kv" secondAttribute="centerX" id="PaK-hF-z3N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uSX-Bd-0kv" secondAttribute="trailing" constant="-16" id="QBs-4o-9Rb"/>
                             <constraint firstItem="E7n-At-wLG" firstAttribute="leading" secondItem="5" secondAttribute="leadingMargin" id="RuM-uh-2IK"/>
+                            <constraint firstItem="Aga-yB-EXG" firstAttribute="top" secondItem="uSX-Bd-0kv" secondAttribute="bottom" id="SJD-NK-VUk"/>
                             <constraint firstItem="E7n-At-wLG" firstAttribute="leading" secondItem="5" secondAttribute="leadingMargin" constant="4" id="T6V-lm-Id9"/>
                             <constraint firstAttribute="centerY" secondItem="uSX-Bd-0kv" secondAttribute="centerY" id="UsZ-ym-igM"/>
                             <constraint firstItem="ndc-s1-W43" firstAttribute="leading" secondItem="JsR-Jp-gCw" secondAttribute="trailing" constant="8" symbolic="YES" id="VX2-9c-fZv"/>
@@ -113,13 +114,17 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="05y-Xj-2Ky"/>
                                 <exclude reference="0ct-vr-sKi"/>
+                                <exclude reference="EEt-hb-AxX"/>
                                 <exclude reference="PaK-hF-z3N"/>
                                 <exclude reference="QBs-4o-9Rb"/>
                                 <exclude reference="UsZ-ym-igM"/>
                                 <exclude reference="5Ci-4Q-XQ3"/>
                                 <exclude reference="NrB-5M-TWQ"/>
                                 <exclude reference="RuM-uh-2IK"/>
+                                <exclude reference="g8n-wk-pV1"/>
+                                <exclude reference="zMi-Xf-7or"/>
                                 <exclude reference="cBQ-hD-J6T"/>
                             </mask>
                         </variation>
@@ -128,7 +133,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="backgroundSwitch" destination="ndc-s1-W43" id="uSI-B3-GeR"/>
                         <outlet property="clusterSwitchLabel" destination="n8y-H0-eau" id="zWm-0H-f1V"/>
