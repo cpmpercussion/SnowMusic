@@ -52,7 +52,6 @@
 
 - (void)receiveList:(NSArray *)list fromSource:(NSString *)source {
     NSLog(@"PD LIST: %@",source);
-
 }
 
 - (void)receiveFloat:(float)received fromSource:(NSString *)source {
@@ -62,11 +61,10 @@
 
 - (void)receiveMessage:(NSString *)message withArguments:(NSArray *)arguments fromSource:(NSString *)source {
     NSLog(@"PD string: %@",source);
-
 }
 
 - (void)receivePrint:(NSString *)message {
-//    NSLog(@"PD print: %@",message);
+    NSLog(@"PD print: %@",message);
 }
 
 - (void)receiveSymbol:(NSString *)symbol fromSource:(NSString *)source {
@@ -94,7 +92,7 @@
     self.newIdeaNumber = 0;
     [self setupOscLogging];
     
-//    [self.clustersOn setHidden:YES];
+    //    [self.clustersOn setHidden:YES];
     [self.distanceLabel setHidden:YES];
     [self.cymbalSwitchLabel setHidden:NO];
     [self.snowSwitchLabel setHidden:NO];
@@ -119,8 +117,8 @@
 }
 
 -(CGFloat)calculateDistanceFromCenter:(CGPoint)touchPoint {
-    CGFloat xDist = (touchPoint.x - self.view.center.y);
-    CGFloat yDist = (touchPoint.y - self.view.center.x);
+    CGFloat xDist = (touchPoint.x - self.view.center.x);
+    CGFloat yDist = (touchPoint.y - self.view.center.y);
     return sqrt((xDist * xDist) + (yDist * yDist));
 }
 
@@ -168,7 +166,7 @@
     CGFloat ratioToCentre = [self calculateDistanceFromCenter:touchPoint] / self.distanceToCentre;
     
     int velocity = floorf(15 + (110*((touch.majorRadius)/80)));
-    NSLog(@"Velocity: %d",velocity);
+    //    NSLog(@"Velocity: %d",velocity);
     if (velocity > 127) velocity = 127;
     if (velocity < 0) velocity = 0;
     
@@ -293,7 +291,7 @@
 
 -(void) loggingServerFoundWithAddress:(NSString *)address andPort:(int)port andHostname:(NSString *)hostname {
     [self.midiInterfaceLabel setHidden:NO];
-    [self.midiInterfaceLabel setText:[NSString stringWithFormat:@"connected to %@ 👍", hostname]];
+    [self.midiInterfaceLabel setText:[NSString stringWithFormat:@"%@ 👍", hostname]];
     
     if (HARDCORE_SWITCH_HIDING) {
         [self hideSwitches];
@@ -306,7 +304,7 @@
 -(void) stoppedSearchingForLoggingServer {
     if (self.oscLogging) {
         [self.midiInterfaceLabel setHidden:NO];
-        [self.midiInterfaceLabel setText: @"classifier not found! 😰"];
+        [self.midiInterfaceLabel setText: @"No Classifier! 😰"];
         [self showSwitches];
     }
 }

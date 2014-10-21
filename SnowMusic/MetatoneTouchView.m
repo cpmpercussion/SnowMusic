@@ -16,7 +16,6 @@
 @interface MetatoneTouchView()
 
 @property (strong, nonatomic) UIImage *lastFrame;
-
 @property (strong, nonatomic) UIColor *touchColour;
 @property (strong, nonatomic) UIColor *loopColour;
 @property (strong, nonatomic) NSString *deviceID;
@@ -80,9 +79,13 @@
     [self.noteCirclePoints addObject:layer];
     
     [CATransaction setAnimationDuration:0.0];
-    CGFloat newX = arc4random_uniform(1024);
-    CGFloat newY = arc4random_uniform(768);
-    layer.position = CGPointMake( newX, newY);
+//    CGFloat newX = arc4random_uniform(1024);
+//    CGFloat newY = arc4random_uniform(768);
+    
+    CGFloat newX = arc4random_uniform(self.bounds.size.width);
+    CGFloat newY = arc4random_uniform(self.bounds.size.height);
+    
+    layer.position = CGPointMake(newX, newY);
     layer.hidden = NO;
     
     float scaleFactor = 1.3 + arc4random_uniform(100)/33;
