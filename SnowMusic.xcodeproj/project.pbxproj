@@ -61,7 +61,6 @@
 		56FA5EBF14E70F78008A2347 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56FA5EBD14E70F78008A2347 /* InfoPlist.strings */; };
 		56FA5EC114E70F78008A2347 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA5EC014E70F78008A2347 /* main.m */; };
 		56FA5EC514E70F78008A2347 /* SnowMusicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA5EC414E70F78008A2347 /* SnowMusicAppDelegate.m */; };
-		56FA5EC814E70F78008A2347 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56FA5EC614E70F78008A2347 /* MainStoryboard_iPhone.storyboard */; };
 		56FA5ECB14E70F78008A2347 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56FA5EC914E70F78008A2347 /* MainStoryboard_iPad.storyboard */; };
 		56FA5ECE14E70F78008A2347 /* SnowMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA5ECD14E70F78008A2347 /* SnowMusicViewController.m */; };
 		56FA5ED614E70F78008A2347 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5ED514E70F78008A2347 /* SenTestingKit.framework */; };
@@ -555,7 +554,6 @@
 		56FA5EC214E70F78008A2347 /* SnowMusic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SnowMusic-Prefix.pch"; sourceTree = "<group>"; };
 		56FA5EC314E70F78008A2347 /* SnowMusicAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnowMusicAppDelegate.h; sourceTree = "<group>"; };
 		56FA5EC414E70F78008A2347 /* SnowMusicAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowMusicAppDelegate.m; sourceTree = "<group>"; };
-		56FA5EC714E70F78008A2347 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		56FA5ECA14E70F78008A2347 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		56FA5ECC14E70F78008A2347 /* SnowMusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnowMusicViewController.h; sourceTree = "<group>"; };
 		56FA5ECD14E70F78008A2347 /* SnowMusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowMusicViewController.m; sourceTree = "<group>"; };
@@ -1096,7 +1094,6 @@
 				56C7C6291979393B003FD551 /* MetatoneTouchView.h */,
 				56C7C62A1979393B003FD551 /* MetatoneTouchView.m */,
 				56FA5EC914E70F78008A2347 /* MainStoryboard_iPad.storyboard */,
-				56FA5EC614E70F78008A2347 /* MainStoryboard_iPhone.storyboard */,
 				56FA5EC314E70F78008A2347 /* SnowMusicAppDelegate.h */,
 				56FA5EC414E70F78008A2347 /* SnowMusicAppDelegate.m */,
 				56A5F78518D329C600B5735A /* ScaleMaker.h */,
@@ -1631,7 +1628,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				56FA5EBF14E70F78008A2347 /* InfoPlist.strings in Resources */,
-				56FA5EC814E70F78008A2347 /* MainStoryboard_iPhone.storyboard in Resources */,
 				56FA5ECB14E70F78008A2347 /* MainStoryboard_iPad.storyboard in Resources */,
 				56FA97C114EFCC9B00628FEF /* snow-crushing-1.wav in Resources */,
 				56FA97C314EFCC9B00628FEF /* snow-sliding-1.wav in Resources */,
@@ -2113,14 +2109,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		56FA5EC614E70F78008A2347 /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56FA5EC714E70F78008A2347 /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
 		56FA5EC914E70F78008A2347 /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2183,7 +2171,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/charles/src/pd-for-ios/libpd/**";
-				VALIDATE_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = AppStore;
