@@ -234,7 +234,7 @@
     int note = (int) (distance * 35);
     
 //    note = [ScaleMaker mixolydian:36 + (self.newIdeaNumber * 3) withNote:note];
-    note = [ScaleMaker mixolydian:32 + (self.newIdeaNumber) withNote:note];
+    note = [ScaleMaker mixolydian:36 + (self.newIdeaNumber) withNote:note];
     [PdBase sendNoteOn:1 pitch:note velocity:velocity];
 }
 

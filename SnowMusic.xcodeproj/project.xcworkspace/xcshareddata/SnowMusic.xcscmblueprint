@@ -1,0 +1,58 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2B0EB831E21915A5997D386C8A6439628AB946BF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2B0EB831E21915A5997D386C8A6439628AB946BF" : 0,
+    "6F7A20C0CDB7BDCD5180DBA15CA6EBFFD435B7B5" : 0,
+    "778D08CA7C55C6E283FAC4140D174E64889DF148" : 0,
+    "8290155778CD077C9D8A85EC03BEA069395BD6EA" : 0,
+    "1A0B07D1631AC7F0F17FCE76695E42D64F01958F" : 0,
+    "5C788FB45371F7A39B6FFB445D10D0EF209EBAE3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5AB20BDD-8770-4C2A-A83B-D74D217867D2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2B0EB831E21915A5997D386C8A6439628AB946BF" : "SnowMusic",
+    "6F7A20C0CDB7BDCD5180DBA15CA6EBFFD435B7B5" : "pd-for-ios\/libpd\/pure-data\/",
+    "778D08CA7C55C6E283FAC4140D174E64889DF148" : "pd-for-ios",
+    "8290155778CD077C9D8A85EC03BEA069395BD6EA" : "SnowMusicMetatoneOSC",
+    "1A0B07D1631AC7F0F17FCE76695E42D64F01958F" : "pd-for-ios\/libpd",
+    "5C788FB45371F7A39B6FFB445D10D0EF209EBAE3" : "PGMidi"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SnowMusic",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SnowMusic.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/libpd\/libpd.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A0B07D1631AC7F0F17FCE76695E42D64F01958F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cpmpercussion\/SnowMusic",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B0EB831E21915A5997D386C8A6439628AB946BF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/petegoodliffe\/PGMidi.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5C788FB45371F7A39B6FFB445D10D0EF209EBAE3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/git.code.sf.net\/p\/pure-data\/pure-data",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6F7A20C0CDB7BDCD5180DBA15CA6EBFFD435B7B5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/libpd\/pd-for-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "778D08CA7C55C6E283FAC4140D174E64889DF148"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cpmpercussion\/MetatoneOSC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8290155778CD077C9D8A85EC03BEA069395BD6EA"
+    }
+  ]
+}

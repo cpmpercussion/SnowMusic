@@ -10,7 +10,6 @@
 		560A8BAC19F0C371002FE490 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560A8BAB19F0C371002FE490 /* Launch Screen.xib */; };
 		560A8BAF19F0C52E002FE490 /* SnowyGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 560A8BAE19F0C52E002FE490 /* SnowyGround.png */; };
 		5612059614F5B5CB007EFBB9 /* snowapp2.pd in Resources */ = {isa = PBXBuildFile; fileRef = 5612059514F5B5CB007EFBB9 /* snowapp2.pd */; };
-		563CFDCC19F0C079001B0C2E /* MetatoneMidiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */; };
 		564580F018D3C58A009E1CA9 /* crotale-C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 564580EF18D3C58A009E1CA9 /* crotale-C.wav */; };
 		564580F318D3C598009E1CA9 /* crotalesynth.pd in Resources */ = {isa = PBXBuildFile; fileRef = 564580F218D3C598009E1CA9 /* crotalesynth.pd */; };
 		5648F75517F16E3900536BC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5648F75417F16E3900536BC2 /* Images.xcassets */; };
@@ -30,6 +29,10 @@
 		566CBF1A19A5C569008EA96A /* snow-wade-soft.wav in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF1519A5C569008EA96A /* snow-wade-soft.wav */; };
 		566CBF1B19A5C569008EA96A /* snow-walking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF1619A5C569008EA96A /* snow-walking.wav */; };
 		566CBF1C19A5C569008EA96A /* snowsteps.wav in Resources */ = {isa = PBXBuildFile; fileRef = 566CBF1719A5C569008EA96A /* snowsteps.wav */; };
+		5679E1221A20335A007C1E2F /* MetatoneMidiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679E1181A20335A007C1E2F /* MetatoneMidiManager.m */; };
+		5679E1231A20335A007C1E2F /* PGMidi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5679E11B1A20335A007C1E2F /* PGMidi.mm */; };
+		5679E1241A20335A007C1E2F /* PGMidiAllSources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5679E11D1A20335A007C1E2F /* PGMidiAllSources.mm */; };
+		5679E1251A20335A007C1E2F /* PGMidiFind.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5679E11F1A20335A007C1E2F /* PGMidiFind.mm */; };
 		567C15C51978D4B3002E2BD3 /* F53OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A41978D4B3002E2BD3 /* F53OSCBundle.m */; };
 		567C15C61978D4B3002E2BD3 /* F53OSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A61978D4B3002E2BD3 /* F53OSCClient.m */; };
 		567C15C71978D4B3002E2BD3 /* F53OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15A91978D4B3002E2BD3 /* F53OSCMessage.m */; };
@@ -46,9 +49,6 @@
 		567C15D31978D4B3002E2BD3 /* NSNumber+F53OSCNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15C11978D4B3002E2BD3 /* NSNumber+F53OSCNumber.m */; };
 		567C15D41978D4B3002E2BD3 /* NSString+F53OSCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C15C31978D4B3002E2BD3 /* NSString+F53OSCString.m */; };
 		567C15D51978D4B3002E2BD3 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 567C15C41978D4B3002E2BD3 /* README.markdown */; };
-		56999F2E16D4916200C1C6D5 /* PGMidi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2916D4916200C1C6D5 /* PGMidi.mm */; };
-		56999F2F16D4916200C1C6D5 /* PGMidiAllSources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2B16D4916200C1C6D5 /* PGMidiAllSources.mm */; };
-		56999F3016D4916200C1C6D5 /* PGMidiFind.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56999F2D16D4916200C1C6D5 /* PGMidiFind.mm */; };
 		56999F3316D4917E00C1C6D5 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56999F3216D4917E00C1C6D5 /* CoreMIDI.framework */; };
 		56A5F78218D3093300B5735A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A5F78118D3093300B5735A /* CFNetwork.framework */; };
 		56A5F78418D3093800B5735A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A5F78318D3093800B5735A /* Security.framework */; };
@@ -472,8 +472,6 @@
 		560A8BAB19F0C371002FE490 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "SnowMusic/Launch Screen.xib"; sourceTree = "<group>"; };
 		560A8BAE19F0C52E002FE490 /* SnowyGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SnowyGround.png; sourceTree = "<group>"; };
 		5612059514F5B5CB007EFBB9 /* snowapp2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snowapp2.pd; path = Resources/snowapp2.pd; sourceTree = "<group>"; };
-		563CFDCA19F0C079001B0C2E /* MetatoneMidiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetatoneMidiManager.h; sourceTree = "<group>"; };
-		563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetatoneMidiManager.m; sourceTree = "<group>"; };
 		564580EF18D3C58A009E1CA9 /* crotale-C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "crotale-C.wav"; sourceTree = "<group>"; };
 		564580F218D3C598009E1CA9 /* crotalesynth.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = crotalesynth.pd; path = Resources/crotalesynth.pd; sourceTree = "<group>"; };
 		5648F75417F16E3900536BC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -494,6 +492,16 @@
 		566CBF1519A5C569008EA96A /* snow-wade-soft.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-wade-soft.wav"; path = "Resources/snow-wade-soft.wav"; sourceTree = "<group>"; };
 		566CBF1619A5C569008EA96A /* snow-walking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snow-walking.wav"; path = "Resources/snow-walking.wav"; sourceTree = "<group>"; };
 		566CBF1719A5C569008EA96A /* snowsteps.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = snowsteps.wav; path = Resources/snowsteps.wav; sourceTree = "<group>"; };
+		5679E1161A20335A007C1E2F /* iOSVersionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSVersionDetection.h; sourceTree = "<group>"; };
+		5679E1171A20335A007C1E2F /* MetatoneMidiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetatoneMidiManager.h; sourceTree = "<group>"; };
+		5679E1181A20335A007C1E2F /* MetatoneMidiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetatoneMidiManager.m; sourceTree = "<group>"; };
+		5679E1191A20335A007C1E2F /* PGArc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGArc.h; sourceTree = "<group>"; };
+		5679E11A1A20335A007C1E2F /* PGMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidi.h; sourceTree = "<group>"; };
+		5679E11B1A20335A007C1E2F /* PGMidi.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidi.mm; sourceTree = "<group>"; };
+		5679E11C1A20335A007C1E2F /* PGMidiAllSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidiAllSources.h; sourceTree = "<group>"; };
+		5679E11D1A20335A007C1E2F /* PGMidiAllSources.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidiAllSources.mm; sourceTree = "<group>"; };
+		5679E11E1A20335A007C1E2F /* PGMidiFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidiFind.h; sourceTree = "<group>"; };
+		5679E11F1A20335A007C1E2F /* PGMidiFind.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidiFind.mm; sourceTree = "<group>"; };
 		567C15A21978D4B3002E2BD3 /* F53OSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSC.h; sourceTree = "<group>"; };
 		567C15A31978D4B3002E2BD3 /* F53OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCBundle.h; sourceTree = "<group>"; };
 		567C15A41978D4B3002E2BD3 /* F53OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCBundle.m; sourceTree = "<group>"; };
@@ -528,14 +536,6 @@
 		567C15C21978D4B3002E2BD3 /* NSString+F53OSCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+F53OSCString.h"; sourceTree = "<group>"; };
 		567C15C31978D4B3002E2BD3 /* NSString+F53OSCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+F53OSCString.m"; sourceTree = "<group>"; };
 		567C15C41978D4B3002E2BD3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
-		56999F2616D4916200C1C6D5 /* iOSVersionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSVersionDetection.h; sourceTree = "<group>"; };
-		56999F2716D4916200C1C6D5 /* PGArc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGArc.h; sourceTree = "<group>"; };
-		56999F2816D4916200C1C6D5 /* PGMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidi.h; sourceTree = "<group>"; };
-		56999F2916D4916200C1C6D5 /* PGMidi.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidi.mm; sourceTree = "<group>"; };
-		56999F2A16D4916200C1C6D5 /* PGMidiAllSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidiAllSources.h; sourceTree = "<group>"; };
-		56999F2B16D4916200C1C6D5 /* PGMidiAllSources.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidiAllSources.mm; sourceTree = "<group>"; };
-		56999F2C16D4916200C1C6D5 /* PGMidiFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidiFind.h; sourceTree = "<group>"; };
-		56999F2D16D4916200C1C6D5 /* PGMidiFind.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidiFind.mm; sourceTree = "<group>"; };
 		56999F3216D4917E00C1C6D5 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		56A5F78118D3093300B5735A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		56A5F78318D3093800B5735A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -988,6 +988,23 @@
 			name = cpmlibs;
 			sourceTree = "<group>";
 		};
+		5679E1141A20335A007C1E2F /* MetatoneMIDI */ = {
+			isa = PBXGroup;
+			children = (
+				5679E1161A20335A007C1E2F /* iOSVersionDetection.h */,
+				5679E1171A20335A007C1E2F /* MetatoneMidiManager.h */,
+				5679E1181A20335A007C1E2F /* MetatoneMidiManager.m */,
+				5679E1191A20335A007C1E2F /* PGArc.h */,
+				5679E11A1A20335A007C1E2F /* PGMidi.h */,
+				5679E11B1A20335A007C1E2F /* PGMidi.mm */,
+				5679E11C1A20335A007C1E2F /* PGMidiAllSources.h */,
+				5679E11D1A20335A007C1E2F /* PGMidiAllSources.mm */,
+				5679E11E1A20335A007C1E2F /* PGMidiFind.h */,
+				5679E11F1A20335A007C1E2F /* PGMidiFind.mm */,
+			);
+			path = MetatoneMIDI;
+			sourceTree = "<group>";
+		};
 		567C15A11978D4B3002E2BD3 /* MetatoneOSC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1029,30 +1046,12 @@
 			path = MetatoneOSC;
 			sourceTree = "<group>";
 		};
-		56999F2516D4916200C1C6D5 /* PGMidi */ = {
-			isa = PBXGroup;
-			children = (
-				563CFDCA19F0C079001B0C2E /* MetatoneMidiManager.h */,
-				563CFDCB19F0C079001B0C2E /* MetatoneMidiManager.m */,
-				56999F2616D4916200C1C6D5 /* iOSVersionDetection.h */,
-				56999F2716D4916200C1C6D5 /* PGArc.h */,
-				56999F2816D4916200C1C6D5 /* PGMidi.h */,
-				56999F2916D4916200C1C6D5 /* PGMidi.mm */,
-				56999F2A16D4916200C1C6D5 /* PGMidiAllSources.h */,
-				56999F2B16D4916200C1C6D5 /* PGMidiAllSources.mm */,
-				56999F2C16D4916200C1C6D5 /* PGMidiFind.h */,
-				56999F2D16D4916200C1C6D5 /* PGMidiFind.mm */,
-			);
-			name = PGMidi;
-			path = ../PGMidi/Sources/PGMidi;
-			sourceTree = "<group>";
-		};
 		56FA5EA514E70F78008A2347 = {
 			isa = PBXGroup;
 			children = (
+				5679E1141A20335A007C1E2F /* MetatoneMIDI */,
 				560A8BAB19F0C371002FE490 /* Launch Screen.xib */,
 				567C15A11978D4B3002E2BD3 /* MetatoneOSC */,
-				56999F2516D4916200C1C6D5 /* PGMidi */,
 				56FA5EF214E70FB6008A2347 /* Resources */,
 				56FA5EBA14E70F78008A2347 /* SnowMusic */,
 				56FA5EB314E70F78008A2347 /* Frameworks */,
@@ -2060,21 +2059,21 @@
 				567C15CE1978D4B3002E2BD3 /* GCDAsyncUdpSocket.m in Sources */,
 				567C15D11978D4B3002E2BD3 /* NSData+F53OSCBlob.m in Sources */,
 				567C15CB1978D4B3002E2BD3 /* F53OSCSocket.m in Sources */,
-				563CFDCC19F0C079001B0C2E /* MetatoneMidiManager.m in Sources */,
+				5679E1231A20335A007C1E2F /* PGMidi.mm in Sources */,
 				56FA5EC514E70F78008A2347 /* SnowMusicAppDelegate.m in Sources */,
 				56FA5ECE14E70F78008A2347 /* SnowMusicViewController.m in Sources */,
+				5679E1241A20335A007C1E2F /* PGMidiAllSources.mm in Sources */,
 				567C15C61978D4B3002E2BD3 /* F53OSCClient.m in Sources */,
 				567C15D31978D4B3002E2BD3 /* NSNumber+F53OSCNumber.m in Sources */,
-				56999F2E16D4916200C1C6D5 /* PGMidi.mm in Sources */,
+				5679E1221A20335A007C1E2F /* MetatoneMidiManager.m in Sources */,
 				567C15D21978D4B3002E2BD3 /* NSDate+F53OSCTimeTag.m in Sources */,
-				56999F2F16D4916200C1C6D5 /* PGMidiAllSources.mm in Sources */,
 				56A5F78718D329C600B5735A /* ScaleMaker.m in Sources */,
 				567C15C51978D4B3002E2BD3 /* F53OSCBundle.m in Sources */,
 				567C15C81978D4B3002E2BD3 /* F53OSCPacket.m in Sources */,
-				56999F3016D4916200C1C6D5 /* PGMidiFind.mm in Sources */,
 				567C15CA1978D4B3002E2BD3 /* F53OSCServer.m in Sources */,
 				566CBF0B19A5B32A008EA96A /* arraysize.c in Sources */,
 				56C7C62B1979393B003FD551 /* MetatoneTouchView.m in Sources */,
+				5679E1251A20335A007C1E2F /* PGMidiFind.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
