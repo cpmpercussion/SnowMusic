@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2B0EB831E21915A5997D386C8A6439628AB946BF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2B0EB831E21915A5997D386C8A6439628AB946BF" : 0,
+    "8290155778CD077C9D8A85EC03BEA069395BD6EA" : 0,
+    "5C788FB45371F7A39B6FFB445D10D0EF209EBAE3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4FBAB324-4DC1-40DE-BF90-02B67E9298E8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2B0EB831E21915A5997D386C8A6439628AB946BF" : "SnowMusic\/",
+    "8290155778CD077C9D8A85EC03BEA069395BD6EA" : "SnowMusic\/MetatoneOSC\/",
+    "5C788FB45371F7A39B6FFB445D10D0EF209EBAE3" : "SnowMusic\/MetatoneMIDI\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SnowMusic",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SnowMusic.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cpmpercussion\/SnowMusic",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B0EB831E21915A5997D386C8A6439628AB946BF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cpmpercussion\/MetatoneMIDI",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5C788FB45371F7A39B6FFB445D10D0EF209EBAE3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cpmpercussion\/MetatoneOSC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8290155778CD077C9D8A85EC03BEA069395BD6EA"
+    }
+  ]
+}

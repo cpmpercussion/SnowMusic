@@ -4,10 +4,6 @@
 # use_frameworks!
 
 target 'SnowMusic' do
-
-end
-
-target 'SnowMusicTests' do
-
+    pod 'libpd', :git => 'https://github.com/libpd/libpd', :submodules => true
 end
 
