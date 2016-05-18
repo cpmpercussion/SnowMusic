@@ -63,9 +63,6 @@
 		56FA5EC514E70F78008A2347 /* SnowMusicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA5EC414E70F78008A2347 /* SnowMusicAppDelegate.m */; };
 		56FA5ECB14E70F78008A2347 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56FA5EC914E70F78008A2347 /* MainStoryboard_iPad.storyboard */; };
 		56FA5ECE14E70F78008A2347 /* SnowMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA5ECD14E70F78008A2347 /* SnowMusicViewController.m */; };
-		56FA5ED614E70F78008A2347 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5ED514E70F78008A2347 /* SenTestingKit.framework */; };
-		56FA5ED714E70F78008A2347 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB414E70F78008A2347 /* UIKit.framework */; };
-		56FA5ED814E70F78008A2347 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA5EB614E70F78008A2347 /* Foundation.framework */; };
 		56FA629214E72936008A2347 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA629114E72936008A2347 /* AudioToolbox.framework */; };
 		56FA629514E72941008A2347 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FA629414E72941008A2347 /* AVFoundation.framework */; };
 		56FA97C114EFCC9B00628FEF /* snow-crushing-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA97BC14EFCC9B00628FEF /* snow-crushing-1.wav */; };
@@ -445,13 +442,6 @@
 			remoteGlobalIDString = 119013AB1486450C00086F19;
 			remoteInfo = "libpd-osx";
 		};
-		56FA5ED914E70F78008A2347 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56FA5EA714E70F78008A2347 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 56FA5EAF14E70F78008A2347;
-			remoteInfo = SnowMusic;
-		};
 		56FA9A9B14EFCFF000628FEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 56FA9A9414EFCFF000628FEF /* libpd.xcodeproj */;
@@ -557,7 +547,6 @@
 		56FA5ECA14E70F78008A2347 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		56FA5ECC14E70F78008A2347 /* SnowMusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnowMusicViewController.h; sourceTree = "<group>"; };
 		56FA5ECD14E70F78008A2347 /* SnowMusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowMusicViewController.m; sourceTree = "<group>"; };
-		56FA5ED414E70F78008A2347 /* SnowMusicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowMusicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA5ED514E70F78008A2347 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		56FA629114E72936008A2347 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		56FA629414E72941008A2347 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -948,16 +937,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56FA5ED014E70F78008A2347 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				56FA5ED614E70F78008A2347 /* SenTestingKit.framework in Frameworks */,
-				56FA5ED714E70F78008A2347 /* UIKit.framework in Frameworks */,
-				56FA5ED814E70F78008A2347 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1064,7 +1043,6 @@
 			isa = PBXGroup;
 			children = (
 				56FA5EB014E70F78008A2347 /* SnowMusic.app */,
-				56FA5ED414E70F78008A2347 /* SnowMusicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1546,33 +1524,14 @@
 			productReference = 56FA5EB014E70F78008A2347 /* SnowMusic.app */;
 			productType = "com.apple.product-type.application";
 		};
-		56FA5ED314E70F78008A2347 /* SnowMusicTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 56FA5EE914E70F79008A2347 /* Build configuration list for PBXNativeTarget "SnowMusicTests" */;
-			buildPhases = (
-				56FA5ECF14E70F78008A2347 /* Sources */,
-				56FA5ED014E70F78008A2347 /* Frameworks */,
-				56FA5ED114E70F78008A2347 /* Resources */,
-				56FA5ED214E70F78008A2347 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				56FA5EDA14E70F78008A2347 /* PBXTargetDependency */,
-			);
-			name = SnowMusicTests;
-			productName = SnowMusicTests;
-			productReference = 56FA5ED414E70F78008A2347 /* SnowMusicTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		56FA5EA714E70F78008A2347 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0600;
-				LastUpgradeCheck = 0600;
+				LastTestingUpgradeCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Charles Martin Percussion";
 				TargetAttributes = {
 					56FA5EAF14E70F78008A2347 = {
@@ -1599,7 +1558,6 @@
 			projectRoot = "";
 			targets = (
 				56FA5EAF14E70F78008A2347 /* SnowMusic */,
-				56FA5ED314E70F78008A2347 /* SnowMusicTests */,
 			);
 		};
 /* End PBXProject section */
@@ -2019,30 +1977,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56FA5ED114E70F78008A2347 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		56FA5ED214E70F78008A2347 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		56FA5EAC14E70F78008A2347 /* Sources */ = {
@@ -2077,21 +2012,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56FA5ECF14E70F78008A2347 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		56FA5EDA14E70F78008A2347 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 56FA5EAF14E70F78008A2347 /* SnowMusic */;
-			targetProxy = 56FA5ED914E70F78008A2347 /* PBXContainerItemProxy */;
-		};
 		56FA9AAB14EFD0DF00628FEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libpd-ios";
@@ -2136,6 +2059,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -2168,27 +2092,11 @@
 				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
 				INFOPLIST_FILE = "SnowMusic/SnowMusic-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.charlesmartin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/charles/src/pd-for-ios/libpd/**";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
-			};
-			name = AppStore;
-		};
-		562C868615FCC5CB008DE188 /* AppStore */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SnowMusic.app/SnowMusic";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
-				INFOPLIST_FILE = "SnowMusicTests/SnowMusicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = AppStore;
 		};
@@ -2208,8 +2116,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2255,6 +2165,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -2288,6 +2199,7 @@
 				INFOPLIST_FILE = "SnowMusic/SnowMusic-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.charlesmartin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/charles/src/pd-for-ios/libpd/**";
 				WRAPPER_EXTENSION = app;
@@ -2303,43 +2215,10 @@
 				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
 				INFOPLIST_FILE = "SnowMusic/SnowMusic-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.charlesmartin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/charles/src/pd-for-ios/libpd/**";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		56FA5EEA14E70F79008A2347 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SnowMusic.app/SnowMusic";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
-				INFOPLIST_FILE = "SnowMusicTests/SnowMusicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		56FA5EEB14E70F79008A2347 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SnowMusic.app/SnowMusic";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SnowMusic/SnowMusic-Prefix.pch";
-				INFOPLIST_FILE = "SnowMusicTests/SnowMusicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -2362,16 +2241,6 @@
 				56FA5EE714E70F78008A2347 /* Debug */,
 				56FA5EE814E70F78008A2347 /* Release */,
 				562C868515FCC5CB008DE188 /* AppStore */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		56FA5EE914E70F79008A2347 /* Build configuration list for PBXNativeTarget "SnowMusicTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				56FA5EEA14E70F79008A2347 /* Debug */,
-				56FA5EEB14E70F79008A2347 /* Release */,
-				562C868615FCC5CB008DE188 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
