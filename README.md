@@ -1,5 +1,7 @@
 # Snow Music app for iOS devices
 
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.51630.svg)](http://dx.doi.org/10.5281/zenodo.51630)
+
 ![A screen shot of Snow Music in action.](https://raw.githubusercontent.com/cpmpercussion/SnowMusic/master/SnowMusic-iPad.jpg)
 
 Snow Music is a simple computer instrument created by Charles Martin and Ensemble Evolution for bringing the sound of snow and ice in Piteå into their performances.
