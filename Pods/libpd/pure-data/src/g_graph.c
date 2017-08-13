@@ -10,7 +10,6 @@ to this file... */
 #include "m_pd.h"
 
 #include "g_canvas.h"
-#include "s_stuff.h"    /* for sys_hostfontsize */
 #include <stdio.h>
 #include <string.h>
 
@@ -744,11 +743,12 @@ static void graph_vis(t_gobj *gr, t_glist *parent_glist, int vis)
             if (g->g_pd == garray_class &&
                 !garray_getname((t_garray *)g, &arrayname))
         {
-            i -= sys_fontheight(glist_getfont(x));
+            i -= glist_fontheight(x);
             sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor nw\
              -font {{%s} -%d %s} -tags [list %s label graph]\n",
              (long)glist_getcanvas(x),  x1, i, arrayname->s_name, sys_font,
-                sys_hostfontsize(glist_getfont(x)), sys_fontweight, tag);
+                sys_hostfontsize(glist_getfont(x), x->gl_zoom),
+                    sys_fontweight, tag);
         }
 
             /* draw ticks on horizontal borders.  If lperb field is
@@ -985,21 +985,20 @@ static void graph_delete(t_gobj *z, t_glist *glist)
     canvas_deletelinesfor(glist, &x->gl_obj);
 }
 
-static t_float graph_lastxpix, graph_lastypix;
-
 static void graph_motion(void *z, t_floatarg dx, t_floatarg dy)
 {
     t_glist *x = (t_glist *)z;
-    t_float newxpix = graph_lastxpix + dx, newypix = graph_lastypix + dy;
+    t_float newxpix = THISGUI->i_graph_lastxpix + dx,
+        newypix = THISGUI->i_graph_lastypix + dy;
     t_garray *a = (t_garray *)(x->gl_list);
-    int oldx = 0.5 + glist_pixelstox(x, graph_lastxpix);
+    int oldx = 0.5 + glist_pixelstox(x, THISGUI->i_graph_lastxpix);
     int newx = 0.5 + glist_pixelstox(x, newxpix);
     t_word *vec;
     int nelem, i;
-    t_float oldy = glist_pixelstoy(x, graph_lastypix);
+    t_float oldy = glist_pixelstoy(x, THISGUI->i_graph_lastypix);
     t_float newy = glist_pixelstoy(x, newypix);
-    graph_lastxpix = newxpix;
-    graph_lastypix = newypix;
+    THISGUI->i_graph_lastxpix = newxpix;
+    THISGUI->i_graph_lastypix = newypix;
         /* verify that the array is OK */
     if (!a || pd_class((t_pd *)a) != garray_class)
         return;
@@ -1059,7 +1058,7 @@ static int graph_click(t_gobj *z, struct _glist *glist,
     }
 }
 
-t_widgetbehavior graph_widgetbehavior =
+const t_widgetbehavior graph_widgetbehavior =
 {
     graph_getrect,
     graph_displace,

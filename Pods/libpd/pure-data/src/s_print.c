@@ -9,7 +9,8 @@
 #include <string.h>
 #include <errno.h>
 #include "s_stuff.h"
-#ifdef _MSC_VER  /* This is only for Microsoft's compiler, not cygwin, e.g. */
+
+#ifdef _MSC_VER
 #define snprintf sprintf_s
 #endif
 
@@ -50,7 +51,7 @@ static void dopost(const char *s)
 {
     if (sys_printhook)
         (*sys_printhook)(s);
-    else if (sys_printtostderr)
+    else if (sys_printtostderr || !sys_havegui())
 #ifdef _WIN32
         fwprintf(stderr, L"%S", s);
 #else

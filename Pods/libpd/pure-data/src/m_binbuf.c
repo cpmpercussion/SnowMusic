@@ -19,6 +19,10 @@
 #include <string.h>
 #include <stdarg.h>
 
+#ifdef _MSC_VER
+#define snprintf sprintf_s
+#endif
+
 struct _binbuf
 {
     int b_n;
@@ -55,7 +59,7 @@ void binbuf_clear(t_binbuf *x)
 }
 
     /* convert text to a binbuf */
-void binbuf_text(t_binbuf *x, char *text, size_t size)
+void binbuf_text(t_binbuf *x, const char *text, size_t size)
 {
     char buf[MAXPDSTRING+1], *bufp, *ebuf = buf+MAXPDSTRING;
     const char *textp = text, *etext = text+size;
@@ -558,7 +562,7 @@ t_symbol *binbuf_realizedollsym(t_symbol *s, int ac, t_atom *av, int tonew)
         }
         else
         {
-            strcat(buf2, str);
+            strncat(buf2, str, MAXPDSTRING-1);
             goto done;
         }
     }
@@ -575,9 +579,9 @@ done:
 
 #ifdef HAVE_ALLOCA
 
-#ifdef _MSC_VER
-# include <malloc.h> /* MSVC */
-#elif defined(__linux__) || defined(__APPLE__) || defined(_WIN32)
+#ifdef _WIN32
+# include <malloc.h> /* MSVC or mingw on windows */
+#elif defined(__linux__) || defined(__APPLE__)
 # include <alloca.h> /* linux, mac, mingw, cygwin */
 #else
 # include <stdlib.h> /* BSDs for example */
@@ -1453,7 +1457,6 @@ static t_binbuf *binbuf_convert(t_binbuf *oldb, int maxtopd)
 }
 
 void pd_doloadbang(void);
-extern t_symbol s__X;
 
 /* LATER make this evaluate the file on-the-fly. */
 /* LATER figure out how to log errors */
@@ -1480,7 +1483,9 @@ void binbuf_evalfile(t_symbol *name, t_symbol *dir)
             b = newb;
         }
         binbuf_eval(b, 0, 0, 0);
-        canvas_initbang((t_canvas *)(s__X.s_thing)); /* JMZ*/
+            /* avoid crashing if no canvas was created by binbuf eval */
+        if (s__X.s_thing && *s__X.s_thing == canvas_class)
+            canvas_initbang((t_canvas *)(s__X.s_thing)); /* JMZ*/
         gensym("#A")->s_thing = bounda;
         s__N.s_thing = boundn;
     }

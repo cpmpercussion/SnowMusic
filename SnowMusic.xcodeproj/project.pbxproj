@@ -431,11 +431,11 @@
 		56FA9ACC14F0580700628FEF /* almglockenC.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AC214F0580700628FEF /* almglockenC.wav */; };
 		56FA9AD614F07B5900628FEF /* bellsynth.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AD414F07B5900628FEF /* bellsynth.pd */; };
 		56FA9AD714F07B5900628FEF /* volumeRandomise.pd in Resources */ = {isa = PBXBuildFile; fileRef = 56FA9AD514F07B5900628FEF /* volumeRandomise.pd */; };
-		F8B15AD9FF70994D7A7C0AFC /* libPods-SnowMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C528B7F5D3DA23445E988B3F /* libPods-SnowMusic.a */; };
+		F64C26F7EE25A044DF48C1C8 /* libPods-SnowMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34B51FA7D49741E360E6294 /* libPods-SnowMusic.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02DF82B29336B4B1B05E4A1E /* Pods-SnowMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnowMusic/Pods-SnowMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		115DAC7682E431CE5DBD04A8 /* Pods-SnowMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnowMusic/Pods-SnowMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		560A8BAB19F0C371002FE490 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "SnowMusic/Launch Screen.xib"; sourceTree = "<group>"; };
 		560A8BAE19F0C52E002FE490 /* SnowyGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SnowyGround.png; sourceTree = "<group>"; };
 		5612059514F5B5CB007EFBB9 /* snowapp2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snowapp2.pd; path = Resources/snowapp2.pd; sourceTree = "<group>"; };
@@ -893,9 +893,9 @@
 		56FA9AC214F0580700628FEF /* almglockenC.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = almglockenC.wav; sourceTree = "<group>"; };
 		56FA9AD414F07B5900628FEF /* bellsynth.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bellsynth.pd; path = Resources/bellsynth.pd; sourceTree = "<group>"; };
 		56FA9AD514F07B5900628FEF /* volumeRandomise.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = volumeRandomise.pd; path = Resources/volumeRandomise.pd; sourceTree = "<group>"; };
-		803743F8E4F9C5537AEE1FF2 /* Pods-SnowMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnowMusic/Pods-SnowMusic.release.xcconfig"; sourceTree = "<group>"; };
-		C528B7F5D3DA23445E988B3F /* libPods-SnowMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SnowMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F29C2F579A9CBD24DCE249FE /* Pods-SnowMusic.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowMusic.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-SnowMusic/Pods-SnowMusic.appstore.xcconfig"; sourceTree = "<group>"; };
+		D34B51FA7D49741E360E6294 /* libPods-SnowMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SnowMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0931E8BC70412DF774EB2FE /* Pods-SnowMusic.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowMusic.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-SnowMusic/Pods-SnowMusic.appstore.xcconfig"; sourceTree = "<group>"; };
+		E4D2368BEC89E389BD609D8E /* Pods-SnowMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnowMusic/Pods-SnowMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -912,13 +912,23 @@
 				56FA5EB514E70F78008A2347 /* UIKit.framework in Frameworks */,
 				56FA5EB714E70F78008A2347 /* Foundation.framework in Frameworks */,
 				56FA5EB914E70F78008A2347 /* CoreGraphics.framework in Frameworks */,
-				F8B15AD9FF70994D7A7C0AFC /* libPods-SnowMusic.a in Frameworks */,
+				F64C26F7EE25A044DF48C1C8 /* libPods-SnowMusic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		074EEFB904A5B75C1889D143 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				115DAC7682E431CE5DBD04A8 /* Pods-SnowMusic.debug.xcconfig */,
+				E4D2368BEC89E389BD609D8E /* Pods-SnowMusic.release.xcconfig */,
+				E0931E8BC70412DF774EB2FE /* Pods-SnowMusic.appstore.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5612059314F5B3EF007EFBB9 /* fieldrecordings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1014,7 +1024,7 @@
 				56FA5EBA14E70F78008A2347 /* SnowMusic */,
 				56FA5EB314E70F78008A2347 /* Frameworks */,
 				56FA5EB114E70F78008A2347 /* Products */,
-				EF9EF95DF4183CFF1FC6AD42 /* Pods */,
+				074EEFB904A5B75C1889D143 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1039,7 +1049,7 @@
 				56FA5EB614E70F78008A2347 /* Foundation.framework */,
 				56FA5EB814E70F78008A2347 /* CoreGraphics.framework */,
 				56FA5ED514E70F78008A2347 /* SenTestingKit.framework */,
-				C528B7F5D3DA23445E988B3F /* libPods-SnowMusic.a */,
+				D34B51FA7D49741E360E6294 /* libPods-SnowMusic.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1474,16 +1484,6 @@
 			path = Resources/percsamples;
 			sourceTree = "<group>";
 		};
-		EF9EF95DF4183CFF1FC6AD42 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				02DF82B29336B4B1B05E4A1E /* Pods-SnowMusic.debug.xcconfig */,
-				803743F8E4F9C5537AEE1FF2 /* Pods-SnowMusic.release.xcconfig */,
-				F29C2F579A9CBD24DCE249FE /* Pods-SnowMusic.appstore.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1491,12 +1491,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56FA5EE614E70F78008A2347 /* Build configuration list for PBXNativeTarget "SnowMusic" */;
 			buildPhases = (
-				836877873831837986D233C6 /* Check Pods Manifest.lock */,
+				CF8F70EEE118A8B52EBC0595 /* [CP] Check Pods Manifest.lock */,
 				56FA5EAC14E70F78008A2347 /* Sources */,
 				56FA5EAD14E70F78008A2347 /* Frameworks */,
 				56FA5EAE14E70F78008A2347 /* Resources */,
-				B11A171DFFCE5F67C23A8833 /* Embed Pods Frameworks */,
-				4F5D59375A9F21ACFAE9D3DD /* Copy Pods Resources */,
+				8E3DC1A0AFBD38BF7F8C7BEC /* [CP] Embed Pods Frameworks */,
+				1E7E775145AA24BAEBE010C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1940,14 +1940,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F5D59375A9F21ACFAE9D3DD /* Copy Pods Resources */ = {
+		1E7E775145AA24BAEBE010C5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1955,34 +1955,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnowMusic/Pods-SnowMusic-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		836877873831837986D233C6 /* Check Pods Manifest.lock */ = {
+		8E3DC1A0AFBD38BF7F8C7BEC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B11A171DFFCE5F67C23A8833 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnowMusic/Pods-SnowMusic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF8F70EEE118A8B52EBC0595 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2086,7 +2086,7 @@
 		};
 		562C868515FCC5CB008DE188 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F29C2F579A9CBD24DCE249FE /* Pods-SnowMusic.appstore.xcconfig */;
+			baseConfigurationReference = E0931E8BC70412DF774EB2FE /* Pods-SnowMusic.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2195,7 +2195,7 @@
 		};
 		56FA5EE714E70F78008A2347 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02DF82B29336B4B1B05E4A1E /* Pods-SnowMusic.debug.xcconfig */;
+			baseConfigurationReference = 115DAC7682E431CE5DBD04A8 /* Pods-SnowMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2213,7 +2213,7 @@
 		};
 		56FA5EE814E70F78008A2347 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 803743F8E4F9C5537AEE1FF2 /* Pods-SnowMusic.release.xcconfig */;
+			baseConfigurationReference = E4D2368BEC89E389BD609D8E /* Pods-SnowMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Icons;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
