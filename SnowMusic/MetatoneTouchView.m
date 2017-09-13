@@ -75,61 +75,79 @@
     UIColor *colour = [self.generativeColours valueForKey:type];
     if (!colour) colour = self.loopColour;
     CALayer *layer = [self makeCircleLayerWithColour:colour];
-    [self.layer addSublayer:layer];
-    [self.noteCirclePoints addObject:layer];
-    
-    [CATransaction setAnimationDuration:0.0];
-//    CGFloat newX = arc4random_uniform(1024);
-//    CGFloat newY = arc4random_uniform(768);
     
     CGFloat newX = arc4random_uniform(self.bounds.size.width);
     CGFloat newY = arc4random_uniform(self.bounds.size.height);
-    
     layer.position = CGPointMake(newX, newY);
+    
+    [self.layer addSublayer:layer];
+    [self.noteCirclePoints addObject:layer];
+    
+    [layer setOpacity:(float) 1.0];
     layer.hidden = NO;
     
-    float scaleFactor = 1.3 + arc4random_uniform(100)/33;
+    [CATransaction flush];
+    [CATransaction begin];
     
+    [CATransaction setCompletionBlock:^{
+        [layer removeFromSuperlayer];
+        [self.touchCirclePoints removeObject:layer];
+    }];
+    
+    // expand animation
+    float scaleFactor = 1.3 + arc4random_uniform(100)/33;
     CABasicAnimation *expand = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     expand.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
     expand.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(scaleFactor, scaleFactor, 1.0)];
-    expand.duration = 2.0;
-    [layer addAnimation:expand forKey:@"expandAnimation"];
-
+    expand.duration = 3.0;
     
-    [CATransaction setCompletionBlock:^{
-        [CATransaction setCompletionBlock:^{
-            [self.noteCirclePoints removeObject:layer];
-            [layer removeFromSuperlayer];
-        }];
-        [CATransaction setAnimationDuration:3.0];
-        layer.hidden = YES;
-    }];
+    // fadeout animation
+    CABasicAnimation *opaqueAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opaqueAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+    opaqueAnimation.toValue = [NSNumber numberWithFloat:0.0];
+    opaqueAnimation.duration = 3.0;
+    
+    [layer addAnimation:expand forKey:@"expandAnimation"];
+    [layer addAnimation:opaqueAnimation forKey:@"opacity"];
+    
+    [CATransaction commit];
 }
 
 
 -(void) drawTouchCircleAt:(CGPoint) point {
     CALayer *layer = [self makeCircleLayerWithColour:self.touchColour];
+    layer.position = point;
     [self.layer addSublayer:layer];
     [self.touchCirclePoints addObject:layer];
     
+    // reveal layer
+    [layer setOpacity:(float) 1.0];
+    layer.hidden = NO;
+    
+    [CATransaction flush];
+    [CATransaction begin];
+    
+    [CATransaction setCompletionBlock:^{
+        [layer removeFromSuperlayer];
+        [self.touchCirclePoints removeObject:layer];
+    }];
+    
+    // Reducing animation
     CABasicAnimation *expand = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     expand.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
     expand.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.1, 0.1, 1.0)];
     expand.duration = 2.0;
-    [layer addAnimation:expand forKey:@"expandAnimation"];
     
-    [CATransaction setAnimationDuration:0.0];
-    layer.position = point;
-    layer.hidden = NO;
-    [CATransaction setCompletionBlock:^{
-        [CATransaction setCompletionBlock:^{
-            [layer removeFromSuperlayer];
-            [self.touchCirclePoints removeObject:layer];
-        }];
-        [CATransaction setAnimationDuration:2.0];
-        layer.hidden = YES;
-    }];
+    // Fadeout animation
+    CABasicAnimation *opaqueAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opaqueAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+    opaqueAnimation.toValue = [NSNumber numberWithFloat:0.0];
+    opaqueAnimation.duration = 2.0;
+    
+    [layer addAnimation:expand forKey:@"expandAnimation"];
+    [layer addAnimation:opaqueAnimation forKey:@"opacity"];
+    
+    [CATransaction commit];
 }
 
 
@@ -163,6 +181,7 @@
     layer.frame = CGRectMake(0, 0, 50, 50);
     layer.cornerRadius = 25.0;
     layer.hidden = YES;
+    layer.opaque = YES;
     return layer;
 }
 
