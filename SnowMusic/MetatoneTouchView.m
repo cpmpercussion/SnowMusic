@@ -83,13 +83,14 @@
     [self.layer addSublayer:layer];
     [self.noteCirclePoints addObject:layer];
     
-    [layer setOpacity:(float) 1.0];
+    [layer setOpacity:(float) 0.0];
     layer.hidden = NO;
     
     [CATransaction flush];
     [CATransaction begin];
     
     [CATransaction setCompletionBlock:^{
+        layer.hidden = YES;
         [layer removeFromSuperlayer];
         [self.touchCirclePoints removeObject:layer];
     }];
@@ -99,17 +100,20 @@
     CABasicAnimation *expand = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     expand.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
     expand.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(scaleFactor, scaleFactor, 1.0)];
-    expand.duration = 3.0;
+    expand.duration = 2.9;
+    expand.fillMode = kCAFillModeForwards;
+    expand.removedOnCompletion = NO;
     
     // fadeout animation
     CABasicAnimation *opaqueAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     opaqueAnimation.fromValue = [NSNumber numberWithFloat:1.0];
     opaqueAnimation.toValue = [NSNumber numberWithFloat:0.0];
     opaqueAnimation.duration = 3.0;
+    expand.fillMode = kCAFillModeForwards;
+    opaqueAnimation.removedOnCompletion = NO;
     
     [layer addAnimation:expand forKey:@"expandAnimation"];
     [layer addAnimation:opaqueAnimation forKey:@"opacity"];
-    
     [CATransaction commit];
 }
 
@@ -121,7 +125,7 @@
     [self.touchCirclePoints addObject:layer];
     
     // reveal layer
-    [layer setOpacity:(float) 1.0];
+    [layer setOpacity:(float) 0.0];
     layer.hidden = NO;
     
     [CATransaction flush];
