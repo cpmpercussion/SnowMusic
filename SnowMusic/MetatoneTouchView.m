@@ -190,14 +190,32 @@
 }
 
 -(void) drawMovingTouchCircleAt:(CGPoint)point {
-    [CATransaction setAnimationDuration:0.0];
-    self.movingTouchCircleLayer.position = point;
     self.movingTouchCircleLayer.hidden = NO;
+    [CATransaction flush];
+    [CATransaction begin];
+    [CATransaction setAnimationDuration:0.0];
+    [self.movingTouchCircleLayer setOpacity:(float) 1.0];
+    self.movingTouchCircleLayer.position = point;
+    [CATransaction commit];
 }
 
 -(void) hideMovingTouchCircle {
-    [CATransaction setAnimationDuration:1.0];
-    self.movingTouchCircleLayer.hidden = YES;
+    // reveal layer
+    [self.movingTouchCircleLayer setOpacity:(float) 0.0];
+    
+    [CATransaction flush];
+    [CATransaction begin];
+    
+    [CATransaction setCompletionBlock:^{
+        self.movingTouchCircleLayer.hidden = YES;
+    }];
+    // Fadeout animation
+    CABasicAnimation *opaqueAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opaqueAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+    opaqueAnimation.toValue = [NSNumber numberWithFloat:0.0];
+    opaqueAnimation.duration = 1.0;
+    [self.movingTouchCircleLayer addAnimation:opaqueAnimation forKey:@"opacity"];
+    [CATransaction commit];
 }
 
 @end
