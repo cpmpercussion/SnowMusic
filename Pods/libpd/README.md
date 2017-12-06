@@ -3,7 +3,7 @@ libpd
 
 [Pure Data](http://puredata.info) as an embeddable audio synthesis library
 
-Copyright (c) Peter Brinkmann & the libpd team 2010-2015
+Copyright (c) Peter Brinkmann & the libpd team 2010-2016
 
 Documentation
 -------------
@@ -55,7 +55,7 @@ The folder containing the sources of Pd Vanilla and standard externals. This is 
 
 This folder contains the source files that make up the core of libpd.
 
-### Android.mk, Makefile, libpd.xcodeproj, libpd_win.sln
+### Android.mk, Makefile, libpd.xcodeproj, libpd_csharp.sln
 
 Build support for various platforms. Feel free to improve the build system in any way you see fit.
 
@@ -63,7 +63,7 @@ Currently the main Makefile builds a dynamic lib on Windows (in MinGW), Linux, &
 
   - **libpd**: (default) builds if no target is specified, builds the libpd.so/dylib/dll
   - **cpplib**: builds libpd with the cpp wrapper
-  - **csharplib**: builds libpdcsharp.dll (tested on Windows only)
+  - **csharplib**: builds libpdcsharp.dll (on Windows) or libpdcsharp.so (on Linux)
   - **javalib**: builds libpdnative and the jni wrapper
   - **clean**: removes the object files
   - **clobber**: removes the linked library files
@@ -75,12 +75,20 @@ Makefile options allow for conditional compilation of libpd util and pd extra ex
   - **UTIL=true**, compiles `libpd_wrapper/util` ringbuffer and print concatenator
   - **EXTRA=true**, compiles `pure-data/extra` externals which are then inited in libpd_init()
   - **DEBUG=true**, compiles libpd with -Wall & no optimizations
+  - **LOCALE=false**, do not set the LC_NUMERIC number format to the default "C" locale\*
+  - **PORTAUDIO=true**, compiles libpd with portaudio support (currently JAVA jni only)
 
 For example, to build libpd with both util and extra:
 
     make UTIL=true EXTRA=true
 
 _Note: cpplib is automatically built with UTIL=true as it uses the ringbuffer_
+
+\* See the Known Issues section for more info.
+
+If you need to add custom search paths to the CFLAGS, you can specify them when building via:
+
+    make CFLAGS="-I/usr/local/lib"
 
 ### java, csharp, objc, cpp, python
 
@@ -99,6 +107,8 @@ For detailed instructions, see [Working with libpd in Xcode](libpd/libpd/wiki/Wo
 
 If you are unfamiliar with how static libraries work or how to use them in Xcode, see [this useful tutorial](http://www.raywenderlich.com/41377/creating-a-static-library-in-ios-tutorial).
 
+_Note: libpd is tested with the release versions of Xcode. It is recommended that you avoid using beta or developer preview versions._
+
 Java Builds
 -----------
 
@@ -114,3 +124,51 @@ Use the following in your CocoaPods podfile:
 
     pod 'libpd', :git => 'https://github.com/libpd/libpd', :submodules => true
 
+C#
+--
+
+### Installation from NuGet
+LibPD is available as a [NuGet package](https://www.nuget.org/packages/LibPdBinding). If your platform's native dll is not included, you have to build it yourself with `make csharplib` and copy the resulting file to the output directory. Batch scripts for compilations on Windows with MinGW64 are included.
+
+### Building yourself
+The C# library expects a file libpdcsharp.dll in its folder. Before using the project, you need to compile it.
+
+Include `csharp/LibPdBinding.csproj` in your solution and reference the project in your application.
+
+#### Windows
+The wrapper can be built with [MinGW-w64](http://mingw-w64.org/doku.php).
+
+You need to install [msys2](http://msys2.github.io/), preferably the version for i686, because that version can build the 64bit versions as well.
+
+Install msys2 using the instructions on the download page.
+
+Install make and gcc by running `pacman -S msys/make mingw32/mingw-w64-i686-gcc mingw64/mingw-w64-x86_64-gcc` from the msys2 console. You can search for packages in msys2 with `pacman -S -s <searchterm>`.
+
+For the 64 bit version of msys2 you also need to install winpthread by running `pacman -S msys/mingw-w64-cross-winpthreads-git`.
+
+Edit `mingw32_build_csharp.bat` or `mingw64_build_csharp.bat` and execute it to create the native dll. You probably only need to change the variable for `%MSYS2%`. Usually you want the 32 bit version, as it will work on 64 bit Windows as well, but Unity 5 needs the 64 bit version.
+
+For the 64 bit version, you also must use `libs/mingw64/libwinptread-1.dll` instead of `libs/mingw32/libwinpthread-1.dll`.
+
+For a current version of `libwinpthread-1.dll` search in your msys2 installation folders.
+
+#### Linux 
+If you want to use the library on Linux with Mono, you need the following changes to the LibPdBinding project:
+
+  - Compile the so file with `make csharplib`.
+  - Remove `libpdcsharp.dll` and `libwinpthread-1.dll` from LibPdBinding project.
+  - Add `libpdcsharp.so` to the LibPdBinding project.
+  - Set "Copy to Output Directory" for `libpdcsharp.so` to "Copy always"
+
+Known Issues
+------------
+
+### Problems with numbers in loaded patches or DSP output always seems to be 0
+
+Pd expects numbers to be in an english format, ie. "0.3". If you are using a non-English language or locale setting on your system, it may be encoding numbers differently, ie. "0,3". This can lead to weird bugs in loaded patches where numbers seem wrong or end up truncated as 0.
+
+By default, libpd is built with the LC\_NUMERIC locale set to the "C" default, so this shouldn't be a problem. If you are using libpd within a project that requires specific locale settings, you will need to make sure libpd's LC\_NUMERIC is left alone or at least reset it to "C" if working with a different numeric setting. If a non-english LC\_NUMERIC is set, you will run into the number parsing issues mentioned above.
+
+If you need to control LC\_NUMERIC manually, you can build libpd without the call to setlocale() in libpd_init using the SETLOCALE=false makefile option or by setting the LIBPD_NO_NUMERIC define.
+
+See <https://github.com/libpd/libpd/issues/130> for more info.

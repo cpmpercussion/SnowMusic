@@ -4,6 +4,7 @@
 # use_frameworks!
 
 target 'SnowMusic' do
-    pod 'libpd', :git => 'https://github.com/libpd/libpd', :submodules => true
+  pod 'libpd', :git => 'https://github.com/libpd/libpd', :submodules => true
+  pod 'SocketRocket'
 end
 

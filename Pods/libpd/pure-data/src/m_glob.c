@@ -4,6 +4,7 @@
 
 #include "m_pd.h"
 #include "m_imp.h"
+#include "s_stuff.h"
 
 t_class *glob_pdobject;
 static t_class *maxclass;
@@ -35,7 +36,9 @@ void glob_startup_dialog(t_pd *dummy, t_symbol *s, int argc, t_atom *argv);
 void glob_ping(t_pd *dummy);
 void glob_plugindispatch(t_pd *dummy, t_symbol *s, int argc, t_atom *argv);
 void glob_watchdog(t_pd *dummy);
-void glob_savepreferences(t_pd *dummy);
+void glob_loadpreferences(t_pd *dummy, t_symbol *s);
+void glob_savepreferences(t_pd *dummy, t_symbol *s);
+void glob_forgetpreferences(t_pd *dummy);
 
 static void glob_helpintro(t_pd *dummy)
 {
@@ -56,7 +59,7 @@ void glob_audio(void *dummy, t_floatarg adc, t_floatarg dac);
 /* a method you add for debugging printout */
 void glob_foo(void *dummy, t_symbol *s, int argc, t_atom *argv);
 
-#if 1
+#if 0
 void glob_foo(void *dummy, t_symbol *s, int argc, t_atom *argv)
 {
     post("foo 1");
@@ -114,6 +117,12 @@ void glob_plugindispatch(t_pd *dummy, t_symbol *s, int argc, t_atom *argv)
     sys_vgui("\n");
 }
 
+int sys_zoom_open = 1;
+void glob_zoom_open(t_pd *dummy, t_floatarg f)
+{
+    sys_zoom_open = (f != 0 ? 2 : 1);
+}
+
 void glob_init(void)
 {
     maxclass = class_new(gensym("max"), 0, 0, sizeof(t_pd),
@@ -164,8 +173,14 @@ void glob_init(void)
     class_addmethod(glob_pdobject, (t_method)glob_startup_dialog,
         gensym("startup-dialog"), A_GIMME, 0);
     class_addmethod(glob_pdobject, (t_method)glob_ping, gensym("ping"), 0);
+    class_addmethod(glob_pdobject, (t_method)glob_loadpreferences,
+        gensym("load-preferences"), A_DEFSYM, 0);
     class_addmethod(glob_pdobject, (t_method)glob_savepreferences,
-        gensym("save-preferences"), 0);
+        gensym("save-preferences"), A_DEFSYM, 0);
+    class_addmethod(glob_pdobject, (t_method)glob_forgetpreferences,
+        gensym("forget-preferences"), A_DEFSYM, 0);
+    class_addmethod(glob_pdobject, (t_method)glob_zoom_open,
+        gensym("zoom-open"), A_FLOAT, 0);
     class_addmethod(glob_pdobject, (t_method)glob_version,
         gensym("version"), A_FLOAT, 0);
     class_addmethod(glob_pdobject, (t_method)glob_perf,

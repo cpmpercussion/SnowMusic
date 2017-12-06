@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Snow Music View Controller-->
@@ -14,26 +19,26 @@
                         <viewControllerLayoutGuide type="bottom" id="Aga-yB-EXG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SnowyGround.png" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-Bd-0kv">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Snow" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="BTl-jM-58y">
-                                <rect key="frame" x="77" y="286" width="42" height="21"/>
+                                <rect key="frame" x="81" y="990" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bells" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="n8y-H0-eau">
-                                <rect key="frame" x="372" y="286" width="35" height="21"/>
+                                <rect key="frame" x="656" y="990" width="35" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MIDI Interface" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qV-J1-zxc">
-                                <rect key="frame" x="16" y="8" width="150" height="31"/>
+                                <rect key="frame" x="20" y="8" width="150" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="u0l-C0-S8X"/>
                                 </constraints>
@@ -42,38 +47,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cymbals" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JsR-Jp-gCw">
-                                <rect key="frame" x="343" y="13" width="64" height="21"/>
+                                <rect key="frame" x="627" y="13" width="64" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaP-TG-Rh8" userLabel="Metatone Touch View" customClass="MetatoneTouchView">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndc-s1-W43" userLabel="cymbal switch" colorLabel="IBBuiltInLabel-Yellow">
-                                <rect key="frame" x="415" y="8" width="51" height="31"/>
-                                <color key="onTintColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="0.62" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="699" y="8" width="51" height="31"/>
+                                <color key="onTintColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="0.62" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="backgroundsOn:" destination="2" eventType="valueChanged" id="a82-CL-0fX"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-9h-rqo" userLabel="clusters switch" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="415" y="281" width="51" height="31"/>
-                                <color key="onTintColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="0.60999999999999999" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="699" y="985" width="51" height="31"/>
+                                <color key="onTintColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="0.60999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="clustersSwitched:" destination="2" eventType="valueChanged" id="dzK-QO-ubV"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7n-At-wLG" userLabel="snow slide switch">
-                                <rect key="frame" x="20" y="281" width="51" height="31"/>
-                                <color key="onTintColor" red="0.0" green="0.50196081399917603" blue="1" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="24" y="985" width="51" height="31"/>
+                                <color key="onTintColor" red="0.0" green="0.50196081399917603" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="snowSwitched:" destination="2" eventType="valueChanged" id="iSN-Zf-t7N"/>
                                 </connections>
                             </switch>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uSX-Bd-0kv" firstAttribute="top" secondItem="7LH-QS-MLZ" secondAttribute="bottom" id="05y-Xj-2Ky"/>
                             <constraint firstItem="yaP-TG-Rh8" firstAttribute="leading" secondItem="5" secondAttribute="leading" id="0DD-ub-Vfa"/>
@@ -132,8 +137,6 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="backgroundSwitch" destination="ndc-s1-W43" id="uSI-B3-GeR"/>
                         <outlet property="clusterSwitchLabel" destination="n8y-H0-eau" id="zWm-0H-f1V"/>

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SocketRocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>libpd.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4C098AB50496C59EC60FCF2368557C2A</key>
+		<key>0574363A375D1EFC13C8187F98D3D42D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B4530B48A5182022630784E8A7B7C4D</key>
+		<key>98A48ED082F0DDD084D95B5DFAD86193</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBA3DA889032C6443B01CB62BBD8449C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

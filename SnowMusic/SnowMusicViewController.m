@@ -46,6 +46,25 @@
 
 @implementation SnowMusicViewController
 
+- (void) didReceivePerformanceStartEvent:(NSString *)event forDevice:(NSString *)device withType:(NSNumber *)type andComposition:(NSNumber *)composition {
+    // do nothing.
+}
+
+- (void) didReceivePerformanceEndEvent:(NSString *)event forDevice:(NSString *)device {
+    // performance over?
+}
+
+- (void) didReceiveGesturePlayMessageFor:(NSString *)device withClass:(NSString *)cla {
+    // do nothing
+}
+
+- (void) didReceiveTouchPlayMessageFor:(NSString *)device X:(NSNumber *)x Y:(NSNumber *)y vel:(NSNumber *)vel {
+    // Playback a touch
+}
+
+
+
+
 - (void)receiveBangFromSource:(NSString *)source {
     NSLog(@"PD BANG: %@",source);
 }
