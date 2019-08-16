@@ -31,6 +31,7 @@ void glob_midi_dialog(t_pd *dummy, t_symbol *s, int argc, t_atom *argv);
 void glob_midi_setapi(t_pd *dummy, t_floatarg f);
 void glob_start_path_dialog(t_pd *dummy, t_floatarg flongform);
 void glob_path_dialog(t_pd *dummy, t_symbol *s, int argc, t_atom *argv);
+void glob_addtopath(t_pd *dummy, t_symbol *path, t_float saveit);
 void glob_start_startup_dialog(t_pd *dummy, t_floatarg flongform);
 void glob_startup_dialog(t_pd *dummy, t_symbol *s, int argc, t_atom *argv);
 void glob_ping(t_pd *dummy);
@@ -39,6 +40,7 @@ void glob_watchdog(t_pd *dummy);
 void glob_loadpreferences(t_pd *dummy, t_symbol *s);
 void glob_savepreferences(t_pd *dummy, t_symbol *s);
 void glob_forgetpreferences(t_pd *dummy);
+void glob_open(t_pd *ignore, t_symbol *name, t_symbol *dir, t_floatarg f);
 
 static void glob_helpintro(t_pd *dummy)
 {
@@ -59,12 +61,13 @@ void glob_audio(void *dummy, t_floatarg adc, t_floatarg dac);
 /* a method you add for debugging printout */
 void glob_foo(void *dummy, t_symbol *s, int argc, t_atom *argv);
 
-#if 0
+#if 1
 void glob_foo(void *dummy, t_symbol *s, int argc, t_atom *argv)
 {
-    post("foo 1");
-    printf("barbarbar 2\n");
-    post("foo 3");
+#ifdef USEAPI_ALSA
+    void alsa_printstate( void);
+    alsa_printstate();
+#endif
 }
 #endif
 
@@ -136,8 +139,8 @@ void glob_init(void)
         A_GIMME, 0);
     class_addmethod(glob_pdobject, (t_method)glob_menunew, gensym("menunew"),
         A_SYMBOL, A_SYMBOL, 0);
-    class_addmethod(glob_pdobject, (t_method)glob_evalfile, gensym("open"),
-        A_SYMBOL, A_SYMBOL, 0);
+    class_addmethod(glob_pdobject, (t_method)glob_open, gensym("open"),
+        A_SYMBOL, A_SYMBOL, A_DEFFLOAT, 0);
     class_addmethod(glob_pdobject, (t_method)glob_quit, gensym("quit"), 0);
     class_addmethod(glob_pdobject, (t_method)glob_verifyquit,
         gensym("verifyquit"), A_DEFFLOAT, 0);
@@ -168,6 +171,8 @@ void glob_init(void)
         gensym("start-path-dialog"), 0);
     class_addmethod(glob_pdobject, (t_method)glob_path_dialog,
         gensym("path-dialog"), A_GIMME, 0);
+    class_addmethod(glob_pdobject, (t_method)glob_addtopath,
+        gensym("add-to-path"), A_SYMBOL, A_DEFFLOAT, 0);
     class_addmethod(glob_pdobject, (t_method)glob_start_startup_dialog,
         gensym("start-startup-dialog"), 0);
     class_addmethod(glob_pdobject, (t_method)glob_startup_dialog,

@@ -1,10 +1,14 @@
 PODS:
-  - libpd (0.10.0)
+  - libpd (0.11.0)
   - SocketRocket (0.5.1)
 
 DEPENDENCIES:
   - libpd (from `https://github.com/libpd/libpd`)
   - SocketRocket
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SocketRocket
 
 EXTERNAL SOURCES:
   libpd:
@@ -13,14 +17,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   libpd:
-    :commit: 9a0bbd2a2b461c8345d5df5e9d347510b37756db
+    :commit: ba51dbc52ae247ec2878164e2aa427e9d02e0211
     :git: https://github.com/libpd/libpd
     :submodules: true
 
 SPEC CHECKSUMS:
-  libpd: 2190cca0c4cc9bfe457499c1bd82e197da433847
+  libpd: 92e99cda31e27261cc63c7508a57283561999cb8
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: f16349c119cc268c57b1366b70b84d9eb8b0eeb4
+PODFILE CHECKSUM: b9d44463154f0497ef0ffebf20af80661f881654
 
-COCOAPODS: 1.2.0.beta.3
+COCOAPODS: 1.7.5
