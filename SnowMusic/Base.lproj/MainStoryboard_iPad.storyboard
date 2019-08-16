@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2">
-    <device id="ipad9_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,26 +18,26 @@
                         <viewControllerLayoutGuide type="bottom" id="Aga-yB-EXG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SnowyGround.png" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-Bd-0kv">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SnowyGround.png" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-Bd-0kv" userLabel="SnowyGround">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Snow" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="BTl-jM-58y">
-                                <rect key="frame" x="81" y="990" width="42" height="21"/>
+                                <rect key="frame" x="81" y="828" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bells" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="n8y-H0-eau">
-                                <rect key="frame" x="656" y="990" width="35" height="21"/>
+                                <rect key="frame" x="302" y="828" width="35" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MIDI Interface" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qV-J1-zxc">
-                                <rect key="frame" x="20" y="8" width="150" height="31"/>
+                                <rect key="frame" x="20" y="52" width="150" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="u0l-C0-S8X"/>
                                 </constraints>
@@ -47,31 +46,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cymbals" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JsR-Jp-gCw">
-                                <rect key="frame" x="627" y="13" width="64" height="21"/>
+                                <rect key="frame" x="273" y="57" width="64" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaP-TG-Rh8" userLabel="Metatone Touch View" customClass="MetatoneTouchView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndc-s1-W43" userLabel="cymbal switch" colorLabel="IBBuiltInLabel-Yellow">
-                                <rect key="frame" x="699" y="8" width="51" height="31"/>
+                                <rect key="frame" x="345" y="52" width="51" height="31"/>
                                 <color key="onTintColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="0.62" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="backgroundsOn:" destination="2" eventType="valueChanged" id="a82-CL-0fX"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-9h-rqo" userLabel="clusters switch" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="699" y="985" width="51" height="31"/>
+                                <rect key="frame" x="345" y="823" width="51" height="31"/>
                                 <color key="onTintColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="0.60999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="clustersSwitched:" destination="2" eventType="valueChanged" id="dzK-QO-ubV"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7n-At-wLG" userLabel="snow slide switch">
-                                <rect key="frame" x="24" y="985" width="51" height="31"/>
+                                <rect key="frame" x="24" y="823" width="51" height="31"/>
                                 <color key="onTintColor" red="0.0" green="0.50196081399917603" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="snowSwitched:" destination="2" eventType="valueChanged" id="iSN-Zf-t7N"/>
@@ -80,59 +79,31 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uSX-Bd-0kv" firstAttribute="top" secondItem="7LH-QS-MLZ" secondAttribute="bottom" id="05y-Xj-2Ky"/>
+                            <constraint firstItem="uSX-Bd-0kv" firstAttribute="top" secondItem="yaP-TG-Rh8" secondAttribute="top" id="05y-Xj-2Ky"/>
                             <constraint firstItem="yaP-TG-Rh8" firstAttribute="leading" secondItem="5" secondAttribute="leading" id="0DD-ub-Vfa"/>
-                            <constraint firstItem="uSX-Bd-0kv" firstAttribute="leading" secondItem="5" secondAttribute="leadingMargin" constant="-16" id="0ct-vr-sKi"/>
                             <constraint firstItem="cPZ-9h-rqo" firstAttribute="leading" secondItem="n8y-H0-eau" secondAttribute="trailing" constant="8" symbolic="YES" id="3Rk-41-sua"/>
-                            <constraint firstItem="yaP-TG-Rh8" firstAttribute="top" secondItem="5" secondAttribute="top" id="5Ci-4Q-XQ3"/>
                             <constraint firstItem="Aga-yB-EXG" firstAttribute="top" secondItem="cPZ-9h-rqo" secondAttribute="bottom" constant="8" symbolic="YES" id="7M9-Ok-ZK2"/>
                             <constraint firstItem="BTl-jM-58y" firstAttribute="leading" secondItem="E7n-At-wLG" secondAttribute="trailing" constant="8" symbolic="YES" id="Cgg-I5-iBi"/>
                             <constraint firstItem="ndc-s1-W43" firstAttribute="top" secondItem="7LH-QS-MLZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Dy9-wK-LCw"/>
-                            <constraint firstItem="uSX-Bd-0kv" firstAttribute="top" secondItem="7LH-QS-MLZ" secondAttribute="bottom" id="EEt-hb-AxX"/>
                             <constraint firstItem="9qV-J1-zxc" firstAttribute="top" secondItem="5" secondAttribute="topMargin" constant="8" id="LT3-r1-Lo1"/>
-                            <constraint firstItem="9qV-J1-zxc" firstAttribute="top" secondItem="7LH-QS-MLZ" secondAttribute="bottom" constant="8" symbolic="YES" id="NrB-5M-TWQ"/>
                             <constraint firstItem="uSX-Bd-0kv" firstAttribute="leading" secondItem="5" secondAttribute="leading" id="OVq-nj-5M5"/>
-                            <constraint firstAttribute="centerX" secondItem="uSX-Bd-0kv" secondAttribute="centerX" id="PaK-hF-z3N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uSX-Bd-0kv" secondAttribute="trailing" constant="-16" id="QBs-4o-9Rb"/>
-                            <constraint firstItem="E7n-At-wLG" firstAttribute="leading" secondItem="5" secondAttribute="leadingMargin" id="RuM-uh-2IK"/>
-                            <constraint firstItem="Aga-yB-EXG" firstAttribute="top" secondItem="uSX-Bd-0kv" secondAttribute="bottom" id="SJD-NK-VUk"/>
                             <constraint firstItem="E7n-At-wLG" firstAttribute="leading" secondItem="5" secondAttribute="leadingMargin" constant="4" id="T6V-lm-Id9"/>
-                            <constraint firstAttribute="centerY" secondItem="uSX-Bd-0kv" secondAttribute="centerY" id="UsZ-ym-igM"/>
                             <constraint firstItem="ndc-s1-W43" firstAttribute="leading" secondItem="JsR-Jp-gCw" secondAttribute="trailing" constant="8" symbolic="YES" id="VX2-9c-fZv"/>
                             <constraint firstItem="yaP-TG-Rh8" firstAttribute="top" secondItem="5" secondAttribute="top" id="VgM-EC-VPH"/>
                             <constraint firstAttribute="trailing" secondItem="uSX-Bd-0kv" secondAttribute="trailing" id="ZLL-0y-YJ0"/>
-                            <constraint firstItem="ndc-s1-W43" firstAttribute="top" secondItem="7LH-QS-MLZ" secondAttribute="bottom" id="cBQ-hD-J6T"/>
-                            <constraint firstItem="Aga-yB-EXG" firstAttribute="top" secondItem="uSX-Bd-0kv" secondAttribute="bottom" id="g8n-wk-pV1"/>
                             <constraint firstItem="BTl-jM-58y" firstAttribute="centerY" secondItem="E7n-At-wLG" secondAttribute="centerY" id="gm6-R8-fOk"/>
                             <constraint firstItem="Aga-yB-EXG" firstAttribute="top" secondItem="E7n-At-wLG" secondAttribute="bottom" constant="8" id="hjh-Jy-E6N"/>
                             <constraint firstItem="Aga-yB-EXG" firstAttribute="top" secondItem="E7n-At-wLG" secondAttribute="bottom" constant="8" symbolic="YES" id="kgi-oM-beZ"/>
                             <constraint firstItem="cPZ-9h-rqo" firstAttribute="centerY" secondItem="n8y-H0-eau" secondAttribute="centerY" id="kkB-4q-dKg"/>
                             <constraint firstItem="9qV-J1-zxc" firstAttribute="leading" secondItem="5" secondAttribute="leadingMargin" id="n8W-Ju-xQ8"/>
+                            <constraint firstItem="yaP-TG-Rh8" firstAttribute="bottom" secondItem="uSX-Bd-0kv" secondAttribute="bottom" id="nLf-mx-GLh"/>
                             <constraint firstItem="JsR-Jp-gCw" firstAttribute="centerY" secondItem="ndc-s1-W43" secondAttribute="centerY" id="ocZ-96-JKa"/>
                             <constraint firstAttribute="trailing" secondItem="yaP-TG-Rh8" secondAttribute="trailing" id="q11-4O-LOQ"/>
                             <constraint firstAttribute="bottom" secondItem="yaP-TG-Rh8" secondAttribute="bottom" id="tZ4-Yu-JIz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cPZ-9h-rqo" secondAttribute="trailing" id="wHz-FX-74k"/>
-                            <constraint firstItem="uSX-Bd-0kv" firstAttribute="top" secondItem="5" secondAttribute="topMargin" id="z8S-N5-L1s"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ndc-s1-W43" secondAttribute="trailing" id="zGw-Ff-CtJ"/>
-                            <constraint firstItem="Aga-yB-EXG" firstAttribute="top" secondItem="uSX-Bd-0kv" secondAttribute="bottom" id="zMi-Xf-7or"/>
                             <constraint firstItem="JsR-Jp-gCw" firstAttribute="centerY" secondItem="9qV-J1-zxc" secondAttribute="centerY" id="zSq-Tp-pBF"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="05y-Xj-2Ky"/>
-                                <exclude reference="0ct-vr-sKi"/>
-                                <exclude reference="EEt-hb-AxX"/>
-                                <exclude reference="PaK-hF-z3N"/>
-                                <exclude reference="QBs-4o-9Rb"/>
-                                <exclude reference="UsZ-ym-igM"/>
-                                <exclude reference="5Ci-4Q-XQ3"/>
-                                <exclude reference="NrB-5M-TWQ"/>
-                                <exclude reference="RuM-uh-2IK"/>
-                                <exclude reference="g8n-wk-pV1"/>
-                                <exclude reference="zMi-Xf-7or"/>
-                                <exclude reference="cBQ-hD-J6T"/>
-                            </mask>
-                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
